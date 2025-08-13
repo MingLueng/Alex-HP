@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eagle MES</title>
+
+<!-- 1. Font từ Google trước (vì các style phụ thuộc font) -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+
+<!-- 2. Thư viện bên thứ 3 (Bootstrap, Font Awesome...) -->
+<link rel="stylesheet" href="./css/bootstrap.css">
+<link href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
+
+<!-- 3. Fonts nội bộ (nếu có) -->
+<!-- <link rel="stylesheet" href="./css/fonts.css"> -->
+
+<!-- 4. CSS chung của bạn -->
+<link rel="stylesheet" href="./css/site.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
+<link rel="stylesheet" href="./css/スタッフの声-page.css">
+<link rel="stylesheet" href="./css/募集職種-page.css">
+<link rel="stylesheet" href="./css/スタッフの声TOP-page.css">
+<link rel="stylesheet" href="./css/社内イベント-page.css">
+<link rel="stylesheet" href="./css/recruit-page.css">
+<link rel="stylesheet" href="./css/過去開発実績-page.css">
+<link rel="stylesheet" href="./css/work-page.css">
+<link rel="stylesheet" href="./css/service-page.css">
+<link rel="stylesheet" href="./css/about-page.css">
+<link rel="stylesheet" href="./css/top-page.css">
+</head>
+<body>
+<div>
+<header class="header-wrapper">
+  <div class="header">
+    <!-- Logo -->
+    <a class="logo" href="top-page.html">
+      <img src="./image/共通_01_画面上部_01_ALEXロゴ.png" alt="Alex">
+    </a>
+
+    <!-- Right block: Language + Nav + Menu Button -->
+    <div class="header-right">
+      <div class="top-bar-right">
+        <div class="language">Japanese / Vietnamese</div>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      </div>
+
+    <!-- Desktop nav -->
+      <nav class="nav" id="nav">
+        <div class="nav-item with-submenu">
+          <a href="about-page.html">ABOUT</a>
+          <div class="submenu">
+            <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+            <a href="#" data-tab="tab2">会社概要</a>
+            <a href="#" data-tab="tab3">沿革</a>
+            <a href="#" data-tab="tab4">組織図</a>
+            <a href="#" data-tab="tab5">主要取引先</a> -->
+          </div>
+        </div>
+
+        <div class="nav-item with-submenu">
+          <a href="service-page.html">SERVICE</a>
+          <div class="submenu">
+            <!-- <a href="#">映像制作</a>
+            <a href="#">実装・プログラミング</a>
+            <a href="#">システム・ツール開発</a>
+            <a href="#">企画</a> -->
+          </div>
+        </div>
+
+        <a href="work-page.html">WORKS</a>
+        <div class="nav-item with-submenu">
+          <a href="recruit-page.html">RECRUIT</a>
+          <div class="submenu">
+            <a href="募集職種-page.html">募集職種</a>
+            <a href="スタッフの声-page.html">スタッフの声</a>
+          </div>
+        </div>
+
+        <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="about-page.html">ABOUT <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+      <a href="#" data-tab="tab2">会社概要</a>
+      <a href="#" data-tab="tab3">沿革</a>
+      <a href="#" data-tab="tab4">組織図</a>
+      <a href="#" data-tab="tab5">主要取引先</a> -->
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="service-page.html">SERVICE <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#">映像制作</a>
+      <a href="#">実装・プログラミング</a>
+      <a href="#">システム・ツール開発</a>
+      <a href="#">企画</a> -->
+    </div>
+  </div>
+
+  <a href="work-page.html">WORK</a>
+
+  <div class="mobile-nav-item">
+    <button class="mobile-toggle" href="recruit-page.html">RECRUIT <span class="toggle-icon">＋</span></button>
+    <div class="mobile-submenu">
+       <a href="募集職種-page.html">募集職種</a>
+      <a href="スタッフの声-page.html">スタッフの声</a>
+    </div>
+  </div>
+
+     <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+  <div class="language">Japanese / Vietnamese</div>
+</div>
+<div class="submenu-tabs-3">
+  <div class="container-2">
+    <span class="main-title-staff">社内イベント</span>
+    <span class="subtitle-staff">スタッフの声</span>
+  </div>
+</div>
+<nav class="submenu-tabs-1">
+  <div class="container">
+    <ul>
+     <li><a href="募集職種-page.html">募集職種</a></li>
+      <li><a href="#スタッフの声TOP-page.html">スタッフの声ＴＯＰ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="staff-comment-section">
+  <div class="staff-comment-detail">
+  <div class="sf-header">
+    <img class="sf-bg" src="../image/グループ 293.png" alt="Green Diagonal BG">
+  </div>
+  <div class="container">
+    <div class="staff-block">
+      
+      <!-- Cột trái: Ảnh + khung -->
+      <div class="staff-image">
+        <div class="staff-frame">
+          <!-- Nền xanh -->
+          <img src="../image/グループ 103.png" class="staff-frame-bg" alt="Green BG">
+          <img src="../image/長方形 455.png" class="staff-frame-middle" alt="Middle Frame">
+          <!-- Khung viền -->
+          <img src="../image/べた塗り 4.png" class="staff-frame-top" alt="Top Frame">
+        </div>
+        <!-- Tên nhân viên -->
+          <!-- Box tên nhân viên -->
+        <div class="staff-name-box">
+          <!-- Hai hình nền ghép -->
+          <img src="../image/長方形 478.png" class="name-bg-white" alt="">
+          <img src="../image/長方形 629.png" class="name-bg-green" alt="">
+          <!-- Nội dung tên -->
+          <div class="name-text">
+            <p class="staff-department">映像制作部 CGデザイナー</p>
+            <p class="staff-name">R.Oさん</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải: Nội dung -->
+      <div class="staff-text">
+        <div class="staff-section-box">
+          <img src="../image/長方形 891.png" alt="" class="staff-avatar-bg">
+          <span class="staff-subtile">現在の仕事内容について教えてください</span>
+          <p>
+            CGデザイナーとして、映像制作におけるコンポジット業務を担当しています。主にAfter Effectsを使用し、パチンコ・パチスロの映像に使われるエフェクトの作成や、全体の <br>
+            見た目をより魅力的に仕上げるためのコンポジット作業を行っています。具体的には、After Effectsで衝撃波や効果背景、ロゴアニメーション、モーショングラフィッ<br>
+            クスなどを作成し、それらを組み合わせて、派手でインパクトのある演出や、スタイリッシュで洗練された表現を生み出しています。また、2D・3Dデザイナーから提供されたキャラクターの<br>
+            イラストや文字素材に対して、オーラや炎のエフェクトを加えたり、撮影データに実写の炎や環境光を合成したりすることで、様々な方が没入できる映像表現を目指しています。<br>
+
+          </p>
+        </div>
+
+        <div class="staff-section-box">
+          <img src="../image/長方形 891.png" alt="" class="staff-avatar-bg">
+          <span class="staff-subtile">仕事のやりがい・魅力を教えてください</span>
+          <p>
+            やりがいを感じるのは、チーム全体で話し合い映像やデザインを一つひとつ作り上げていき、誰も思いつかないような面白い発想が形となり、世の中に作品として反映<br>
+            され、多くの方に見て楽しんでいただけるその過程で得られる達成感や充実感は、何ものにも代えがたいです。特にアミューズメント業界は、映像の「見せ方」が常に進<br>
+            化し続けており、表現力と技術力の両方が求められます。そのため、学びが尽きることはなく、常に成長し続けられる点も、この仕事の大きなやりがいであり魅力です。<br>
+            また、自分がこれまで培ってきたスキルや発想・感性を後輩に伝えることで、個人の成長だけでなくチーム全体のレベルアップにもつながりその積み重ねがALEX全体の力<br>
+            となることにも喜びを感じています。<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="staff-comment-detail">
+    <div class="sf-header">
+      <img class="sf-bg" src="../image/グループ 293.png" alt="Green Diagonal BG">
+    </div>
+    <div class="container">
+      <div class="staff-block reverse">
+        <div class="staff-image-reverse">
+          <div class="staff-frame">
+            <img src="../image/レイヤー 15.png" class="staff-frame-brigde" alt="Green BG">
+
+            <img src="../image/長方形 455.png" class="staff-frame-braved" alt="Middle Frame">
+            
+            <img src="../image/べた塗り 4.png" class="staff-frame-bottom" alt="Top Frame">
+          </div>
+        </div>
+        <div class="staff-text">
+          <div class="staff-section-box">
+            <img src="../image/長方形 891.png" alt="" class="staff-avatar-bg">
+            <span class="staff-subtile">現在の仕事内容について教えてください</span>
+            <p>
+              CGデザイナーとして、映像制作におけるコンポジット業務を担当しています。主にAfter Effectsを使用し、パチンコ・パチスロの映像に使われるエフェクトの作成や、全体の <br>
+              見た目をより魅力的に仕上げるためのコンポジット作業を行っています。具体的には、After Effectsで衝撃波や効果背景、ロゴアニメーション、モーショングラフィッ<br>
+              クスなどを作成し、それらを組み合わせて、派手でインパクトのある演出や、スタイリッシュで洗練された表現を生み出しています。また、2D・3Dデザイナーから提供されたキャラクターの<br>
+              イラストや文字素材に対して、オーラや炎のエフェクトを加えたり、撮影データに実写の炎や環境光を合成したりすることで、様々な方が没入できる映像表現を目指しています。<br>
+
+            </p>
+          </div>
+
+          <div class="staff-section-box">
+            <img src="../image/長方形 891.png" alt="" class="staff-avatar-bg">
+            <span class="staff-subtile">仕事のやりがい・魅力を教えてください</span>
+            <p>
+              やりがいを感じるのは、チーム全体で話し合い映像やデザインを一つひとつ作り上げていき、誰も思いつかないような面白い発想が形となり、世の中に作品として反映<br>
+              され、多くの方に見て楽しんでいただけるその過程で得られる達成感や充実感は、何ものにも代えがたいです。特にアミューズメント業界は、映像の「見せ方」が常に進<br>
+              化し続けており、表現力と技術力の両方が求められます。そのため、学びが尽きることはなく、常に成長し続けられる点も、この仕事の大きなやりがいであり魅力です。<br>
+              また、自分がこれまで培ってきたスキルや発想・感性を後輩に伝えることで、個人の成長だけでなくチーム全体のレベルアップにもつながりその積み重ねがALEX全体の力<br>
+              となることにも喜びを感じています。<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="staff-comment-detail">
+      <div class="container">
+    <div class="staff-block reverse-bg">
+      <div class="staff-image-reverse-bg">
+        <div class="staff-frame">
+      
+          <img src="../image/レイヤー 998.png" class="staff-frame-wrapper" alt="Green BG">
+
+          <img src="../image/長方形 479.png" class="staff-frame-scrapper" alt="Middle Frame">
+          
+          <img src="../image/長方形 999.png" class="staff-frame-underground" alt="Top Frame">
+        </div>
+      </div>
+      <div class="staff-text-bg">
+        <div class="staff-section-box">
+          <img src="../image/長方形 891.png" alt="" class="staff-avatar-bg">
+          <span class="staff-subtile">就職活動中の方、これから入社される方へのメッセージ</span>
+          <p>
+            「作ることが好き」「デザインを見ることが好き」その気持ちは、デザイナーにとって何よりの原動力です。<br>
+            自分にしかない発想や感性は、唯一無二の武器だからこそ、それをどう活かすかが、クリエイターとしての醍醐味だと感じています。<br>
+            アミューズメント業界では、2D・3D・コンポジットなど多彩な表現手法が用いられており、「どうすればもっと良くなるか」「本当に心を動かすデザインとは何か」を常に問い続けることが求められます。この業界は、挑戦しがいのある環境だと思います。<br>
+            私たちと一緒に、デザインへの熱い想いを映像に込めて、より良い、より心に響くクリエイティブを生み出していきましょう。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+</div>
+
+<script src="./js/core.min.js"></script>
+<script src="./js/script.js"></script>
+<script>
+    
+// Toggle mobile menu visibility
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("show");
+
+  // Đổi icon giữa ☰ và ✕
+  if (mobileNav.classList.contains("show")) {
+    menuToggle.innerHTML = '&times;'; // ✕
+  } else {
+    menuToggle.innerHTML = '&#9776;'; // ☰
+  }
+});
+
+// Handle submenu accordion logic
+document.querySelectorAll('.mobile-toggle').forEach(button => {
+  button.addEventListener('click', function () {
+    const parent = this.closest('.mobile-nav-item');
+    const submenu = parent.querySelector('.mobile-submenu');
+    const icon = this.querySelector('.toggle-icon');
+
+    // Close all other submenus
+document.querySelectorAll('.mobile-nav-item').forEach(item => {
+      if (item !== parent) {
+        item.classList.remove('open');
+        item.querySelector('.mobile-submenu')?.classList.remove('show');
+        item.querySelector('.toggle-icon').textContent = '＋';
+      }
+    });
+
+    // Toggle current submenu
+    const isOpen = parent.classList.contains('open');
+    if (isOpen) {
+      parent.classList.remove('open');
+      submenu.classList.remove('show');
+      icon.textContent = '＋';
+    } else {
+      parent.classList.add('open');
+      submenu.classList.add('show');
+      icon.textContent = '−';
+    }
+  });
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const list = document.getElementById("newsList");
+    let isScrolling = false;
+
+    window.scrollNews = function (direction) {
+      if (!list || isScrolling) return;
+
+      const scrollAmount = 100;
+      isScrolling = true;
+
+      list.scrollBy({
+        top: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+
+      // Khoảng delay nhẹ để tránh spam cuộn
+      setTimeout(() => {
+        isScrolling = false;
+      }, 300); // khớp với smooth animation
+    };
+  });
+</script>
+<script>
+  document.querySelectorAll('nav.submenu-tabs a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetID = this.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetID);
+
+      if (targetEl) {
+        const yOffset = -100; // khoảng cách bù trừ cho header fixed
+        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+<script>
+document.querySelectorAll('.creation-interview-box').forEach(box => {
+  const overwhole = box.querySelector('.interview-overwhole');
+  const prevBtn = box.querySelector('.overwhole-btn.prev');
+  const nextBtn = box.querySelector('.overwhole-btn.next');
+  const items = overwhole.querySelectorAll('.overwhole-item img');
+  const bigImage = box.querySelector('.creation-interview-left img');
+
+  const itemsPerPage = 3;
+  const gap = 15;
+  const itemWidth = items[0].getBoundingClientRect().width + gap;
+  const totalItems = items.length;
+  const maxOffset = Math.max(0, (totalItems - itemsPerPage) * itemWidth - gap);
+
+  let offset = 0;
+
+  // Thêm transition mượt cho slider
+  overwhole.style.transition = "transform 0.4s ease";
+
+  function updateSlider() {
+    if (offset > maxOffset) offset = maxOffset;
+    if (offset < 0) offset = 0;
+    overwhole.style.transform = `translateX(-${offset}px)`;
+    
+    // Update trạng thái nút
+    prevBtn.disabled = offset === 0;
+    nextBtn.disabled = offset >= maxOffset;
+    prevBtn.style.opacity = offset === 0 ? 0.3 : 1;
+    nextBtn.style.opacity = offset >= maxOffset ? 0.3: 1;
+  }
+
+  // Sự kiện click ảnh nhỏ -> đổi ảnh lớn kèm hiệu ứng fade
+  items.forEach(img => {
+    img.addEventListener('click', () => {
+      // Thêm class fade-out
+      bigImage.classList.add('fade-out');
+
+      // Sau 400ms thì đổi ảnh và remove fade-out để fade-in
+      setTimeout(() => {
+        bigImage.src = img.src;
+        bigImage.classList.remove('fade-out');
+      }, 400);
+    });
+  });
+
+  // Sự kiện click nút next / prev
+  nextBtn.addEventListener('click', () => {
+    offset += itemWidth;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    offset -= itemWidth;
+    updateSlider();
+  });
+
+  // Khởi tạo
+  updateSlider();
+});
+</script>
+
+<script>
+  const stack = document.querySelector('.interview-stack');
+  const prevBtn = document.querySelector('.slide-interview-btn.prev');
+  const nextBtn = document.querySelector('.slide-interview-btn.next');
+  const items = stack.querySelectorAll('.stack-item');
+
+  const gap = 15;
+  let offset = 0;
+
+  // Lấy chiều rộng 1 item
+  function getItemWidth() {
+    return items[0].getBoundingClientRect().width + gap;
+  }
+
+  // Số item hiển thị tùy màn hình
+  function getItemsPerPage() {
+    const w = window.innerWidth;
+    if (w <= 768) return 2;
+    if (w <= 1200) return 3;
+    if (w <= 1600) return 4;
+    return 5;
+  }
+
+  // Offset tối đa (không để dư khoảng trắng)
+  function getMaxOffset() {
+    const itemWidth = getItemWidth();
+    const itemsPerPage = getItemsPerPage();
+    const totalItems = items.length;
+
+    if (totalItems <= itemsPerPage) return 0;
+
+    // Tổng chiều rộng item thực tế (trừ gap cuối cùng)
+    const totalWidth = totalItems * itemWidth - gap;
+    const containerWidth = stack.parentElement.getBoundingClientRect().width;
+
+    // Scroll tối đa = totalWidth - containerWidth
+    return Math.max(0, totalWidth - containerWidth);
+  }
+
+  function updateSliderStaff() {
+    const containerWidth = stack.parentElement.getBoundingClientRect().width;
+    const totalItems = items.length;
+    const itemWidth = getItemWidth();
+    const totalWidth = totalItems * itemWidth - gap;
+    const maxOffset = getMaxOffset();
+
+    // Nếu ít item hơn container → căn giữa
+    if (totalWidth <= containerWidth) {
+      const gapCenter = (containerWidth - totalWidth) / 2;
+      stack.style.transform = `translateX(${gapCenter}px)`;
+      prevBtn.style.display = "none";
+      nextBtn.style.display = "none";
+      return;
+    }
+
+    // Giới hạn offset
+    offset = Math.max(0, Math.min(offset, maxOffset));
+
+    // Trượt
+    stack.style.transform = `translateX(-${offset}px)`;
+    stack.style.transition = "transform 0.4s ease";
+
+    // Cập nhật nút
+    prevBtn.style.display = "block";
+    nextBtn.style.display = "block";
+    prevBtn.disabled = offset === 0;
+    nextBtn.disabled = offset >= maxOffset;
+    prevBtn.style.opacity = offset === 0 ? 0.3 : 1;
+    nextBtn.style.opacity = offset >= maxOffset ? 0.3 : 1;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    offset += getItemWidth();
+    updateSliderStaff();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    offset -= getItemWidth();
+    updateSliderStaff();
+  });
+
+  window.addEventListener('resize', () => {
+    offset = 0;
+    updateSliderStaff();
+  });
+
+  updateSliderStaff();
+</script>
+
+
+<script>
+document.querySelectorAll('.stack-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const popupSelector = item.getAttribute('data-popup');
+    const popup = document.querySelector(popupSelector);
+
+    // Ẩn tất cả popup trước
+    document.querySelectorAll('.interview-popup-overlay').forEach(p => p.classList.remove('active'));
+
+    // Hiện popup tương ứng
+    popup.classList.add('active');
+
+    // Thêm class để ẩn thanh cuộn
+    document.body.classList.add('popup-open');
+  });
+});
+
+// Đóng popup khi click ra ngoài
+document.querySelectorAll('.interview-popup-overlay').forEach(popup => {
+  popup.addEventListener('click', e => {
+    if (e.target === popup) {
+      popup.classList.remove('active');
+      
+      // Gỡ class ẩn thanh cuộn
+      document.body.classList.remove('popup-open');
+    }
+  });
+});
+</script>
+</body>

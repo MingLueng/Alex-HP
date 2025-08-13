@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eagle MES</title>
+
+<!-- 1. Font từ Google trước (vì các style phụ thuộc font) -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+
+<!-- 2. Thư viện bên thứ 3 (Bootstrap, Font Awesome...) -->
+<link rel="stylesheet" href="./css/bootstrap.css">
+<link href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
+
+<!-- 3. Fonts nội bộ (nếu có) -->
+<!-- <link rel="stylesheet" href="./css/fonts.css"> -->
+
+<!-- 4. CSS chung của bạn -->
+<link rel="stylesheet" href="./css/site.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
+<link rel="stylesheet" href="./css/recruit-page.css">
+<link rel="stylesheet" href="./css/過去開発実績-page.css">
+<link rel="stylesheet" href="./css/work-page.css">
+<link rel="stylesheet" href="./css/service-page.css">
+<link rel="stylesheet" href="./css/about-page.css">
+<link rel="stylesheet" href="./css/top-page.css">
+</head>
+<body>
+<div>
+<header class="header-wrapper">
+  <div class="header">
+    <!-- Logo -->
+    <a class="logo" href="top-page.html">
+      <img src="./image/共通_01_画面上部_01_ALEXロゴ.png" alt="Alex">
+    </a>
+
+    <!-- Right block: Language + Nav + Menu Button -->
+    <div class="header-right">
+      <div class="top-bar-right">
+        <div class="language">Japanese / Vietnamese</div>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      </div>
+
+    <!-- Desktop nav -->
+      <nav class="nav" id="nav">
+        <div class="nav-item with-submenu">
+          <a href="about-page.html">ABOUT</a>
+          <div class="submenu">
+            <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+            <a href="#" data-tab="tab2">会社概要</a>
+            <a href="#" data-tab="tab3">沿革</a>
+            <a href="#" data-tab="tab4">組織図</a>
+            <a href="#" data-tab="tab5">主要取引先</a> -->
+          </div>
+        </div>
+
+        <div class="nav-item with-submenu">
+          <a href="service-page.html">SERVICE</a>
+          <div class="submenu">
+            <!-- <a href="#">映像制作</a>
+            <a href="#">実装・プログラミング</a>
+            <a href="#">システム・ツール開発</a>
+            <a href="#">企画</a> -->
+          </div>
+        </div>
+
+        <a href="work-page.html">WORKS</a>
+        <div class="nav-item with-submenu">
+          <a href="recruit-page.html">RECRUIT</a>
+          <div class="submenu">
+            <a href="募集職種-page.html">募集職種</a>
+            <a href="スタッフの声-page.html">スタッフの声</a>
+          </div>
+        </div>
+
+        <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="about-page.html">ABOUT <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+      <a href="#" data-tab="tab2">会社概要</a>
+      <a href="#" data-tab="tab3">沿革</a>
+      <a href="#" data-tab="tab4">組織図</a>
+      <a href="#" data-tab="tab5">主要取引先</a> -->
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="service-page.html">SERVICE <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#">映像制作</a>
+      <a href="#">実装・プログラミング</a>
+      <a href="#">システム・ツール開発</a>
+      <a href="#">企画</a> -->
+    </div>
+  </div>
+
+  <a href="work-page.html">WORK</a>
+
+  <div class="mobile-nav-item">
+    <button class="mobile-toggle" href="recruit-page.html">RECRUIT <span class="toggle-icon">＋</span></button>
+    <div class="mobile-submenu">
+       <a href="募集職種-page.html">募集職種</a>
+      <a href="スタッフの声-page.html">スタッフの声</a>
+    </div>
+  </div>
+
+     <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+  <div class="language">Japanese / Vietnamese</div>
+</div>
+<section class="about">
+  <div class="about-avatar">
+    <!-- Ảnh nền tự động chuyển bằng CSS -->
+    <div class="service-bg" style="background-image:url('../image/画像_RECRUIT.png');"></div>
+
+    <div class="overlay-about">
+      <!-- Bên trái: câu khẩu hiệu -->
+      <div class="about-left-text">
+        <h2>あなたの想像を超える未来を<br>私たちと共に創りませんか？<br></h2> 
+      </div>
+      <!-- Bên phải: RECRUIT + 事業内容 -->
+      <div class="about-right-text">
+        <span class="company-info">事業内容</span>
+        <h1 class="about-heading">RECRUIT</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="submenu-tabs-1">
+  <div class="container">
+    <ul>
+      <li><a href="募集職種-page.html">募集職種</a></li>
+      <li><a href="スタッフの声TOP-page.html">スタッフの声ＴＯＰ</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="recruit-heading" id="代表メッセージ">
+  <div class="recruit-header">
+    <img class="recruit-bg" src="../image/グループ 19.png" alt="帯背景">
+  </div>
+  <!-- Subtitle frame được đưa vào trong box-wrapper để giữ đúng vị trí -->
+  <div class="subtitle-frame-wrapper-recruit">
+    <img class="subtitle-frame-recruit" src="../image/グループ 27.png" alt="Subtitle Frame">
+    <span class="subtitle-text-recruit">募集職種</span>
+  </div>
+  <div class="container">
+    <div class="creation-recruit-box">
+       <div class="creation-recruit-left">
+        <div class="image-frame">
+          <img src="../image/写真.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-recruit-right">
+          <h4 class="creation-recruit-title">
+             プロデューサー・映像ディレクター
+          </h4>
+          <div class="creation-recruit-content">
+             <p><strong>プロデューサー</strong><br>
+              社外案件の予算・進行管理、社内外のリソース管理などプロデュース業務をお任せします。</p>
+
+             <p><strong>映像ディレクター</strong><br>
+              ゲーム、CM、ぱちんこ・パチスロなどの映像企画・開発のディレクションをお任せします。</p>
+
+            <ul>
+              <li>映像制作チームのまとめ、制作進行管理。</li>
+              <li>協力会社とのディレクション。</li>
+              <li>映像品質管理</li>
+              
+            </ul>
+          </div>
+          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+       </div>
+    </div>
+    <div class="creation-recruit-box">
+       <div class="creation-recruit-left">
+        <div class="image-frame">
+          <img src="../image/写真-301.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-recruit-right">
+          <h4 class="creation-recruit-title">
+             エフェクトデザイナー・コンポジター
+          </h4>
+          <div class="creation-recruit-content">
+             <p>ゲーム、CM、ぱちんこ・パチスロなどの映像制作をお任せします。<br>
+            2Dデザイナーや3Dデザイナーとも連携し、映像をより良く見せるためのエフェクト制作～<br>
+            最終コンポジットまでの仕上げの部分をメインに担当いただきます。</p>
+
+          </div>
+         <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+       </div>
+    </div>
+        <div class="creation-recruit-box">
+       <div class="creation-recruit-left">
+        <div class="image-frame">
+          <img src="../image/写真-205.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-recruit-right">
+          <h4 class="creation-recruit-title">
+             2DCGデザイナー
+          </h4>
+          <div class="creation-recruit-content">
+            <p>ゲーム、CM、ぱちんこ・パチスロなどの映像制作をお任せします。<br>
+          背景、キャラ、インターフェイス、ロゴなど2D素材制作を担当いただきます。<br>
+          演出企画では絵コンテ制作や見せ方考案にも関わっていただく場合もあります。<br>
+          ※どれか1つでも得意分野があれば問題ありません。</p>
+          </div>
+          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+       </div>
+    </div>
+        <div class="creation-recruit-box">
+       <div class="creation-recruit-left">
+        <div class="image-frame">
+          <img src="../image/写真-501.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-recruit-right">
+          <h4 class="creation-recruit-title">
+             3DCGデザイナー
+          </h4>
+          <div class="creation-recruit-content">
+            <p>ゲーム、CM、ぱちんこ・パチスロなどの映像制作をお任せします。<br>
+            小物、キャラ、背景、ロゴなど3Dモデリングからコンポジットまで担当いただきます。<br>
+            コンテからのシーン構築など演出企画にも関わっていただくこともあります。
+            ※どれか1つでも得意分野があれば問題ありません。</p>
+          </div>
+          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+       </div>
+    </div>
+        <div class="creation-recruit-box">
+       <div class="creation-recruit-left">
+        <div class="image-frame">
+          <img src="../image/写真-220.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-recruit-right">
+          <h4 class="creation-recruit-title">
+             プログラマー
+          </h4>
+          <div class="creation-recruit-content">
+              <p>大手メーカー様から直接ご依頼をいただき、演出企画、映像企画、出玉企画と連携しながら<br>
+               プログラム開発を担当していただきます。</p>
+          </div>
+          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+       </div>
+    </div>
+        <div class="creation-recruit-box">
+       <div class="creation-recruit-left">
+        <div class="image-frame">
+          <img src="../image/写真-491.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-recruit-right">
+          <h4 class="creation-recruit-title">
+             企画設計
+          </h4>
+          <div class="creation-recruit-content">
+             <p>メーカーからの受託によるぱちんこ・パチスロ開発・管理に携わります。<br>
+                新しいアイディアを出すだけでなく、完成まで司令塔として各担当と連携して開発を進めていきます。<br>
+                情熱が命の仕事です。</p>
+
+          </div>
+          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+       </div>
+    </div>
+        <div class="creation-recruit-box">
+       <div class="creation-recruit-left">
+        <div class="image-frame">
+          <img src="../image/写真-500.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-recruit-right">
+          <h4 class="creation-recruit-title">
+             出玉設計
+          </h4>
+          <div class="creation-recruit-content">
+             <p>パチスロ機の出玉数・機械割などの計算。<br>
+            数学的知識、統計学等の基礎知識のある方(数学に強い方)が最適です。</p>
+          </div>
+         <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+       </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<script src="./js/core.min.js"></script>
+<script src="./js/script.js"></script>
+<script>
+    
+// Toggle mobile menu visibility
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("show");
+
+  // Đổi icon giữa ☰ và ✕
+  if (mobileNav.classList.contains("show")) {
+    menuToggle.innerHTML = '&times;'; // ✕
+  } else {
+    menuToggle.innerHTML = '&#9776;'; // ☰
+  }
+});
+
+// Handle submenu accordion logic
+document.querySelectorAll('.mobile-toggle').forEach(button => {
+  button.addEventListener('click', function () {
+    const parent = this.closest('.mobile-nav-item');
+    const submenu = parent.querySelector('.mobile-submenu');
+    const icon = this.querySelector('.toggle-icon');
+
+    // Close all other submenus
+    document.querySelectorAll('.mobile-nav-item').forEach(item => {
+      if (item !== parent) {
+        item.classList.remove('open');
+        item.querySelector('.mobile-submenu')?.classList.remove('show');
+        item.querySelector('.toggle-icon').textContent = '＋';
+      }
+    });
+
+    // Toggle current submenu
+    const isOpen = parent.classList.contains('open');
+    if (isOpen) {
+      parent.classList.remove('open');
+      submenu.classList.remove('show');
+      icon.textContent = '＋';
+    } else {
+      parent.classList.add('open');
+      submenu.classList.add('show');
+      icon.textContent = '−';
+    }
+  });
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const list = document.getElementById("newsList");
+    let isScrolling = false;
+
+    window.scrollNews = function (direction) {
+      if (!list || isScrolling) return;
+
+      const scrollAmount = 100;
+      isScrolling = true;
+
+      list.scrollBy({
+        top: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+
+      // Khoảng delay nhẹ để tránh spam cuộn
+      setTimeout(() => {
+        isScrolling = false;
+      }, 300); // khớp với smooth animation
+    };
+  });
+</script>
+<script>
+  document.querySelectorAll('nav.submenu-tabs a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetID = this.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetID);
+
+      if (targetEl) {
+        const yOffset = -100; // khoảng cách bù trừ cho header fixed
+        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>

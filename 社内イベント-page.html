@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eagle MES</title>
+
+<!-- 1. Font từ Google trước (vì các style phụ thuộc font) -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+
+<!-- 2. Thư viện bên thứ 3 (Bootstrap, Font Awesome...) -->
+<link rel="stylesheet" href="./css/bootstrap.css">
+<link href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
+
+<!-- 3. Fonts nội bộ (nếu có) -->
+<!-- <link rel="stylesheet" href="./css/fonts.css"> -->
+
+<!-- 4. CSS chung của bạn -->
+<link rel="stylesheet" href="./css/site.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
+<link rel="stylesheet" href="./css/社内イベント-page.css">
+<link rel="stylesheet" href="./css/recruit-page.css">
+<link rel="stylesheet" href="./css/過去開発実績-page.css">
+<link rel="stylesheet" href="./css/work-page.css">
+<link rel="stylesheet" href="./css/service-page.css">
+<link rel="stylesheet" href="./css/about-page.css">
+<link rel="stylesheet" href="./css/top-page.css">
+</head>
+<body>
+<div>
+<header class="header-wrapper">
+  <div class="header">
+    <!-- Logo -->
+    <a class="logo" href="top-page.html">
+      <img src="./image/共通_01_画面上部_01_ALEXロゴ.png" alt="Alex">
+    </a>
+
+    <!-- Right block: Language + Nav + Menu Button -->
+    <div class="header-right">
+      <div class="top-bar-right">
+        <div class="language">Japanese / Vietnamese</div>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      </div>
+
+    <!-- Desktop nav -->
+      <nav class="nav" id="nav">
+        <div class="nav-item with-submenu">
+          <a href="about-page.html">ABOUT</a>
+          <div class="submenu">
+            <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+            <a href="#" data-tab="tab2">会社概要</a>
+            <a href="#" data-tab="tab3">沿革</a>
+            <a href="#" data-tab="tab4">組織図</a>
+            <a href="#" data-tab="tab5">主要取引先</a> -->
+          </div>
+        </div>
+
+        <div class="nav-item with-submenu">
+          <a href="service-page.html">SERVICE</a>
+          <div class="submenu">
+            <!-- <a href="#">映像制作</a>
+            <a href="#">実装・プログラミング</a>
+            <a href="#">システム・ツール開発</a>
+            <a href="#">企画</a> -->
+          </div>
+        </div>
+
+        <a href="work-page.html">WORKS</a>
+        <div class="nav-item with-submenu">
+          <a href="recruit-page.html">RECRUIT</a>
+          <div class="submenu">
+            <a href="募集職種-page.html">募集職種</a>
+            <a href="スタッフの声-page.html">スタッフの声</a>
+          </div>
+        </div>
+
+        <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="about-page.html">ABOUT <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+      <a href="#" data-tab="tab2">会社概要</a>
+      <a href="#" data-tab="tab3">沿革</a>
+      <a href="#" data-tab="tab4">組織図</a>
+      <a href="#" data-tab="tab5">主要取引先</a> -->
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="service-page.html">SERVICE <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#">映像制作</a>
+      <a href="#">実装・プログラミング</a>
+      <a href="#">システム・ツール開発</a>
+      <a href="#">企画</a> -->
+    </div>
+  </div>
+
+  <a href="work-page.html">WORK</a>
+
+  <div class="mobile-nav-item">
+    <button class="mobile-toggle" href="recruit-page.html">RECRUIT <span class="toggle-icon">＋</span></button>
+    <div class="mobile-submenu">
+       <a href="募集職種-page.html">募集職種</a>
+      <a href="スタッフの声-page.html">スタッフの声</a>
+    </div>
+  </div>
+
+     <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+  <div class="language">Japanese / Vietnamese</div>
+</div>
+
+<div class="submenu-tabs-2">
+  <div class="container-2">
+    <span class="main-title">社内イベント</span>
+  </div>
+</div>
+<nav class="submenu-tabs-1">
+  <div class="container"></div>
+</nav>
+
+<section class="interview-heading" id="brillant-1">
+  <div class="interview-header">
+    <img class="interview-bg" src="../image/グループ 19.png" alt="帯背景">
+  </div>
+
+  <div class="subtitle-frame-wrapper-interview">
+    <img class="subtitle-frame-interview" src="../image/グループ 27.png" alt="Subtitle Frame">
+    <span class="subtitle-text-interview">社内イベント</span>
+  </div>
+  <div class="container">
+    <div class="creation-interview-box">
+       <div class="creation-interview-left">
+        <div class="image-frame-popper">
+          <img src="../image/画像_ABOUT.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-interview-right">
+          <h4 class="creation-interview-title">
+             2024年 12月 冬納会
+          </h4>
+          <div class="creation-interview-content">     
+              <p>
+                今年も年末に納会を行いました！
+              </p>
+              <p>
+                内容企画から社員一丸となって進めます<br>
+                今年はピザにフライドチキン、お寿司に色々なお酒も飲めて最高でした！<br>
+              </p>
+          </div>
+          <div class="interview-overwhole-wrapper">
+              <button class="overwhole-btn prev">&#10094;</button>
+              <div class="interview-overwhole">
+                <div class="overwhole-item">
+                  <img src="../image/写真-500.png" alt="Alex">     
+                </div>
+                <div class="overwhole-item">
+                  <img src="../image/写真-501.png" alt="Alex">
+                </div>
+                <div class="overwhole-item">
+                  <img src="../image/写真-220.png" alt="Alex">           
+                </div>
+                <div class="overwhole-item">
+                  <img src="../image/写真-491.png" alt="Alex"> 
+                </div>
+
+              </div>
+              <button class="overwhole-btn next">&#10095;</button>
+          </div>
+       </div>
+    </div>
+    <div class="creation-interview-box">
+       <div class="creation-interview-left">
+        <div class="image-frame-popper">
+          <img src="../image/レイヤー 735.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-interview-right">
+          <h4 class="creation-interview-title">
+             2024年 10月 社員旅行
+          </h4>
+          <div class="creation-interview-content">
+             <p>
+              今年の社員旅行は山梨へ行ってきました！<br>
+              自由参加なので不参加の人は1日お休みです！<br>
+              ビンゴ大会では大いに盛り上がり、豪華景品をGET！<br>
+              自然にも触れ心身ともにリフレッシュして来ました。<br>
+             </p>
+          </div>
+          <div class="interview-overwhole-wrapper">
+              <button class="overwhole-btn prev">&#10094;</button>
+              
+              <div class="interview-overwhole">
+               <div class="overwhole-item">
+                  <img src="../image/写真-205.png" alt="Alex">     
+                </div>
+                <div class="overwhole-item">
+                  <img src="../image/写真-301.png" alt="Alex">
+                </div>
+                <div class="overwhole-item">
+                  <img src="../image/画像_CONTACT.png" alt="Alex">           
+                </div>
+                <div class="overwhole-item">
+                  <img src="../image/レイヤー 856.png" alt="Alex"> 
+                </div>
+              </div>
+              <button class="overwhole-btn next">&#10095;</button>
+          </div>
+       </div>
+    </div>
+  </div>
+</section>
+
+<section class="interview-heading" id="brillant-2">
+  <div class="interview-header">
+    <img class="interview-bg" src="../image/グループ 19.png" alt="帯背景">
+  </div>
+  <div class="subtitle-frame-wrapper-interview">
+    <img class="subtitle-frame-interview" src="../image/グループ 27.png" alt="Subtitle Frame">
+    <span class="subtitle-text-interview">社内研修</span>
+  </div>
+  <div class="container">
+    <div class="creation-interview-box">
+       <div class="creation-interview-left">
+        <div class="image-frame-popper">
+          <img src="../image/写真.png" alt="Alex">
+        </div>
+       </div>
+       <div class="creation-interview-right">
+          <h4 class="creation-interview-title">
+             2024年 7月 海外研修
+          </h4>
+          <div class="creation-interview-content">
+             <p>
+              選考された6名でフィリピンに行ってきました！
+              </p>
+              <p>
+                日本にはまだないカジノ。圧巻でした！<br>
+                昔懐かしのスロット～改造されていてexciting(笑)<br>
+              </p>
+          </div>
+          <div class="interview-overwhole-wrapper">
+              <button class="overwhole-btn prev">&#10094;</button>
+              
+              <div class="interview-overwhole">
+                <div class="overwhole-item">
+                  <img src="../image/画像_SERVICE.png" alt="Alex">     
+                </div>
+                <div class="overwhole-item">
+                  <img src="../image/画像_RECRUIT.png" alt="Alex">
+                </div>
+                <div class="overwhole-item">
+                  <img src="../image/画像_WORKS.png" alt="Alex">           
+                </div>
+              </div>
+              <button class="overwhole-btn next">&#10095;</button>
+          </div>
+       </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<script src="./js/core.min.js"></script>
+<script src="./js/script.js"></script>
+<script>
+    
+// Toggle mobile menu visibility
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("show");
+
+  // Đổi icon giữa ☰ và ✕
+  if (mobileNav.classList.contains("show")) {
+    menuToggle.innerHTML = '&times;'; // ✕
+  } else {
+    menuToggle.innerHTML = '&#9776;'; // ☰
+  }
+});
+
+// Handle submenu accordion logic
+document.querySelectorAll('.mobile-toggle').forEach(button => {
+  button.addEventListener('click', function () {
+    const parent = this.closest('.mobile-nav-item');
+    const submenu = parent.querySelector('.mobile-submenu');
+    const icon = this.querySelector('.toggle-icon');
+
+    // Close all other submenus
+document.querySelectorAll('.mobile-nav-item').forEach(item => {
+      if (item !== parent) {
+        item.classList.remove('open');
+        item.querySelector('.mobile-submenu')?.classList.remove('show');
+        item.querySelector('.toggle-icon').textContent = '＋';
+      }
+    });
+
+    // Toggle current submenu
+    const isOpen = parent.classList.contains('open');
+    if (isOpen) {
+      parent.classList.remove('open');
+      submenu.classList.remove('show');
+      icon.textContent = '＋';
+    } else {
+      parent.classList.add('open');
+      submenu.classList.add('show');
+      icon.textContent = '−';
+    }
+  });
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const list = document.getElementById("newsList");
+    let isScrolling = false;
+
+    window.scrollNews = function (direction) {
+      if (!list || isScrolling) return;
+
+      const scrollAmount = 100;
+      isScrolling = true;
+
+      list.scrollBy({
+        top: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+
+      // Khoảng delay nhẹ để tránh spam cuộn
+      setTimeout(() => {
+        isScrolling = false;
+      }, 300); // khớp với smooth animation
+    };
+  });
+</script>
+<script>
+  document.querySelectorAll('nav.submenu-tabs a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetID = this.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetID);
+
+      if (targetEl) {
+        const yOffset = -100; // khoảng cách bù trừ cho header fixed
+        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+<script>
+document.querySelectorAll('.creation-interview-box').forEach(box => {
+  const overwhole = box.querySelector('.interview-overwhole');
+  const prevBtn = box.querySelector('.overwhole-btn.prev');
+  const nextBtn = box.querySelector('.overwhole-btn.next');
+  const items = overwhole.querySelectorAll('.overwhole-item img');
+  const bigImage = box.querySelector('.creation-interview-left img');
+
+  const itemsPerPage = 3;
+  const gap = 15;
+  const itemWidth = items[0].getBoundingClientRect().width + gap;
+  const totalItems = items.length;
+  const maxOffset = Math.max(0, (totalItems - itemsPerPage) * itemWidth - gap);
+
+  let offset = 0;
+
+  // Thêm transition mượt cho slider
+  overwhole.style.transition = "transform 0.4s ease";
+
+  function updateSlider() {
+    if (offset > maxOffset) offset = maxOffset;
+    if (offset < 0) offset = 0;
+    overwhole.style.transform = `translateX(-${offset}px)`;
+    
+    // Update trạng thái nút
+    prevBtn.disabled = offset === 0;
+    nextBtn.disabled = offset >= maxOffset;
+    prevBtn.style.opacity = offset === 0 ? 0.3 : 1;
+    nextBtn.style.opacity = offset >= maxOffset ? 0.3: 1;
+  }
+
+  // Sự kiện click ảnh nhỏ -> đổi ảnh lớn kèm hiệu ứng fade
+  items.forEach(img => {
+    img.addEventListener('click', () => {
+      // Thêm class fade-out
+      bigImage.classList.add('fade-out');
+
+      // Sau 400ms thì đổi ảnh và remove fade-out để fade-in
+      setTimeout(() => {
+        bigImage.src = img.src;
+        bigImage.classList.remove('fade-out');
+      }, 400);
+    });
+  });
+
+  // Sự kiện click nút next / prev
+  nextBtn.addEventListener('click', () => {
+    offset += itemWidth;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    offset -= itemWidth;
+    updateSlider();
+  });
+
+  // Khởi tạo
+  updateSlider();
+});
+</script>
+</body>

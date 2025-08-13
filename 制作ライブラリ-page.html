@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eagle MES</title>
+
+<!-- 1. Font từ Google trước (vì các style phụ thuộc font) -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+
+<!-- 2. Thư viện bên thứ 3 (Bootstrap, Font Awesome...) -->
+<link rel="stylesheet" href="./css/bootstrap.css">
+<link href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
+
+<!-- 3. Fonts nội bộ (nếu có) -->
+<!-- <link rel="stylesheet" href="./css/fonts.css"> -->
+
+<!-- 4. CSS chung của bạn -->
+<link rel="stylesheet" href="./css/site.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
+<link rel="stylesheet" href="./css/制作ライブラリ.css">
+<link rel="stylesheet" href="./css/スタッフの声-page.css">
+<link rel="stylesheet" href="./css/募集職種-page.css">
+<link rel="stylesheet" href="./css/スタッフの声TOP-page.css">
+<link rel="stylesheet" href="./css/社内イベント-page.css">
+<link rel="stylesheet" href="./css/recruit-page.css">
+<link rel="stylesheet" href="./css/過去開発実績-page.css">
+<link rel="stylesheet" href="./css/work-page.css">
+<link rel="stylesheet" href="./css/service-page.css">
+<link rel="stylesheet" href="./css/about-page.css">
+<link rel="stylesheet" href="./css/top-page.css">
+</head>
+<body>
+<div>
+<header class="header-wrapper">
+  <div class="header">
+    <!-- Logo -->
+    <a class="logo" href="top-page.html">
+      <img src="./image/共通_01_画面上部_01_ALEXロゴ.png" alt="Alex">
+    </a>
+
+    <!-- Right block: Language + Nav + Menu Button -->
+    <div class="header-right">
+      <div class="top-bar-right">
+        <div class="language">Japanese / Vietnamese</div>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      </div>
+
+    <!-- Desktop nav -->
+      <nav class="nav" id="nav">
+        <div class="nav-item with-submenu">
+          <a href="about-page.html">ABOUT</a>
+          <div class="submenu">
+            <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+            <a href="#" data-tab="tab2">会社概要</a>
+            <a href="#" data-tab="tab3">沿革</a>
+            <a href="#" data-tab="tab4">組織図</a>
+            <a href="#" data-tab="tab5">主要取引先</a> -->
+          </div>
+        </div>
+
+        <div class="nav-item with-submenu">
+          <a href="service-page.html">SERVICE</a>
+          <div class="submenu">
+            <!-- <a href="#">映像制作</a>
+            <a href="#">実装・プログラミング</a>
+            <a href="#">システム・ツール開発</a>
+            <a href="#">企画</a> -->
+          </div>
+        </div>
+
+        <a href="work-page.html">WORKS</a>
+        <div class="nav-item with-submenu">
+          <a href="recruit-page.html">RECRUIT</a>
+          <div class="submenu">
+            <a href="募集職種-page.html">募集職種</a>
+            <a href="スタッフの声-page.html">スタッフの声</a>
+          </div>
+        </div>
+
+        <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="about-page.html">ABOUT <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+      <a href="#" data-tab="tab2">会社概要</a>
+      <a href="#" data-tab="tab3">沿革</a>
+      <a href="#" data-tab="tab4">組織図</a>
+      <a href="#" data-tab="tab5">主要取引先</a> -->
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="service-page.html">SERVICE <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#">映像制作</a>
+      <a href="#">実装・プログラミング</a>
+      <a href="#">システム・ツール開発</a>
+      <a href="#">企画</a> -->
+    </div>
+  </div>
+
+  <a href="work-page.html">WORK</a>
+
+  <div class="mobile-nav-item">
+    <button class="mobile-toggle" href="recruit-page.html">RECRUIT <span class="toggle-icon">＋</span></button>
+    <div class="mobile-submenu">
+       <a href="募集職種-page.html">募集職種</a>
+      <a href="スタッフの声-page.html">スタッフの声</a>
+    </div>
+  </div>
+
+     <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+  <div class="language">Japanese / Vietnamese</div>
+</div>
+<div class="submenu-tabs-3">
+  <div class="container-2">
+    <span class="main-title-staff">制作ライブラリ</span>
+  </div>
+</div>
+<nav class="submenu-tabs-1">
+</nav>
+
+
+<div class="app" id="app">
+  <!-- ===== Left Nav ===== -->
+  <aside class="sidebar" aria-label="Navigation">
+    <div class="sidebar__scroll" id="navScroll">
+        <button class="help-btn" id="helpBtn" title="Trợ giúp">
+        <span>?</span>
+        </button>
+      <div class="brand">■ アレックス ライブラリ</div>
+
+      <!-- Group 1 -->
+      <details open>
+        <summary><span class="label">気体系 (Gases)</span></summary>
+        <div class="tree-group">
+          <a href="#" class="tree-item" data-path="Gases/Smoke" data-key="smoke"><span class="label">Smoke</span></a>
+          <a href="#" class="tree-item" data-path="Gases/WaterBG" data-key="waterbg"><span class="label">WaterBG</span></a>
+          <a href="#" class="tree-item" data-path="Gases/Explosion_clouds" data-key="explosion"><span class="label">Explosion clouds</span></a>
+        </div>
+      </details>
+
+      <!-- Group 2 -->
+      <details>
+        <summary><span class="label">固体系 (Solids)</span></summary>
+        <div class="tree-group">
+          <a href="#" class="tree-item" data-path="Solids/Dust" data-key="dust"><span class="label">Dust</span></a>
+          <a href="#" class="tree-item" data-path="Solids/Fragment" data-key="fragment"><span class="label">Fragment</span></a>
+        </div>
+      </details>
+
+      <!-- Group 3 -->
+      <details>
+        <summary><span class="label">粉塵系 (Particles)</span></summary>
+        <div class="tree-group">
+          <a href="#" class="tree-item" data-path="Particles/EF" data-key="ef"><span class="label">BG_EF</span></a>
+          <a href="#" class="tree-item" data-path="Particles/Gold" data-key="gold"><span class="label">BG_Gold</span></a>
+          <a href="#" class="tree-item" data-path="Particles/Heart" data-key="heart"><span class="label">BG_Heart</span></a>
+        </div>
+      </details>
+
+      <!-- Group 4 -->
+      <details>
+        <summary><span class="label">その他 (Other)</span></summary>
+        <div class="tree-group">
+          <a href="#" class="tree-item" data-path="Other/Cyber" data-key="cyber"><span class="label">BG_Cyber</span></a>
+        </div>
+      </details>
+    </div>
+    
+    <!-- Collapse / Expand button (bottom-left corner) -->
+    <button class="collapse-btn" id="collapseBtn" aria-label="Thu gọn/ Mở rộng nav" title="Thu gọn/ Mở rộng">
+      <span>≪</span>
+    </button>
+  </aside>
+
+  <!-- ===== Right Content ===== -->
+<main class="content" id="content" aria-live="polite">
+  <div class="pager" id="pager"></div>   <!-- ⟵ thanh phân trang -->
+  <div class="grid" id="grid"></div>
+</main>
+</div>
+
+</div>
+
+<script src="./js/core.min.js"></script>
+<script src="./js/script.js"></script>
+<script>
+    
+// Toggle mobile menu visibility
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("show");
+
+  // Đổi icon giữa ☰ và ✕
+  if (mobileNav.classList.contains("show")) {
+    menuToggle.innerHTML = '&times;'; // ✕
+  } else {
+    menuToggle.innerHTML = '&#9776;'; // ☰
+  }
+});
+
+// Handle submenu accordion logic
+document.querySelectorAll('.mobile-toggle').forEach(button => {
+  button.addEventListener('click', function () {
+    const parent = this.closest('.mobile-nav-item');
+    const submenu = parent.querySelector('.mobile-submenu');
+    const icon = this.querySelector('.toggle-icon');
+
+    // Close all other submenus
+document.querySelectorAll('.mobile-nav-item').forEach(item => {
+      if (item !== parent) {
+        item.classList.remove('open');
+        item.querySelector('.mobile-submenu')?.classList.remove('show');
+        item.querySelector('.toggle-icon').textContent = '＋';
+      }
+    });
+
+    // Toggle current submenu
+    const isOpen = parent.classList.contains('open');
+    if (isOpen) {
+      parent.classList.remove('open');
+      submenu.classList.remove('show');
+      icon.textContent = '＋';
+    } else {
+      parent.classList.add('open');
+      submenu.classList.add('show');
+      icon.textContent = '−';
+    }
+  });
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const list = document.getElementById("newsList");
+    let isScrolling = false;
+
+    window.scrollNews = function (direction) {
+      if (!list || isScrolling) return;
+
+      const scrollAmount = 100;
+      isScrolling = true;
+
+      list.scrollBy({
+        top: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+
+      // Khoảng delay nhẹ để tránh spam cuộn
+      setTimeout(() => {
+        isScrolling = false;
+      }, 300); // khớp với smooth animation
+    };
+  });
+</script>
+<script>
+  document.querySelectorAll('nav.submenu-tabs a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetID = this.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetID);
+
+      if (targetEl) {
+        const yOffset = -100; // khoảng cách bù trừ cho header fixed
+        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+<script>
+document.querySelectorAll('.creation-interview-box').forEach(box => {
+  const overwhole = box.querySelector('.interview-overwhole');
+  const prevBtn = box.querySelector('.overwhole-btn.prev');
+  const nextBtn = box.querySelector('.overwhole-btn.next');
+  const items = overwhole.querySelectorAll('.overwhole-item img');
+  const bigImage = box.querySelector('.creation-interview-left img');
+
+  const itemsPerPage = 3;
+  const gap = 15;
+  const itemWidth = items[0].getBoundingClientRect().width + gap;
+  const totalItems = items.length;
+  const maxOffset = Math.max(0, (totalItems - itemsPerPage) * itemWidth - gap);
+
+  let offset = 0;
+
+  // Thêm transition mượt cho slider
+  overwhole.style.transition = "transform 0.4s ease";
+
+  function updateSlider() {
+    if (offset > maxOffset) offset = maxOffset;
+    if (offset < 0) offset = 0;
+    overwhole.style.transform = `translateX(-${offset}px)`;
+    
+    // Update trạng thái nút
+    prevBtn.disabled = offset === 0;
+    nextBtn.disabled = offset >= maxOffset;
+    prevBtn.style.opacity = offset === 0 ? 0.3 : 1;
+    nextBtn.style.opacity = offset >= maxOffset ? 0.3: 1;
+  }
+
+  // Sự kiện click ảnh nhỏ -> đổi ảnh lớn kèm hiệu ứng fade
+  items.forEach(img => {
+    img.addEventListener('click', () => {
+      // Thêm class fade-out
+      bigImage.classList.add('fade-out');
+
+      // Sau 400ms thì đổi ảnh và remove fade-out để fade-in
+      setTimeout(() => {
+        bigImage.src = img.src;
+        bigImage.classList.remove('fade-out');
+      }, 400);
+    });
+  });
+
+  // Sự kiện click nút next / prev
+  nextBtn.addEventListener('click', () => {
+    offset += itemWidth;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    offset -= itemWidth;
+    updateSlider();
+  });
+
+  // Khởi tạo
+  updateSlider();
+});
+</script>
+
+<script>
+/* ===== Demo dataset (giữ nguyên của bạn) ===== */
+const LIBRARY = {
+  smoke: [
+    { title:"Smoke_HD_01", src:"videos/smoke01.mp4", poster:"thumbs/smoke01.jpg" },
+    { title:"Smoke_HD_02", src:"videos/smoke02.mp4", poster:"thumbs/smoke02.jpg" },
+    { title:"Smoke_HD_03", src:"videos/smoke03.mp4", poster:"thumbs/smoke03.jpg" },
+    { title:"Smoke_HD_04", src:"videos/smoke04.mp4", poster:"thumbs/smoke04.jpg" },
+
+  ],
+  waterbg: [
+    { title:"WaterBG_SD_01", src:"videos/waterbg01.mp4", poster:"thumbs/waterbg01.jpg" },
+    { title:"WaterBG_SD_02", src:"videos/waterbg02.mp4", poster:"thumbs/waterbg02.jpg" },
+  ],
+  explosion: [
+    { title:"Explosion_Clouds_01", src:"videos/explosion01.mp4", poster:"thumbs/explosion01.jpg" },
+    { title:"Explosion_Clouds_02", src:"videos/explosion02.mp4", poster:"thumbs/explosion02.jpg" },
+  ],
+  dust: [
+    { title:"Dust_HD_01", src:"videos/dust01.mp4", poster:"thumbs/dust01.jpg" },
+    { title:"Dust_HD_02", src:"videos/dust02.mp4", poster:"thumbs/dust02.jpg" },
+  ],
+  fragment: [{ title:"Fragment_HD_01", src:"videos/fragment01.mp4", poster:"thumbs/fragment01.jpg" }],
+  ef: [
+    { title:"BG_EF1", src:"videos/ef01.mp4", poster:"thumbs/ef01.jpg" },
+    { title:"BG_EF2", src:"videos/ef02.mp4", poster:"thumbs/ef02.jpg" },
+    { title:"BG_EF3", src:"videos/ef03.mp4", poster:"thumbs/ef03.jpg" },
+  ],
+  gold:  [{ title:"BG_Gold",  src:"videos/gold01.mp4",  poster:"thumbs/gold01.jpg" }],
+  heart: [{ title:"BG_Heart", src:"videos/heart01.mp4", poster:"thumbs/heart01.jpg" }],
+  cyber: [{ title:"BG_Cyber", src:"videos/cyber01.mp4",  poster:"thumbs/cyber01.jpg" }],
+};
+
+/* ===== DOM refs & state ===== */
+const ITEMS_PER_PAGE = 9; // 3x3
+let currentKey  = null;
+let currentPage = 1;
+let totalPages  = 1;
+
+const app         = document.getElementById('app');
+const grid        = document.getElementById('grid');
+const nav         = document.getElementById('navScroll');
+const collapseBtn = document.getElementById('collapseBtn');
+let   pager       = document.getElementById('pager');
+
+/* Nếu thiếu #pager trong HTML, tự tạo đặt trước #grid */
+if (!pager) {
+  pager = document.createElement('div');
+  pager.id = 'pager';
+  pager.className = 'pager';
+  const content = document.getElementById('content') || document.body;
+  content.insertBefore(pager, grid);
+}
+
+/* ===== Helpers ===== */
+function getListByKey(key){ return (LIBRARY[key] || []).slice(); }
+
+/* Grid theo trang */
+function renderGridPage(list, page){
+  const start = (page - 1) * ITEMS_PER_PAGE;
+  const slice = list.slice(start, start + ITEMS_PER_PAGE);
+
+  grid.innerHTML = slice.map(item => `
+    <article class="video-card" data-title="${item.title}">
+      <div class="video-card__title">${item.title}</div>
+      <div class="video-wrapper">
+        <video preload="metadata" controls poster="${item.poster || ''}">
+          <source src="${item.src}" type="video/mp4" />
+          Trình duyệt của bạn không hỗ trợ video.
+        </video>
+      </div>
+    </article>
+  `).join('');
+}
+
+/* Thanh phân trang */
+function renderPager(page, pages){
+  const nums = Array.from({length: pages}, (_,i)=>i+1);
+  const prevDisabled = page === 1 ? 'is-disabled' : '';
+  const nextDisabled = page === pages ? 'is-disabled' : '';
+  pager.innerHTML = `
+    <button class="page-btn ${prevDisabled}" data-action="prev" aria-label="Trang trước">≪</button>
+    ${nums.map(n => `<button class="page-btn ${n===page?'is-active':''}" data-page="${n}">${n}</button>`).join('')}
+    <button class="page-btn ${nextDisabled}" data-action="next" aria-label="Trang sau">≫</button>
+  `;
+}
+
+/* Chuyển trang (CORE) */
+function goToPage(page){
+  const list = getListByKey(currentKey);
+  totalPages = Math.max(1, Math.ceil(list.length / ITEMS_PER_PAGE));
+  currentPage = Math.min(Math.max(1, page), totalPages);
+
+  renderGridPage(list, currentPage);
+  renderPager(currentPage, totalPages);
+  grid.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* Render khi chọn thư mục */
+function renderVideos(key){
+  currentKey = key;
+  currentPage = 1;
+  goToPage(1);
+}
+
+/* Active item highlight */
+function setActive(link){
+  document.querySelectorAll('.tree-item.active').forEach(el=>el.classList.remove('active'));
+  link.classList.add('active');
+}
+
+/* ===== EVENTS ===== */
+
+/* CLICK PHÂN TRANG — thiếu đoạn này nên trang 2 không chạy */
+pager.addEventListener('click', (e)=>{
+  const btn = e.target.closest('.page-btn');
+  if(!btn || btn.classList.contains('is-disabled')) return;
+
+  if (btn.dataset.action === 'prev')      goToPage(currentPage - 1);
+  else if (btn.dataset.action === 'next') goToPage(currentPage + 1);
+  else if (btn.dataset.page)              goToPage(parseInt(btn.dataset.page, 10));
+});
+
+/* Click item ở cây thư mục */
+nav.addEventListener('click', (e)=>{
+  const link = e.target.closest('.tree-item');
+  if(!link) return;
+  e.preventDefault();
+  setActive(link);
+  renderVideos(link.dataset.key);
+
+  if (matchMedia('(max-width: 640px)').matches && !app.classList.contains('is-collapsed')){
+    app.classList.add('is-collapsed');
+  }
+});
+
+/* Thu gọn/mở rộng sidebar */
+collapseBtn.addEventListener('click', ()=>{
+  app.classList.toggle('is-collapsed');
+  collapseBtn.firstElementChild.textContent = app.classList.contains('is-collapsed') ? '≫' : '≪';
+});
+
+/* Nút trợ giúp (nếu dùng) */
+document.getElementById('helpBtn')?.addEventListener('click', ()=> {
+  alert('Mở trang trợ giúp hoặc popup ở đây');
+});
+
+/* Khởi tạo: chọn thư mục đầu tiên và vào trang 1 */
+window.addEventListener('DOMContentLoaded', ()=>{
+  const first = document.querySelector('.tree-item');
+  if(first) first.click();
+});
+</script>
+
+</body>

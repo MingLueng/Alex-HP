@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eagle MES</title>
+
+<!-- 1. Font từ Google trước (vì các style phụ thuộc font) -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+
+<!-- 2. Thư viện bên thứ 3 (Bootstrap, Font Awesome...) -->
+<link rel="stylesheet" href="./css/bootstrap.css">
+<link href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
+
+<!-- 3. Fonts nội bộ (nếu có) -->
+<!-- <link rel="stylesheet" href="./css/fonts.css"> -->
+
+<!-- 4. CSS chung của bạn -->
+<link rel="stylesheet" href="./css/site.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
+ <link rel="stylesheet" href="./css/contact-page.css">
+<link rel="stylesheet" href="./css/access-page.css">
+<link rel="stylesheet" href="./css/スタッフの声-page.css">
+<link rel="stylesheet" href="./css/募集職種-page.css">
+<link rel="stylesheet" href="./css/スタッフの声TOP-page.css">
+<link rel="stylesheet" href="./css/社内イベント-page.css">
+<link rel="stylesheet" href="./css/recruit-page.css">
+<link rel="stylesheet" href="./css/過去開発実績-page.css">
+<link rel="stylesheet" href="./css/work-page.css">
+<link rel="stylesheet" href="./css/service-page.css">
+<link rel="stylesheet" href="./css/about-page.css">
+<link rel="stylesheet" href="./css/top-page.css">
+</head>
+<body>
+<div>
+<header class="header-wrapper">
+  <div class="header">
+    <!-- Logo -->
+    <a class="logo" href="top-page.html">
+      <img src="./image/共通_01_画面上部_01_ALEXロゴ.png" alt="Alex">
+    </a>
+
+    <!-- Right block: Language + Nav + Menu Button -->
+    <div class="header-right">
+      <div class="top-bar-right">
+        <div class="language">Japanese / Vietnamese</div>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      </div>
+
+    <!-- Desktop nav -->
+      <nav class="nav" id="nav">
+        <div class="nav-item with-submenu">
+          <a href="about-page.html">ABOUT</a>
+          <div class="submenu">
+            <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+            <a href="#" data-tab="tab2">会社概要</a>
+            <a href="#" data-tab="tab3">沿革</a>
+            <a href="#" data-tab="tab4">組織図</a>
+            <a href="#" data-tab="tab5">主要取引先</a> -->
+          </div>
+        </div>
+
+        <div class="nav-item with-submenu">
+          <a href="service-page.html">SERVICE</a>
+          <div class="submenu">
+            <!-- <a href="#">映像制作</a>
+            <a href="#">実装・プログラミング</a>
+            <a href="#">システム・ツール開発</a>
+            <a href="#">企画</a> -->
+          </div>
+        </div>
+
+        <a href="work-page.html">WORKS</a>
+        <div class="nav-item with-submenu">
+          <a href="recruit-page.html">RECRUIT</a>
+          <div class="submenu">
+            <a href="募集職種-page.html">募集職種</a>
+            <a href="スタッフの声-page.html">スタッフの声</a>
+          </div>
+        </div>
+
+        <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="about-page.html">ABOUT <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+      <a href="#" data-tab="tab2">会社概要</a>
+      <a href="#" data-tab="tab3">沿革</a>
+      <a href="#" data-tab="tab4">組織図</a>
+      <a href="#" data-tab="tab5">主要取引先</a> -->
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="service-page.html">SERVICE <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#">映像制作</a>
+      <a href="#">実装・プログラミング</a>
+      <a href="#">システム・ツール開発</a>
+      <a href="#">企画</a> -->
+    </div>
+  </div>
+
+  <a href="work-page.html">WORK</a>
+
+  <div class="mobile-nav-item">
+    <button class="mobile-toggle" href="recruit-page.html">RECRUIT <span class="toggle-icon">＋</span></button>
+    <div class="mobile-submenu">
+       <a href="募集職種-page.html">募集職種</a>
+      <a href="スタッフの声-page.html">スタッフの声</a>
+    </div>
+  </div>
+
+     <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+  <div class="language">Japanese / Vietnamese</div>
+</div>
+
+<section class="about">
+  <div class="about-avatar">
+    <!-- Ảnh nền tự động chuyển bằng CSS -->
+    <div class="about-bg bg1" style="background-image:url('../image/レイヤー 853.png');"></div>
+    <div class="about-bg bg2" style="background-image:url('../image/レイヤー 851.png');"></div>
+
+    <div class="overlay-about">
+      <!-- Bên trái: câu khẩu hiệu -->
+      <div class="about-left-text">
+        <h2>枠にとらわれない <br>創造力で<br>未来をデザイン<br></h2>
+      </div>
+      
+      <!-- Bên phải: ABOUT + 会社情報 -->
+      <div class="about-right-text">
+        <span class="company-info">お問い合わせ</span>
+        <h1 class="about-heading">CONTACT</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<nav class="submenu-tabs">
+</nav>
+
+<section class="contact-heading" >
+  <div class="container">
+    <div class="contact-block-wrapper" id="main_contents">
+<p>
+  以下のフォームにお問い合わせ内容をご記入いただき、送信してください
+</p>
+
+
+<div id="position_box">
+  <ul>
+    <li class="active"><span>STEP1　内容入力</span> →</li>
+    <li><span>STEP2　内容確認</span> →</li>
+    <li><span>STEP3　受付完了</span></li>
+    </ul>
+</div>
+
+
+<div id="form_box" class="line-contact">
+  <form action="system/contact_form.php" method="post" name="applyform" id="applyform">
+    
+  <table>
+  <tbody>
+    <tr>
+      <th>お名前
+        <span class="required">※必須</span>
+      </th>
+  <td>
+    <input name="お名前" type="text" size="7">
+  </td>
+  </tr>
+    
+  <tr>
+    <th>フリガナ</th>
+  <td>
+    <input name="フリガナ" type="text" size="7">
+  </td>
+  </tr>
+    
+  <tr>
+    <th>電話番号</th>
+  <td>
+    <input name="電話番号" type="text" size="11" maxlength="11" style="ime-mode: disabled">
+  </td>
+  </tr>
+    
+  <tr>
+    <th>メールアドレス
+      <span class="required">※必須</span>
+    </th>
+  <td>
+  <input name="email" type="text" size="40" title="info@example.com" style="ime-mode: disabled">
+  <div class="plus_txt">
+    ドメイン指定受信の設定をされている方は、「alex7.co.jp」を<br>
+    指定メールアドレスに追加してください。<br>
+    【ドメイン指定の方法】<br>
+    ■<a href="https://www.nttdocomo.co.jp/info/spam_mail/measure/url/index.html" target="_blank">docomoをご使用の方</a>
+    ■<a href="http://www.au.kddi.com/support/mobile/trouble/forestalling/mail/anti-spam/fillter/" target="_blank">auをご使用の方</a>　　
+    ■<a href="http://www.softbank.jp/mobile/support/antispam/settings/indivisual/whiteblack/" target="_blank">SoftBankをご使用の方</a>
+  </div>
+  </td>
+  </tr>
+    
+  <tr>
+    <th>メールアドレス確認用
+      <span class="required">※必須</span>
+    </th>
+  <td>
+    <input name="email2" type="text" size="40" title="info@example.com" style="ime-mode: disabled">
+  </td>
+  </tr>
+    
+  <tr>
+  <th>
+    お問い合わせ内容<span class="required">※必須</span>
+  </th>
+  <td>
+    <textarea name="お問い合わせ内容" id="comment"></textarea>
+  </td>
+</tr>
+  </tbody>
+</table>  
+  <p id="sub_btn">
+    <input type="image" name="submit" class="submit" value="入力内容を確認する" src="image/btn_confirm.png">
+  </p>
+  </form>
+  <div class="errm">
+<h4>未入力項目があります</h4>
+<font color="#ff0000">「お名前」は必須入力項目です。</font><br>
+<font color="#ff0000">「メールアドレス」は必須入力項目です。</font><br>
+<font color="#ff0000">「メールアドレス：確認用」は必須入力項目です。</font><br>
+<font color="#ff0000">「お問い合わせ内容」は必須入力項目です。</font><br>
+</div>
+<div id="confirm_btn">
+<img src="../image/btn_back.png" onclick="history.back()" class="h_back">
+</div>
+
+<div class="submittable">
+<p>
+以下の内容で間違いがなければ、「送信」ボタンを押してください。
+</p>
+<form action="contact_form.php" method="POST">
+
+<table cellpadding="0" cellspacing="0" class="confirm_table">
+<tbody><tr><th>お名前</th><td><input type="hidden" name="お名前" value=""></td></tr>
+<tr><th>フリガナ</th><td><input type="hidden" name="フリガナ" value=""></td></tr>
+<tr><th>電話番号</th><td><input type="hidden" name="電話番号" value=""></td></tr>
+<tr><th>メールアドレス</th><td><input type="hidden" name="email" value=""></td></tr>
+<tr><th>お問い合わせ内容</th><td><input type="hidden" name="お問い合わせ内容" value=""></td></tr>
+</tbody></table>
+<div class="hide">
+<input type="hidden" name="email2" value="">
+</div>
+
+<div id="confirm_btn">
+<input type="hidden" name="eweb_set" value="eweb_submit">
+<img src="../image/btn_back.png" onclick="history.back()" class="h_back">
+<input type="image" src="../image/btn_send.png" name="submit" value="送信する" class="submit">
+</div>
+</form>
+</div>
+<p>
+  お問い合わせありがとうございました。<br>
+  送信は無事に完了しました。
+</p>
+</div>
+</div>
+  </div>
+</section>
+</div>
+<script src="./js/core.min.js"></script>
+<script src="./js/script.js"></script>
+<script>
+    
+// Toggle mobile menu visibility
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("show");
+
+  // Đổi icon giữa ☰ và ✕
+  if (mobileNav.classList.contains("show")) {
+    menuToggle.innerHTML = '&times;'; // ✕
+  } else {
+    menuToggle.innerHTML = '&#9776;'; // ☰
+  }
+});
+
+// Handle submenu accordion logic
+document.querySelectorAll('.mobile-toggle').forEach(button => {
+  button.addEventListener('click', function () {
+    const parent = this.closest('.mobile-nav-item');
+    const submenu = parent.querySelector('.mobile-submenu');
+    const icon = this.querySelector('.toggle-icon');
+
+    // Close all other submenus
+    document.querySelectorAll('.mobile-nav-item').forEach(item => {
+      if (item !== parent) {
+        item.classList.remove('open');
+        item.querySelector('.mobile-submenu')?.classList.remove('show');
+        item.querySelector('.toggle-icon').textContent = '＋';
+      }
+    });
+
+    // Toggle current submenu
+    const isOpen = parent.classList.contains('open');
+    if (isOpen) {
+      parent.classList.remove('open');
+      submenu.classList.remove('show');
+      icon.textContent = '＋';
+    } else {
+      parent.classList.add('open');
+      submenu.classList.add('show');
+      icon.textContent = '−';
+    }
+  });
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const list = document.getElementById("newsList");
+    let isScrolling = false;
+
+    window.scrollNews = function (direction) {
+      if (!list || isScrolling) return;
+
+      const scrollAmount = 100;
+      isScrolling = true;
+
+      list.scrollBy({
+        top: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+
+      // Khoảng delay nhẹ để tránh spam cuộn
+      setTimeout(() => {
+        isScrolling = false;
+      }, 300); // khớp với smooth animation
+    };
+  });
+</script>
+<script>
+  document.querySelectorAll('nav.submenu-tabs a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetID = this.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetID);
+
+      if (targetEl) {
+        const yOffset = -100; // khoảng cách bù trừ cho header fixed
+        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Click vào bất kỳ .arrow-icon nào
+      document.addEventListener('click', (e) => {
+        const icon = e.target.closest('.arrow-icon');
+        if (!icon) return;
+
+        // Lấy section chứa icon để thao tác đúng khung video của section đó
+        const section = icon.closest('section.recruit-heading');
+        if (!section) return;
+
+        const wrapper = section.querySelector('.building-video .video-wrapper');
+        if (!wrapper) return;
+
+        const img = wrapper.querySelector('.default-building-img');
+        const iframe = wrapper.querySelector('iframe');
+        if (!iframe || !img) return;
+
+        const videoId = icon.dataset.video;
+        if (!videoId) return;
+
+        const start = parseInt(icon.dataset.start || '0', 10);
+        const url = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1${start ? `&start=${start}` : ''}`;
+
+        // Ẩn ảnh, hiện video, set src (chỉ set khi khác để tránh reload không cần)
+        img.style.display = 'none';
+        iframe.style.display = 'block';
+        if (iframe.src !== url) iframe.src = url;
+      });
+    });
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // ====== DOM ======
+  const stepLis = Array.from(document.querySelectorAll("#position_box li"));
+  const formBox = document.querySelector("#form_box");
+  const form    = document.querySelector("#applyform");
+  const submitImg = form.querySelector('input.submit[type="image"]');
+
+  const errBox = document.querySelector(".errm"); // khối lỗi
+  const errBackWrap = errBox?.nextElementSibling?.id === "confirm_btn" ? errBox.nextElementSibling : null; // nút quay lại ngay sau khối lỗi
+
+  const confirmBox = document.querySelector(".submittable"); // khối xác nhận
+  const confirmForm = confirmBox?.querySelector("form");
+  const confirmSendImg = confirmBox?.querySelector('input.submit[type="image"]');
+  const confirmBtnsWrap = confirmBox?.querySelector("#confirm_btn");
+
+  // đoạn cảm ơn (là <p> cuối cùng trong #form_box)
+  const thanksP = (() => {
+    const ps = Array.from(formBox.querySelectorAll("p"));
+    return ps[ps.length - 1];
+  })();
+
+  // Ẩn mặc định mọi thứ ngoài STEP1
+  show(errBox, false);
+  show(errBackWrap, false);
+  show(confirmBox, false);
+  show(thanksP, false);
+  setStep(1);
+
+  // Gỡ inline history.back() rồi gán handler quay về STEP1
+  document.querySelectorAll(".h_back").forEach(btn => {
+    btn.removeAttribute("onclick");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      setStep(1);
+      window.scrollTo({ top: formBox.offsetTop - 20, behavior: "smooth" });
+    });
+  });
+
+  // ====== Helpers ======
+  function show(el, vis){ if(!el) return; el.style.display = vis ? "" : "none"; }
+  function setStep(n){
+    stepLis.forEach((li,i)=> li.classList.toggle("active", i === n-1));
+    show(form, n === 1);
+    // STEP2 có 2 chế độ: lỗi hoặc xác nhận → điều khiển riêng lúc validate
+    show(thanksP, n === 3);
+    // luôn ẩn phần kia nếu không ở step tương ứng
+    if (n !== 2){ show(errBox,false); show(errBackWrap,false); show(confirmBox,false); }
+  }
+  function emailOK(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function onlyDigits(v){ return (v||"").replace(/\D/g,""); }
+  function values(){
+    return {
+      name:  (form.querySelector('input[name="お名前"]').value || "").trim(),
+      kana:  (form.querySelector('input[name="フリガナ"]').value || "").trim(),
+      tel:   onlyDigits(form.querySelector('input[name="電話番号"]').value || ""),
+      email: (form.querySelector('input[name="email"]').value || "").trim(),
+      email2:(form.querySelector('input[name="email2"]').value || "").trim(),
+      body:  (form.querySelector('textarea[name="お問い合わせ内容"]').value || "").trim(),
+    };
+  }
+  function renderErrors(list){
+    if (!errBox) return;
+    errBox.innerHTML = [
+      "<h4>未入力項目があります</h4>",
+      ...list.map(t => `<font color="#ff0000">${t}</font><br>`)
+    ].join("");
+  }
+  function fillConfirm(nameAttr, val){
+    const hidden = confirmBox.querySelector(`input[name="${nameAttr}"]`);
+    if (hidden) hidden.value = val;
+    const td = hidden ? hidden.closest("td") : null;
+    if (td){
+      // xóa text node cũ, giữ lại hidden
+      td.childNodes.forEach(n => { if (n.nodeType === Node.TEXT_NODE) td.removeChild(n); });
+      td.insertBefore(document.createTextNode(val || "—"), td.firstChild);
+    }
+  }
+
+  // ====== B1 -> B2 (validate) ======
+  function handleConfirm(e){
+    e.preventDefault();
+    const v = values();
+    const errs = [];
+    if (!v.name)  errs.push("「お名前」は必須入力項目です。");
+    if (!v.email) errs.push("「メールアドレス」は必須入力項目です。");
+    if (!v.email2)errs.push("「メールアドレス：確認用」は必須入力項目です。");
+    if (!v.body)  errs.push("「お問い合わせ内容」は必須入力項目です。");
+    if (v.email && !emailOK(v.email)) errs.push("メールアドレスの形式が正しくありません。");
+    if (v.email && v.email2 && v.email !== v.email2) errs.push("メールアドレス確認用が一致しません。");
+    if (v.tel && (v.tel.length < 9 || v.tel.length > 11)) errs.push("電話番号は9〜11桁の数字で入力してください。");
+
+    if (errs.length){
+      // STEP2 (LỖI)
+      renderErrors(errs);
+      setStep(2);
+      show(confirmBox, false);
+      show(errBox, true);
+      show(errBackWrap, true);
+      window.scrollTo({ top: formBox.offsetTop - 20, behavior: "smooth" });
+      return;
+    }
+
+    // STEP2 (XÁC NHẬN)
+    show(errBox, false);
+    show(errBackWrap, false);
+    fillConfirm("お名前", v.name);
+    fillConfirm("フリガナ", v.kana);
+    fillConfirm("電話番号", v.tel);
+    fillConfirm("email", v.email);
+    fillConfirm("お問い合わせ内容", v.body);
+    const hEmail2 = confirmBox.querySelector('input[name="email2"]');
+    if (hEmail2) hEmail2.value = v.email2;
+
+    setStep(2);
+    show(confirmBox, true);
+    window.scrollTo({ top: formBox.offsetTop - 20, behavior: "smooth" });
+  }
+
+  // click ảnh xác nhận hoặc nhấn Enter trong form
+  submitImg.addEventListener("click", handleConfirm);
+  form.addEventListener("submit", handleConfirm);
+
+  // ====== B2 (XÁC NHẬN) -> B3 ======
+  function handleFinalSend(e){
+    // Nếu muốn gửi thật về server PHP, bỏ comment dòng dưới và xóa e.preventDefault()
+    // return; // cho submit mặc định
+    e.preventDefault(); // demo UI
+    show(confirmBox, false);
+    setStep(3);
+    window.scrollTo({ top: formBox.offsetTop - 20, behavior: "smooth" });
+  }
+  if (confirmSendImg) confirmSendImg.addEventListener("click", handleFinalSend);
+  if (confirmForm) confirmForm.addEventListener("submit", handleFinalSend);
+});
+</script>
+
+
+</body>

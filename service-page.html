@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eagle MES</title>
+
+<!-- 1. Font từ Google trước (vì các style phụ thuộc font) -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+
+<!-- 2. Thư viện bên thứ 3 (Bootstrap, Font Awesome...) -->
+<!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+<link href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
+
+<!-- 3. Fonts nội bộ (nếu có) -->
+<!-- <link rel="stylesheet" href="./css/fonts.css"> -->
+
+<!-- 4. CSS chung của bạn -->
+<link rel="stylesheet" href="./css/site.css">
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
+<link rel="stylesheet" href="./css/service-page.css">
+<link rel="stylesheet" href="./css/about-page.css">
+<link rel="stylesheet" href="./css/top-page.css">
+</head>
+<body>
+<div>
+<header class="header-wrapper">
+  <div class="header">
+    <!-- Logo -->
+    <a class="logo" href="top-page.html">
+      <img src="./image/共通_01_画面上部_01_ALEXロゴ.png" alt="Alex">
+    </a>
+
+    <!-- Right block: Language + Nav + Menu Button -->
+    <div class="header-right">
+      <div class="top-bar-right">
+        <div class="language">Japanese / Vietnamese</div>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      </div>
+
+    <!-- Desktop nav -->
+      <nav class="nav" id="nav">
+        <div class="nav-item with-submenu">
+          <a href="about-page.html">ABOUT</a>
+          <div class="submenu">
+            <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+            <a href="#" data-tab="tab2">会社概要</a>
+            <a href="#" data-tab="tab3">沿革</a>
+            <a href="#" data-tab="tab4">組織図</a>
+            <a href="#" data-tab="tab5">主要取引先</a> -->
+          </div>
+        </div>
+
+        <div class="nav-item with-submenu">
+          <a href="service-page.html">SERVICE</a>
+          <div class="submenu">
+            <!-- <a href="#">映像制作</a>
+            <a href="#">実装・プログラミング</a>
+            <a href="#">システム・ツール開発</a>
+            <a href="#">企画</a> -->
+          </div>
+        </div>
+
+        <a href="work-page.html">WORKS</a>
+        <div class="nav-item with-submenu">
+          <a href="recruit-page.html">RECRUIT</a>
+          <div class="submenu">
+            <a href="募集職種-page.html">募集職種</a>
+            <a href="スタッフの声-page.html">スタッフの声</a>
+          </div>
+        </div>
+
+        <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="about-page.html">ABOUT <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
+      <a href="#" data-tab="tab2">会社概要</a>
+      <a href="#" data-tab="tab3">沿革</a>
+      <a href="#" data-tab="tab4">組織図</a>
+      <a href="#" data-tab="tab5">主要取引先</a> -->
+    </div>
+  </div>
+
+  <div class="mobile-nav-item">
+    <a class="mobile-toggle" href="service-page.html">SERVICE <span class="toggle-icon">＋</span></a>
+    <div class="mobile-submenu">
+      <!-- <a href="#">映像制作</a>
+      <a href="#">実装・プログラミング</a>
+      <a href="#">システム・ツール開発</a>
+      <a href="#">企画</a> -->
+    </div>
+  </div>
+
+  <a href="work-page.html">WORK</a>
+
+  <div class="mobile-nav-item">
+    <button class="mobile-toggle" href="recruit-page.html">RECRUIT <span class="toggle-icon">＋</span></button>
+    <div class="mobile-submenu">
+       <a href="募集職種-page.html">募集職種</a>
+      <a href="スタッフの声-page.html">スタッフの声</a>
+    </div>
+  </div>
+
+     <a href="access-page.html">ACCESS</a>
+        <a href="contact-page.html">CONTACT</a>
+  <div class="language">Japanese / Vietnamese</div>
+</div>
+<section class="about">
+  <div class="about-avatar">
+    <!-- Ảnh nền tự động chuyển bằng CSS -->
+    <div class="service-bg" style="background-image:url('../image/レイヤー 735.png');"></div>
+
+    <div class="overlay-about">
+      <!-- Bên trái: câu khẩu hiệu -->
+      <div class="about-left-text">
+        <h2>枠にとらわれない<br>創造力で<br>未来をデザイン<br></h2> 
+      </div>
+      <!-- Bên phải: SERVICE + 事業内容 -->
+      <div class="about-right-text">
+        <span class="company-info">事業内容</span>
+        <h1 class="about-heading">SERVICE</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="submenu-tabs">
+  <div class="container"></div>
+</nav>
+
+<section class="creation-tech-section">
+  <div class="container">
+    <div class="creation-tech-box">
+      <h2 class="creation-title">CREATION<span class="symbol">X</span>TECHNOLOGY</h2>
+      <p class="creation-description">
+        ALEXは企画立案から映像制作、プログラムまで全ての作業をワンストップで対応できます。<br>
+        しがらみにとらわれない自由な発想と作業効率を考えたシステム・アプリ開発。<br>
+        クリエイティブとテクノロジーの融合により、常に新しい価値を生み出し続けます。
+      </p>
+    </div>
+  </div>
+</section>
+<section class="video-section">
+   <div class="sg-header">
+    <img class="sg-bg" src="../image/グループ 19.png" alt="Green Diagonal BG">
+  </div>
+  <div class="container">
+    <div class="box-wrapper">
+      
+      <div class="subtitle-frame-wrapper">
+        <img class="subtitle-frame" src="../image/グループ 27.png" alt="Subtitle Frame">
+        <span class="subtitle-text">映像制作</span>
+      </div>
+
+      <img class="box-bg" src="../image/グループ 28.png" alt="Box Frame BG">
+      <div class="subtitle-spacer"></div>
+      <div class="info-box">
+        <div class="info-content">
+          <p>
+            映像・演出提案含め映像完成まで全ての工程において対応可能です。<br>
+            2Dアニメーション制作のみ協力会社様と連携し制作いたします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section">
+   <div class="sg-header">
+    <img class="sg-bg" src="../image/グループ 19.png" alt="Green Diagonal BG">
+  </div>
+  <div class="container">
+    <div class="box-wrapper">
+      
+      <div class="subtitle-frame-wrapper">
+        <img class="subtitle-frame" src="../image/グループ 27.png" alt="Subtitle Frame">
+        <span class="subtitle-text">実装・プログラミング</span>
+      </div>
+
+      <img class="box-bg" src="../image/グループ 28.png" alt="Box Frame BG">
+      <div class="subtitle-spacer"></div>
+      <div class="info-box">
+        <div class="info-content">
+          <p>
+          市場動向に応じて仕様が頻繁に変更されるプログラム開発において、実装スピードと品質確保の両立が極めて重要です。<br>
+          効率的な役割分担とツール活用による柔軟な開発体制、<br>
+          そして多層的な品質管理プロセスによって、迅速かつ不具合のない実装を実現します。
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section">
+   <div class="sg-header">
+    <img class="sg-bg" src="../image/グループ 19.png" alt="Green Diagonal BG">
+  </div>
+  <div class="container">
+    <div class="box-wrapper">
+      
+      <div class="subtitle-frame-wrapper">
+        <img class="subtitle-frame" src="../image/グループ 27.png" alt="Subtitle Frame">
+        <span class="subtitle-text">システム・ツール開発</span>
+      </div>
+
+      <img class="box-bg" src="../image/グループ 28.png" alt="Box Frame BG">
+      <div class="subtitle-spacer"></div>
+      <div class="info-box">
+        <div class="info-content">
+          <p>
+          高品質な製品開発の実現に向けツール活用による効率化と人的ミス低減に注力しています。<br>
+          その取り組みとして、先進的なツールを開発しています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section">
+   <div class="sg-header">
+    <img class="sg-bg" src="../image/グループ 19.png" alt="Green Diagonal BG">
+  </div>
+  <div class="container">
+    <div class="box-wrapper">
+      
+      <!-- Subtitle frame được đưa vào trong box-wrapper để giữ đúng vị trí -->
+      <div class="subtitle-frame-wrapper">
+        <img class="subtitle-frame" src="../image/グループ 27.png" alt="Subtitle Frame">
+        <span class="subtitle-text">企画</span>
+      </div>
+
+      <img class="box-bg" src="../image/グループ 28.png" alt="Box Frame BG">
+      <div class="subtitle-spacer"></div>
+      <div class="info-box">
+        <div class="info-content">
+          <p>
+          豊富な経験に裏打ちされた企画力で、ゲーム性・演出・出玉設計から仕様・申請書類の作成まで、すべての工程に対応可能。<br> 
+          市場動向やユーザー志向をふまえた提案で、確実な開発と高い完成度を実現します。<br>
+          リリースまで一貫してお任せいただける安心の体制で、ヒット機種づくりをサポートします。 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<script src="./js/core.min.js"></script>
+<script src="./js/script.js"></script>
+<script>
+    
+// Toggle mobile menu visibility
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("show");
+
+  // Đổi icon giữa ☰ và ✕
+  if (mobileNav.classList.contains("show")) {
+    menuToggle.innerHTML = '&times;'; // ✕
+  } else {
+    menuToggle.innerHTML = '&#9776;'; // ☰
+  }
+});
+
+// Handle submenu accordion logic
+document.querySelectorAll('.mobile-toggle').forEach(button => {
+  button.addEventListener('click', function () {
+    const parent = this.closest('.mobile-nav-item');
+    const submenu = parent.querySelector('.mobile-submenu');
+    const icon = this.querySelector('.toggle-icon');
+
+    // Close all other submenus
+    document.querySelectorAll('.mobile-nav-item').forEach(item => {
+      if (item !== parent) {
+        item.classList.remove('open');
+        item.querySelector('.mobile-submenu')?.classList.remove('show');
+        item.querySelector('.toggle-icon').textContent = '＋';
+      }
+    });
+
+    // Toggle current submenu
+    const isOpen = parent.classList.contains('open');
+    if (isOpen) {
+      parent.classList.remove('open');
+      submenu.classList.remove('show');
+      icon.textContent = '＋';
+    } else {
+      parent.classList.add('open');
+      submenu.classList.add('show');
+      icon.textContent = '−';
+    }
+  });
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const list = document.getElementById("newsList");
+    let isScrolling = false;
+
+    window.scrollNews = function (direction) {
+      if (!list || isScrolling) return;
+
+      const scrollAmount = 100;
+      isScrolling = true;
+
+      list.scrollBy({
+        top: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+
+      // Khoảng delay nhẹ để tránh spam cuộn
+      setTimeout(() => {
+        isScrolling = false;
+      }, 300); // khớp với smooth animation
+    };
+  });
+</script>
+<script>
+  document.querySelectorAll('nav.submenu-tabs a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetID = this.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetID);
+
+      if (targetEl) {
+        const yOffset = -100; // khoảng cách bù trừ cho header fixed
+        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
