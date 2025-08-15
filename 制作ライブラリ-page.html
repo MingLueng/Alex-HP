@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="./css/style.css">
 
 <!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
-<link rel="stylesheet" href="./css/制作ライブラリ.css">
+<link rel="stylesheet" href="./css/制作ライブラリ-page.css">
 <link rel="stylesheet" href="./css/スタッフの声-page.css">
 <link rel="stylesheet" href="./css/募集職種-page.css">
 <link rel="stylesheet" href="./css/スタッフの声TOP-page.css">
@@ -132,63 +132,75 @@
 <nav class="submenu-tabs-1">
 </nav>
 
-
 <div class="app" id="app">
-  <!-- ===== Left Nav ===== -->
   <aside class="sidebar" aria-label="Navigation">
     <div class="sidebar__scroll" id="navScroll">
         <button class="help-btn" id="helpBtn" title="Trợ giúp">
         <span>?</span>
         </button>
-      <div class="brand">■ アレックス ライブラリ</div>
+<details>
+  <summary><span class="label">気体系</span></summary>
+  <div class="tree-group">
+    <a href="#" class="tree-item" data-key="gases"><span class="label">Smoke SD</span></a>
+    <a href="#" class="tree-item" data-key="gases"><span class="label">Smoke HD</span></a>
+    <a href="#" class="tree-item" data-key="gases"><span class="label">Z_smoke SD</span></a>
+    <a href="#" class="tree-item" data-key="gases"><span class="label">Z_smoke HD</span></a>
+    <a href="#" class="tree-item" data-key="gases"><span class="label">Smoke_injection SD</span></a>
+    <a href="#" class="tree-item" data-key="gases"><span class="label">Smoke_injection HD</span></a>
+    <a href="#" class="tree-item" data-key="gases"><span class="label">Explosion_clouds SD</span></a>
+    <a href="#" class="tree-item" data-key="gases"><span class="label">Explosion_clouds HD</span></a>
+  </div>
+</details>
+<details>
+  <summary><span class="label">固体系</span></summary>
+  <div class="tree-group">
+    <a href="#" class="tree-item" data-key="solids"><span class="label">Dust SD</span></a>
+    <a href="#" class="tree-item" data-key="solids"><span class="label">Dust HD</span></a>
+    <a href="#" class="tree-item" data-key="solids"><span class="label">Falling_stone SD_HD</span></a>
+    <a href="#" class="tree-item" data-key="solids"><span class="label">Dosha HD</span></a>
+    <a href="#" class="tree-item" data-key="solids"><span class="label">fragment HD</span></a>
+    <a href="#" class="tree-item" data-key="solids"><span class="label">Wind HD</span></a>
+  </div>
+</details>
+<details>
+  <summary><span class="label">粉砕系</span></summary>
+  <div class="tree-group">
+    <a href="#" class="tree-item" data-key="crush"><span class="label">Digital Vision Video</span></a>
+  </div>
+</details>
+<details>
+  <summary><span class="label">その他</span></summary>
+  <div class="tree-group">
+    <a href="#" class="tree-item" data-key="others"><span class="label">ControlPanels</span></a>
+    <a href="#" class="tree-item" data-key="others"><span class="label">Effect SD_HD</span></a>
+    <a href="#" class="tree-item" data-key="others"><span class="label">Sky</span></a>
+    <a href="#" class="tree-item" data-key="others"><span class="label">promotion</span></a>
+    <a href="#" class="tree-item" data-key="others"><span class="label">3D_sozai</span></a>
+    <a href="#" class="tree-item" data-key="others"><span class="label">Night_view</span></a>
+  </div>
+</details>
+<details open>
+  <summary><span class="label sub-library">アレックスライブラリ</span></summary>
+  <div class="tree-group">
+    <a href="#" class="tree-item" data-key="alexlib"><span class="label">えむぷり</span></a>
+    <a href="#" class="tree-item" data-key="alexlib"><span class="label">てぃーぷり</span></a>
+    <a href="#" class="tree-item" data-key="alexlib"><span class="label">はいぷり</span></a>
+    <a href="#" class="tree-item" data-key="alexlib"><span class="label">SGP3</span></a>
+  </div>
+</details>
+<details>
+  <summary><span class="label sub-library">素材集ライブラリ</span></summary>
+</details>
 
-      <!-- Group 1 -->
-      <details open>
-        <summary><span class="label">気体系 (Gases)</span></summary>
-        <div class="tree-group">
-          <a href="#" class="tree-item" data-path="Gases/Smoke" data-key="smoke"><span class="label">Smoke</span></a>
-          <a href="#" class="tree-item" data-path="Gases/WaterBG" data-key="waterbg"><span class="label">WaterBG</span></a>
-          <a href="#" class="tree-item" data-path="Gases/Explosion_clouds" data-key="explosion"><span class="label">Explosion clouds</span></a>
-        </div>
-      </details>
-
-      <!-- Group 2 -->
-      <details>
-        <summary><span class="label">固体系 (Solids)</span></summary>
-        <div class="tree-group">
-          <a href="#" class="tree-item" data-path="Solids/Dust" data-key="dust"><span class="label">Dust</span></a>
-          <a href="#" class="tree-item" data-path="Solids/Fragment" data-key="fragment"><span class="label">Fragment</span></a>
-        </div>
-      </details>
-
-      <!-- Group 3 -->
-      <details>
-        <summary><span class="label">粉塵系 (Particles)</span></summary>
-        <div class="tree-group">
-          <a href="#" class="tree-item" data-path="Particles/EF" data-key="ef"><span class="label">BG_EF</span></a>
-          <a href="#" class="tree-item" data-path="Particles/Gold" data-key="gold"><span class="label">BG_Gold</span></a>
-          <a href="#" class="tree-item" data-path="Particles/Heart" data-key="heart"><span class="label">BG_Heart</span></a>
-        </div>
-      </details>
-
-      <!-- Group 4 -->
-      <details>
-        <summary><span class="label">その他 (Other)</span></summary>
-        <div class="tree-group">
-          <a href="#" class="tree-item" data-path="Other/Cyber" data-key="cyber"><span class="label">BG_Cyber</span></a>
-        </div>
-      </details>
     </div>
-    
-    <!-- Collapse / Expand button (bottom-left corner) -->
+
     <button class="collapse-btn" id="collapseBtn" aria-label="Thu gọn/ Mở rộng nav" title="Thu gọn/ Mở rộng">
       <span>≪</span>
     </button>
   </aside>
 
-  <!-- ===== Right Content ===== -->
 <main class="content" id="content" aria-live="polite">
-  <div class="pager" id="pager"></div>   <!-- ⟵ thanh phân trang -->
+  <div class="pager" id="pager"></div>  
   <div class="grid" id="grid"></div>
 </main>
 </div>
@@ -342,41 +354,46 @@ document.querySelectorAll('.creation-interview-box').forEach(box => {
   updateSlider();
 });
 </script>
-
 <script>
-/* ===== Demo dataset (giữ nguyên của bạn) ===== */
-const LIBRARY = {
-  smoke: [
-    { title:"Smoke_HD_01", src:"videos/smoke01.mp4", poster:"thumbs/smoke01.jpg" },
-    { title:"Smoke_HD_02", src:"videos/smoke02.mp4", poster:"thumbs/smoke02.jpg" },
-    { title:"Smoke_HD_03", src:"videos/smoke03.mp4", poster:"thumbs/smoke03.jpg" },
-    { title:"Smoke_HD_04", src:"videos/smoke04.mp4", poster:"thumbs/smoke04.jpg" },
+  /* ---------- Data (giữ tên key như bạn dùng) ---------- */
+  const LIBRARY = {
+    gases: [
+      { title:"Smoke SD", src:"videos/Ogryzek - AURA (Official Music Video).mp4", poster:"thumbs/smoke_sd.jpg" },
+      { title:"Smoke HD", src:"videos/demo1.mp4", poster:"thumbs/smoke_hd.jpg" },
+      { title:"Z_smoke SD", src:"videos/demo1.mp4", poster:"thumbs/z_smoke_sd.jpg" },
+      { title:"Z_smoke HD", src:"videos/demo1.mp4", poster:"thumbs/z_smoke_hd.jpg" },
+      { title:"Smoke_injection SD", src:"videos/demo1.mp4", poster:"thumbs/smoke_inj_sd.jpg" },
+      { title:"Smoke_injection HD", src:"videos/demo1.mp4", poster:"thumbs/smoke_inj_hd.jpg" },
+      { title:"Explosion_clouds SD", src:"videos/demo1.mp4", poster:"thumbs/explosion_sd.jpg" },
+      { title:"Explosion_clouds HD", src:"videos/demo1.mp4", poster:"thumbs/explosion_hd.jpg" },
+    ],
+    solids: [
+      { title:"Dust SD", src:"videos/demo2.mp4", poster:"thumbs/dust_sd.jpg" },
+      { title:"Dust HD", src:"videos/demo2.mp4", poster:"thumbs/dust_hd.jpg" },
+      { title:"Falling_stone SD_HD", src:"videos/demo2.mp4", poster:"thumbs/falling_stone.jpg" },
+      { title:"Dosha HD", src:"videos/demo2.mp4", poster:"thumbs/dosha_hd.jpg" },
+      { title:"fragment HD", src:"videos/demo2.mp4", poster:"thumbs/fragment_hd.jpg" },
+      { title:"Wind HD", src:"videos/demo2.mp4", poster:"thumbs/wind_hd.jpg" },
+    ],
+    crush:  [{ title:"Digital Vision Video", src:"videos/demo1.mp4", poster:"thumbs/dvv.jpg" }],
+    others: [
+      { title:"ControlPanels", src:"videos/demo1.mp4", poster:"thumbs/controlpanels.jpg" },
+      { title:"Effect SD_HD",  src:"videos/demo1.mp4", poster:"thumbs/effect_sd_hd.jpg" },
+      { title:"Sky",           src:"videos/demo1.mp4", poster:"thumbs/sky.jpg" },
+      { title:"promotion",     src:"videos/demo1.mp4", poster:"thumbs/promotion.jpg" },
+      { title:"3D_sozai",      src:"videos/demo1.mp4", poster:"thumbs/3d_sozai.jpg" },
+      { title:"Night_view",    src:"videos/demo1.mp4", poster:"thumbs/night_view.jpg" },
+    ],
+    alexlib: [
+      { title:"えむぷり", src:"videos/demo2.mp4", poster:"thumbs/alex_emupri.jpg" },
+      { title:"てぃーぷり", src:"videos/demo2.mp4", poster:"thumbs/alex_tipri.jpg" },
+      { title:"はいぷり", src:"videos/demo2.mp4", poster:"thumbs/alex_haipri.jpg" },
+      { title:"SGP3", src:"videos/demo2.mp4", poster:"thumbs/alex_sgp3.jpg" },
+    ],
+    sozailib: [],
+  };
 
-  ],
-  waterbg: [
-    { title:"WaterBG_SD_01", src:"videos/waterbg01.mp4", poster:"thumbs/waterbg01.jpg" },
-    { title:"WaterBG_SD_02", src:"videos/waterbg02.mp4", poster:"thumbs/waterbg02.jpg" },
-  ],
-  explosion: [
-    { title:"Explosion_Clouds_01", src:"videos/explosion01.mp4", poster:"thumbs/explosion01.jpg" },
-    { title:"Explosion_Clouds_02", src:"videos/explosion02.mp4", poster:"thumbs/explosion02.jpg" },
-  ],
-  dust: [
-    { title:"Dust_HD_01", src:"videos/dust01.mp4", poster:"thumbs/dust01.jpg" },
-    { title:"Dust_HD_02", src:"videos/dust02.mp4", poster:"thumbs/dust02.jpg" },
-  ],
-  fragment: [{ title:"Fragment_HD_01", src:"videos/fragment01.mp4", poster:"thumbs/fragment01.jpg" }],
-  ef: [
-    { title:"BG_EF1", src:"videos/ef01.mp4", poster:"thumbs/ef01.jpg" },
-    { title:"BG_EF2", src:"videos/ef02.mp4", poster:"thumbs/ef02.jpg" },
-    { title:"BG_EF3", src:"videos/ef03.mp4", poster:"thumbs/ef03.jpg" },
-  ],
-  gold:  [{ title:"BG_Gold",  src:"videos/gold01.mp4",  poster:"thumbs/gold01.jpg" }],
-  heart: [{ title:"BG_Heart", src:"videos/heart01.mp4", poster:"thumbs/heart01.jpg" }],
-  cyber: [{ title:"BG_Cyber", src:"videos/cyber01.mp4",  poster:"thumbs/cyber01.jpg" }],
-};
-
-/* ===== DOM refs & state ===== */
+  /* ===== DOM refs & state ===== */
 const ITEMS_PER_PAGE = 9; // 3x3
 let currentKey  = null;
 let currentPage = 1;
@@ -495,6 +512,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
   const first = document.querySelector('.tree-item');
   if(first) first.click();
 });
+
 </script>
 
 </body>
