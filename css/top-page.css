@@ -83,7 +83,7 @@ html,body {
 }
 
 .description {
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   line-height: 1.8;
   font-weight: 600;
   margin-top: 20px;
@@ -460,7 +460,7 @@ html,body {
 
 /* Layer dưới cùng: đường viền trắng */
 /* Đường viền trắng (nằm trên cùng) */
-.recruit-banner .line{ z-index: 4; top: 15px; left: 0; }
+.recruit-banner .line{z-index: 4;top: -13px;left: 0;}
 /* Nền vàng */
 .recruit-banner .banner{ z-index: 2; top: 0; left: 0; }
 /* Lớp bán trong suốt lệch nhẹ */
@@ -539,7 +539,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-19px);
+  transform: skewX(-15deg) translateX(-36px) translateY(-45px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -585,9 +585,9 @@ html,body {
   padding: 0 1.5rem;
 }
 
-.about-layer {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-left .about-layer {
   position: absolute;
-  top: -70px;
+  top: -39px;
   left: -7px;
   width: 100%;
   height: 100%;
@@ -597,7 +597,7 @@ html,body {
   pointer-events: none;
   z-index: 10;
 }
-.menu-item {
+.top-page-menu .container-menu .menu-grid .menu-item {
   display: flex;
   background-image: url('../image/元素材.png');
   background-size: cover;
@@ -611,7 +611,7 @@ html,body {
 }
 
 /* Bên trái chứa ảnh */
-.menu-left {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-left {
   flex: 0 0 40%;
   overflow: visible;
   padding: 1px 5px;
@@ -620,7 +620,7 @@ html,body {
 
 }
 
-.about-avatar {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-left .about-avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -629,7 +629,7 @@ html,body {
 }
 
 /* Bên phải chứa chữ */
-.menu-right {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-right {
   flex: 1;
   position: absolute;
   right: 0;
@@ -660,21 +660,16 @@ html,body {
   margin: 0;
   line-height: 1;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35); /* shadow mạnh hơn một chút để nổi */
   position: relative;
-  /* z-index: 2; */
-}
-.menu-title::after {
-  content: attr(data-text); /* giống nội dung chữ */
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #006c4b; /* màu shadow đậm hơn nền */
-  z-index: -1;
-  transform: translate(-8px, 0px) skew(0deg); /* nghiêng và dịch */
+  transform: translate(-8px, -5px) skew(0deg);
   opacity: 1;
+  text-shadow: 
+    2px 2px 0 #006c4b,
+    4px 4px 0 #006c4b,
+    6px 6px 0 #006c4b;
 }
-.menu-grid{
+
+.top-page-menu .container-menu .menu-grid{
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -682,7 +677,7 @@ html,body {
   gap:40px;
 }
 
-.menu-item:hover {
+.top-page-menu .container-menu .menu-grid .menu-item:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
@@ -695,7 +690,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-13px);
+  transform: skewX(-15deg) translateX(-25px) translateY(-42px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -721,6 +716,7 @@ html,body {
   font-size: clamp(10px, 1.2vw, 16px);
   line-height: 0;
 }
+
 
 }
 
@@ -780,7 +776,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-7px);
+  transform: skewX(-15deg) translateX(-16px) translateY(-40px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -789,9 +785,9 @@ html,body {
 }
 }
 @media (max-width: 1068px) {
-.about-layer {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-left .about-layer {
     position: absolute;
-    top: -57px;
+    top: -32px;
     left: -4px;
     width: 100%;
     height: 100%;
@@ -801,7 +797,7 @@ html,body {
     pointer-events: none;
     z-index: 10;
     }
-.menu-right {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-right {
     flex: 1;
     position: absolute;
     right: -17px;
@@ -814,11 +810,11 @@ html,body {
     z-index: 2;
     max-width: 60%;
     }
-  .menu-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .menu-title {
     font-size: 6.6rem;
   }
 
-  .sub-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .sub-title {
     font-size: 0.8rem;
   }
 
@@ -876,7 +872,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-7px);
+  transform: skewX(-15deg) translateX(-12px) translateY(-36px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -914,7 +910,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-7px);
+  transform: skewX(-15deg) translateX(-10px) translateY(-38px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -924,9 +920,9 @@ html,body {
 }
 
 @media (max-width: 900px) {
-  .about-layer {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-left .about-layer {
     position: absolute;
-    top: -52px;
+    top: -28px;
     left: -4px;
     width: 100%;
     height: 100%;
@@ -936,7 +932,7 @@ html,body {
     pointer-events: none;
     z-index: 10;
     }
-.menu-right {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-right {
     flex: 1;
     position: absolute;
     right: -14px;
@@ -949,11 +945,11 @@ html,body {
     z-index: 2;
     max-width: 60%;
     }
-  .menu-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .menu-title {
     font-size: 5.5rem;
   }
 
-  .sub-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .sub-title {
     font-size: 0.6rem;
   }
   .overlay-box-side .line4{
@@ -985,7 +981,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-10px);
+  transform: skewX(-15deg) translateX(-14px) translateY(-34px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -996,9 +992,9 @@ html,body {
 
 @media (max-width: 768px) {
   
-.about-layer {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-left .about-layer {
   position: absolute;
-  top: -50px;
+  top: -24px;
   left: -4px;
   width: 100%;
   height: 100%;
@@ -1008,7 +1004,7 @@ html,body {
   pointer-events: none;
   z-index: 10;
 }
-.menu-right {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-right {
     flex: 1;
     position: absolute;
     right: 0;
@@ -1073,11 +1069,11 @@ html,body {
     position: relative;
     bottom: 25px;
 }
-   .menu-title {
+   .top-page-menu .container-menu .menu-grid .menu-item .menu-right .menu-title {
     font-size: 4rem;
   }
 
-  .sub-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .sub-title {
     font-size: 0.8rem;
   }
    .overlay-box .line1 {
@@ -1095,9 +1091,9 @@ html,body {
 /* Responsive */ 
 @media (max-width: 600px) {
 
-.about-layer {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-left .about-layer {
     position: absolute;
-    top: -46px;
+    top: -18px;
     left: -4px;
     width: 100%;
     height: 100%;
@@ -1107,7 +1103,7 @@ html,body {
     pointer-events: none;
     z-index: 10;
 }
-.menu-right {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-right {
     flex: 1;
     position: absolute;
     right: 0;
@@ -1129,23 +1125,14 @@ html,body {
   }
 
 
-  .menu-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .menu-title {
     font-size: 3rem;
   }
 
-  .sub-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .sub-title {
     font-size: 0.6rem;
   }
-  .menu-title::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 4px;
-    color: #006c4b;
-    z-index: -1;
-    transform: translate(-8px, 0px) skew(0deg);
-    opacity: 1;
-}
+
 
   .overlay-box .line1 {
     font-size: 1.6rem;
@@ -1185,7 +1172,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-41px) translateX(-88px);
+  transform: skewX(-15deg) translateY(-70px) translateX(-88px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1228,7 +1215,7 @@ html,body {
   right: clamp(14px, 2.6vw, 49px);
   bottom: clamp(10px, 1.8vw, 15px);
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
-  transform: skewX(-15deg) translateY(-42px) translateX(-86px);
+  transform: skewX(-15deg) translateY(-71px) translateX(-86px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1266,7 +1253,7 @@ html,body {
   right: clamp(14px, 2.6vw, 49px);
   bottom: clamp(10px, 1.8vw, 15px);
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
-  transform: skewX(-15deg) translateY(-42px) translateX(-86px);
+  transform: skewX(-15deg) translateY(-73px) translateX(-86px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1293,19 +1280,10 @@ html,body {
     bottom: -22px;
   }
 
-  .menu-title::after {
-    content: attr(data-text);
+
+.top-page-menu .container-menu .menu-grid .menu-item .menu-left .about-layer {
     position: absolute;
-    top: 0;
-    left: 4px;
-    color: #006c4b;
-    z-index: -1;
-    transform: translate(-8px, 0px) skew(0deg);
-    opacity: 1;
-}
-.about-layer {
-    position: absolute;
-    top: -43px;
+    top: -14px;
     left: -4px;
     width: 100%;
     height: 100%;
@@ -1315,7 +1293,7 @@ html,body {
     pointer-events: none;
     z-index: 10;
     }
-.menu-right {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-right {
     flex: 1;
     position: absolute;
     right: -25px;
@@ -1328,11 +1306,11 @@ html,body {
     z-index: 2;
     max-width: 60%;
     }
-  .menu-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .menu-title {
     font-size: 2.2rem;
   }
 
-  .sub-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .sub-title {
     font-size: 0.4rem;
   }
 
@@ -1365,7 +1343,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-28px) translateX(-80px);
+  transform: skewX(-15deg) translateY(-60px) translateX(-80px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1404,7 +1382,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-27px) translateX(-48px);
+  transform: skewX(-15deg) translateY(-55px) translateX(-54px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1443,7 +1421,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-22px) translateX(-56px);
+  transform: skewX(-15deg) translateY(-51px) translateX(-56px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1482,7 +1460,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-15px) translateX(-47px);
+  transform: skewX(-15deg) translateY(-50px) translateX(-66px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1508,9 +1486,9 @@ html,body {
   font-size: 0.7rem;
 }
 
-.about-layer {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-left .about-layer {
   position: absolute;
-  top: -38px;
+  top: -9px;
   left: -2px;
   width: 100%;
   height: 100%;
@@ -1521,7 +1499,7 @@ html,body {
   z-index: 10;
 }
 
-.menu-right {
+.top-page-menu .container-menu .menu-grid .menu-item .menu-right {
   flex: 1;
   position: absolute;
   right: -6px;
@@ -1534,11 +1512,12 @@ html,body {
   z-index: 2;
   max-width: 60%;
   }
-  .menu-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .menu-title {
   font-size: 1.5rem;
+
 }
 
-  .sub-title {
+  .top-page-menu .container-menu .menu-grid .menu-item .menu-right .sub-title {
     font-size: 0.3rem;
   }
 
@@ -1571,7 +1550,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateY(-10px);
+  transform: skewX(-15deg) translateY(-41px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1610,7 +1589,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateX(-16px) translateY(-8px);
+  transform: skewX(-15deg) translateX(-16px) translateY(-36px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1650,7 +1629,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateX(2px) translateY(-1px);
+  transform: skewX(-15deg) translateX(-23px) translateY(-33px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1691,7 +1670,7 @@ html,body {
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
 
   /* nghiêng cái hộp để song song cạnh banner */
-  transform: skewX(-15deg) translateX(-9px) translateY(-1px);
+  transform: skewX(-15deg) translateX(-10px) translateY(-28px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;
@@ -1724,7 +1703,7 @@ html,body {
   right: clamp(14px, 2.6vw, 49px);
   bottom: clamp(10px, 1.8vw, 15px);
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
-  transform: skewX(-15deg) translateX(-10px) translateY(6px);
+  transform: skewX(-15deg) translateX(-10px) translateY(-27px);
   transform-origin: right bottom;
   text-align: right;
   color:#fff;

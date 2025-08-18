@@ -107,7 +107,7 @@
   max-width: 340px;
   height: auto;
   pointer-events: none;
-   top: 0px;
+  top: 20px;
   left: 20px;
 }
 .staff-frame-middle
@@ -118,7 +118,7 @@
   max-width: 340px;
   height: auto;
   pointer-events: none;
-  top: -35px;
+  top: -4px;
   left: 0px;
 }
 
@@ -141,7 +141,7 @@
   max-width: 340px;
   height: auto;
   pointer-events: none;
-  top: -54px;
+  top: -30px;
   left: 15px;
 }
 
@@ -152,7 +152,7 @@
   max-width: 340px;
   height: auto;
   pointer-events: none;
-  top: -59px;
+  top: -34px;
   left: 15px;
 }
 
@@ -174,7 +174,7 @@
   max-width: 98%;
   height: auto;
   pointer-events: none;
-  top: -69px;
+  top: -39px;
   left: 15px;
 }
 
@@ -185,7 +185,7 @@
   max-width: 98%;
   height: auto;
   pointer-events: none;
-  top: -69px;
+  top: -39px;
   left: 15px;
 }
 
@@ -235,8 +235,8 @@
 }
 .staff-name-box {
   position: relative;
-  top: -88px; /* điều chỉnh vị trí tùy ảnh */
-  left: -37px;
+  top: -73px; /* điều chỉnh vị trí tùy ảnh */
+  left: -40px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -292,8 +292,8 @@
   position: absolute;
   z-index: 3;
   color: #fff;
-  top: 67px;
-  left: 21px;
+  top: 40px;
+  left: 22px;
   transform: skewY(-18deg); /* 👈 tạo góc nghiêng */
 }
 
@@ -342,12 +342,12 @@
   /* Viền trắng & mảng xanh dính ảnh */
   .staff-frame-scrapper {    /* viền trắng */
     left: 8px;
-    top: -60px;
+    top: -30px;
     max-width: 98%;
   }
   .staff-frame-underground { /* mảng xanh */
     left: 8px;
-    top: -60px;
+    top: -30px;
     max-width: 98%;
   }
 }
@@ -355,8 +355,8 @@
 /* ====== ≤1024px: thu nhỏ thêm, giữ ảnh mép phải ====== */
 @media (max-width: 1024px) {
   .staff-image-reverse-bg {max-width: 100%;}
-  .staff-frame-scrapper {left: 10px;top: -52px;max-width: 97%;}
-  .staff-frame-underground {left: 10px;top: -52px;max-width: 97%;}
+  .staff-frame-scrapper {left: 10px;top: -23px;max-width: 97%;}
+  .staff-frame-underground {left: 10px;top: -23px;max-width: 97%;}
 }
 
 /* Tablet và nhỏ hơn */
@@ -373,8 +373,8 @@
 
   
 
-  .staff-frame-scrapper {left: 14px;top: -44px;max-width: 96%;}
-  .staff-frame-underground {left: 14px;top: -44px;max-width: 96%;}
+  .staff-frame-scrapper {left: 14px;top: -16px;max-width: 96%;}
+  .staff-frame-underground {left: 14px;top: -16px;max-width: 96%;}
 
   .staff-block {
     flex-direction: column;
@@ -433,7 +433,7 @@
   }
 
   .name-text {
-    top: 65px;
+    top: 48px;
     left: 6px;
     transform: skewY(-18deg) scale(0.95);
   }
@@ -477,8 +477,8 @@
   }
 
   .name-text {
-    top: 66px;
-    left: -7px;
+    top: 52px;
+    left: -2px;
     transform: skewY(-22deg) scale(0.9);
   }
 
@@ -495,8 +495,8 @@
   }
 
 
-  .staff-frame-scrapper {left: 12px;top: -40px;max-width: 95%;}
-  .staff-frame-underground {left: 12px;top: -40px;max-width: 95%;}
+  .staff-frame-scrapper {left: 12px;top: -10px;max-width: 95%;}
+  .staff-frame-underground {left: 12px;top: -10px;max-width: 95%;}
 }
 
 /* Điện thoại nhỏ (<=480px) */
@@ -516,8 +516,8 @@
   }
 
   .name-text {
-    top: 87px;
-    left: -12px;
+    top: 60px;
+    left: -6px;
     transform: skewY(-27deg) scale(0.87);
   }
 
@@ -538,8 +538,8 @@
   }
 
 
-  .staff-frame-scrapper {left: 10px;top: -38px;}
-  .staff-frame-underground { left: 10px; top: -38px; }
+  .staff-frame-scrapper {left: 10px;top: -8px;}
+  .staff-frame-underground {left: 10px;top: -8px;}
 }
 
 @media (max-width: 460px) {
@@ -550,12 +550,12 @@
 
   .staff-frame-braved {
     left: 15px;
-    top: -42px;
+    top: -12px;
     max-width: 230px;
   }
   .staff-frame-bottom {
     left: 15px;
-    top: -39px;
+    top: -9px;
     max-width: 230px;
   }
  
@@ -568,17 +568,17 @@
 
   .staff-frame-braved {
     left: 12px;
-    top: -41px;
+    top: -12px;
     max-width: 204px;
   }
   .staff-frame-bottom {
     left: 12px;
-    top: -38px;
+    top: -9px;
     max-width: 204px;
   }
 
-  .staff-frame-scrapper {left: 9px;top: -36px;}
-  .staff-frame-underground {left: 9px;top: -36px;}
+  .staff-frame-scrapper {left: 9px;top: -4px;}
+  .staff-frame-underground {left: 9px;top: -4px;}
 }
 
 @media (max-width: 360px) {
@@ -586,12 +586,12 @@
   /* Viền trắng & mảng xanh bám sát ảnh */
   .staff-frame-scrapper { /* viền trắng */
     left: 8px;
-    top: -34px;
+    top: -4px;
     max-width: 94%;
   }
   .staff-frame-underground { /* mảng xanh */
     left: 8px;
-    top: -34px;
+    top: -4px;
     max-width: 94%;
   }
 
@@ -603,8 +603,8 @@
 /* ====== ≤320px: cực nhỏ – thêm chút co giãn */
 @media (max-width: 320px) {
 
-  .staff-frame-scrapper {left: 7px;top: -33px;}
-  .staff-frame-underground {left: 7px;top: -33px;}
+  .staff-frame-scrapper {left: 7px;top: -4px;}
+  .staff-frame-underground {left: 7px;top: -4px;}
 
   .staff-section-box { padding: 10px; }
   .staff-section-box .staff-subtile { font-size: 14px; }
@@ -618,12 +618,12 @@
 
   .staff-frame-braved {
     left: 10px;
-    top: -41px;
+    top: -14px;
     max-width: 180px;
   }
   .staff-frame-bottom {
     left: 10px;
-    top: -38px;
+    top: -11px;
     max-width: 180px;
   }
 }
@@ -637,7 +637,7 @@
         /* margin-top: 120px; */
   }
     .name-text {
-    top: 74px;
+    top: 48px;
     left: 8px;
     transform: skewY(-27deg);
   }
@@ -654,12 +654,12 @@
 
   .staff-frame-braved {
     left: 8px;
-    top: -41px;
+    top: -9px;
     max-width: 135px;
   }
   .staff-frame-bottom {
     left: 8px;
-    top: -38px;
+    top: -7px;
     max-width: 135px;
   }
 }
@@ -671,12 +671,12 @@
 
   .staff-frame-braved {
     left: 5px;
-    top: -41px;
+    top: -10px;
     max-width: 110px;
   }
   .staff-frame-bottom {
     left: 5px;
-    top: -38px;
+    top: -8px;
     max-width: 110px;
   }
 }
@@ -689,12 +689,12 @@
 
   .staff-frame-braved {
     left: 5px;
-    top: -35px;
+    top: -4px;
     max-width: 80px;
   }
   .staff-frame-bottom {
     left: 5px;
-    top: -33px;
+    top: -4px;
     max-width: 80px;
   }
 }
@@ -707,12 +707,12 @@
 
   .staff-frame-braved {
     left: 2px;
-    top: -35px;
+    top: -4px;
     max-width: 55px;
   }
   .staff-frame-bottom {
     left: 2px;
-    top: -34px;
+    top: -3px;
     max-width: 55px;
   }
 }
@@ -725,9 +725,9 @@
       /* margin-top: 60px; */
   }
     .name-text {
-      top: 74px;
+      top: 59px;
       left: 8px;
-      transform: skewY(-27deg);
+      transform: skewY(-34deg);
   }
     .staff-department {
       font-size: 8px;

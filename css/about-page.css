@@ -272,7 +272,7 @@
 }
 
 .overlay-top {
-  top: -63px;
+  top: -32px;
 }
 
 .overlay-bottom {
@@ -494,7 +494,7 @@
 
 
 .overlay-top {
-  top: -67px;
+  top: -38px;
 }
 
 .overlay-bottom {
@@ -506,7 +506,7 @@
 
 
 .overlay-top {
-  top: -66px;
+  top: -37px;
 }
 
 .overlay-bottom {
@@ -518,7 +518,7 @@
 
 
 .overlay-top {
-  top: -68px;
+  top: -40px;
 }
 
 .overlay-bottom {
@@ -529,7 +529,7 @@
 
 
 .overlay-top {
-  top: -63px;
+  top: -33px;
 }
 
 .overlay-bottom {
@@ -539,7 +539,7 @@
 
 @media screen and (max-width: 1200px) {
 .overlay-top {
-  top: -59px;
+  top: -31px;
 }
 
 .overlay-bottom {
@@ -549,7 +549,7 @@
 
 @media screen and (max-width: 1158px) {
 .overlay-top {
-  top: -59px;
+  top: -34px;
 }
 
 .overlay-bottom {
@@ -558,7 +558,7 @@
 }
 @media screen and (max-width: 1036px) {
 .overlay-top {
-  top: -59px;
+  top: -29px;
 }
 
 .overlay-bottom {
@@ -589,7 +589,7 @@
   }
 
 .overlay-top {
-  top: -58px;
+  top: -31px;
 }
 
 .overlay-bottom {
@@ -598,7 +598,7 @@
 }
 @media screen and (max-width: 992px) {
 .overlay-top {
-  top: -57px;
+  top: -31px;
 }
 
 .overlay-bottom {
@@ -621,7 +621,7 @@
 }
 @media screen and (max-width: 900px) {
 .overlay-top {
-  top: -51px;
+  top: -26px;
 }
 
 .overlay-bottom {
@@ -631,7 +631,7 @@
 }
 @media screen and (max-width: 800px) {
 .overlay-top {
-  top: -50px;
+  top: -21px;
 }
 
 .overlay-bottom {
@@ -724,7 +724,7 @@
   }
 
   .overlay-top {
-  top: -45px;
+  top: -22px;
 }
 
 .overlay-bottom {
@@ -808,7 +808,7 @@
 
 @media screen and (max-width: 642px) {
   .overlay-top {
-  top: -48px;
+  top: -17px;
 }
 
 .overlay-bottom {
@@ -855,7 +855,7 @@
 }
 @media screen and (max-width: 600px) {
  .overlay-top {
-  top: -43px;
+  top: -18px;
 }
 
 .overlay-bottom {
@@ -1020,7 +1020,7 @@
     padding: 6px 12px;
   }
  .overlay-top {
-  top: -37px;
+  top: -13px;
 }
 
 .overlay-bottom {
@@ -1208,7 +1208,7 @@
 @media screen and (max-width: 360px) {
 
  .overlay-top {
-  top: -38px;
+  top: -9px;
 }
 
 .overlay-bottom {

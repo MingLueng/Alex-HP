@@ -16,7 +16,7 @@
 <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet"> -->
 <!-- 4. CSS chung của bạn -->
 <!-- <link rel="stylesheet" href="./css/site.css"> -->
-<link rel="stylesheet" href="./css/style.css">
+<!-- <link rel="stylesheet" href="./css/style.css"> -->
 
 <!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
 <link rel="stylesheet" href="./css/top-page.css">
@@ -159,6 +159,21 @@
             下に行くほど古い内容
           </div>
         </div>
+          <div class="news-item">
+          <div class="news-date">2025.03.01</div>
+          <div class="news-content">
+              白いエリア内で縦スクロール<br>
+            更新履歴<br>
+            更新履歴
+          </div>
+        </div>
+             <div class="news-item">
+          <div class="news-date">2025.03.01</div>
+          <div class="news-content">
+            下に行くほど古い内容
+          </div>
+        </div>
+
         
       </div>
     
@@ -207,7 +222,7 @@
       </div>
       <div class="menu-right">
         <p class="sub-title">会社情報</p>
-        <h2 class="menu-title" data-text="ABOUT">ABOUT</h2> 
+        <h2 class="menu-title" >ABOUT</h2> 
       </div>
     </a>
 
@@ -218,7 +233,7 @@
       </div>
       <div class="menu-right">
         <p class="sub-title">事業内容</p>
-        <h2 class="menu-title" data-text="SERVICE">SERVICE</h2> 
+        <h2 class="menu-title" >SERVICE</h2> 
       </div>
     </a>
       <a class="menu-item" href="work-page.html">
@@ -228,7 +243,7 @@
       </div>
       <div class="menu-right">
         <p class="sub-title">制作実績</p>
-        <h2 class="menu-title" data-text="WORKS">WORKS</h2> 
+        <h2 class="menu-title">WORKS</h2> 
       </div>
     </a>
      <a class="menu-item" href="recruit-page.html">
@@ -238,7 +253,7 @@
       </div>
       <div class="menu-right">
         <p class="sub-title">採用情報</p>
-        <h2 class="menu-title" data-text="RECRUIT">RECRUIT</h2> 
+        <h2 class="menu-title" >RECRUIT</h2> 
       </div>
     </a>
      <a class="menu-item" href="access-page.html">
@@ -248,7 +263,7 @@
       </div>
       <div class="menu-right">
         <p class="sub-title">会社案内</p>
-        <h2 class="menu-title" data-text="ACCESS">ACCESS</h2> 
+        <h2 class="menu-title" >ACCESS</h2> 
       </div>
     </a>
       <a class="menu-item" href="contact-page.html">
@@ -258,7 +273,7 @@
       </div>
       <div class="menu-right">
         <p class="sub-title">お問い合わせ</p>
-        <h2 class="menu-title" data-text="CONTACT">CONTACT</h2> 
+        <h2 class="menu-title" >CONTACT</h2> 
       </div>
     </a>
   </div>
@@ -315,29 +330,84 @@ document.querySelectorAll('.mobile-toggle').forEach(button => {
 });
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const list = document.getElementById("newsList");
-    let isScrolling = false;
+document.addEventListener("DOMContentLoaded", () => {
+  const list = document.getElementById("newsList");
+  if (!list) return;
 
-    window.scrollNews = function (direction) {
-      if (!list || isScrolling) return;
+  list.style.overflowY = "hidden";
 
-      const scrollAmount = 100;
-      isScrolling = true;
+  let items = [];
+  let tops  = [];
+  const COUNT = 2; // cửa sổ luôn thấy 2 item, nhưng bước nhảy = 1
 
-      list.scrollBy({
-        top: direction * scrollAmount,
-        behavior: 'smooth'
-      });
+  function measure() {
+    items = Array.from(list.querySelectorAll(".news-item"));
+    tops  = items.map(el => el.offsetTop);
 
-      // Khoảng delay nhẹ để tránh spam cuộn
-      setTimeout(() => {
-        isScrolling = false;
-      }, 300); // khớp với smooth animation
-    };
+    // đặt chiều cao viewport đúng bằng tổng chiều cao 2 item đầu (để “cửa sổ” cố định)
+    if (items.length >= 2) {
+      const h = (items[0].offsetTop + items[0].offsetHeight) - items[0].offsetTop
+              + (items[1].offsetTop + items[1].offsetHeight) - items[1].offsetTop;
+      list.style.maxHeight = h + "px";
+    }
+    updateButtons();
+  }
+
+  // tìm index item ở đỉnh cửa sổ (gần nhất với scrollTop)
+  function headIndex() {
+    const st = list.scrollTop;
+    // binary search cho chắc ăn
+    let l = 0, r = tops.length - 1, ans = 0;
+    while (l <= r) {
+      const m = (l + r) >> 1;
+      if (tops[m] <= st + 1) { ans = m; l = m + 1; }
+      else r = m - 1;
+    }
+    return ans;
+  }
+
+  // cuộn sao cho item index i nằm ở đỉnh
+  function scrollToHead(i, smooth = true) {
+    if (!tops.length) return;
+    const maxHead = Math.max(0, items.length - COUNT);
+    i = Math.max(0, Math.min(i, maxHead));
+    list.scrollTo({ top: tops[i], behavior: smooth ? "smooth" : "auto" });
+    // KHÔNG gọi snap sau khi cuộn — tránh nhảy 2 item
+    setTimeout(updateButtons, 200);
+  }
+
+  // API cho nút ▲ / ▼ (dịch đúng 1 item)
+  window.scrollNews = function(dir) {
+    const i = headIndex();
+    scrollToHead(i + (dir > 0 ? 1 : -1), true);
+  };
+
+  // cập nhật trạng thái nút khi chạm biên
+  function updateButtons() {
+    const upBtn   = document.querySelector(".scroll-btn.up");
+    const downBtn = document.querySelector(".scroll-btn.down");
+    if (!upBtn || !downBtn) return;
+    const i = headIndex();
+    const maxHead = Math.max(0, items.length - COUNT);
+    upBtn.disabled   = (i <= 0);
+    downBtn.disabled = (i >= maxHead);
+  }
+
+  // chỉ cập nhật nút khi người dùng tự cuộn (không snap)
+  list.addEventListener("scroll", () => {
+    updateButtons();
+  }, { passive: true });
+
+  // re-measure khi resize
+  let rt = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(rt);
+    rt = setTimeout(measure, 120);
   });
-</script>
 
+  measure();
+});
+</script>
 </div>
 </body>
 </html>

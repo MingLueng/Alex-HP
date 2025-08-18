@@ -96,7 +96,7 @@
     font-size: 14px;
     font-weight: 400;
   }
-  .tree-item:hover{background: #87cefa;}
+  .tree-item:hover{background: #87cefa;text-decoration: none;color: #584d4d;}
   .tree-item.active{color:#5a2e10; font-weight:600; }
 
   /* ====== Collapse button (bottom-left) ====== */
