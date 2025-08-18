@@ -1007,7 +1007,7 @@
 		if (isDesktop && !isNoviBuilder) {
 			$().UItoTop({
 				easingType: 'easeOutQuad',
-				containerClass: 'ui-to-top mdi mdi-arrow-up'
+				containerClass: 'ui-to-top mdi fa-arrow-up'
 			});
 		}
 
