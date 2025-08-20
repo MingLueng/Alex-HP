@@ -16,7 +16,8 @@
 <link rel="stylesheet" href="./css/fonts.css">
 
 <!-- 4. CSS chung của bạn -->
-<link rel="stylesheet" href="./css/site.css">
+<!-- <link rel="stylesheet" href="./css/site.css"> -->
+
 <!-- <link rel="stylesheet" href="./css/style.css"> -->
 
 <!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
@@ -297,93 +298,8 @@
 </section>
 </div>
 
-<script src="./js/core.min.js"></script>
-<script src="./js/script.js"></script>
-<script>
-    
-// Toggle mobile menu visibility
-const menuToggle = document.getElementById("menuToggle");
-const mobileNav = document.getElementById("mobileNav");
 
-menuToggle.addEventListener("click", () => {
-  mobileNav.classList.toggle("show");
-
-  // Đổi icon giữa ☰ và ✕
-  if (mobileNav.classList.contains("show")) {
-    menuToggle.innerHTML = '&times;'; // ✕
-  } else {
-    menuToggle.innerHTML = '&#9776;'; // ☰
-  }
-});
-
-// Handle submenu accordion logic
-document.querySelectorAll('.mobile-toggle').forEach(button => {
-  button.addEventListener('click', function () {
-    const parent = this.closest('.mobile-nav-item');
-    const submenu = parent.querySelector('.mobile-submenu');
-    const icon = this.querySelector('.toggle-icon');
-
-    // Close all other submenus
-    document.querySelectorAll('.mobile-nav-item').forEach(item => {
-      if (item !== parent) {
-        item.classList.remove('open');
-        item.querySelector('.mobile-submenu')?.classList.remove('show');
-        item.querySelector('.toggle-icon').textContent = '＋';
-      }
-    });
-
-    // Toggle current submenu
-    const isOpen = parent.classList.contains('open');
-    if (isOpen) {
-      parent.classList.remove('open');
-      submenu.classList.remove('show');
-      icon.textContent = '＋';
-    } else {
-      parent.classList.add('open');
-      submenu.classList.add('show');
-      icon.textContent = '−';
-    }
-  });
-});
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const list = document.getElementById("newsList");
-    let isScrolling = false;
-
-    window.scrollNews = function (direction) {
-      if (!list || isScrolling) return;
-
-      const scrollAmount = 100;
-      isScrolling = true;
-
-      list.scrollBy({
-        top: direction * scrollAmount,
-        behavior: 'smooth'
-      });
-
-      // Khoảng delay nhẹ để tránh spam cuộn
-      setTimeout(() => {
-        isScrolling = false;
-      }, 300); // khớp với smooth animation
-    };
-  });
-</script>
-<script>
-  document.querySelectorAll('nav.submenu-tabs a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetID = this.getAttribute('href').slice(1);
-      const targetEl = document.getElementById(targetID);
-
-      if (targetEl) {
-        const yOffset = -100; // khoảng cách bù trừ cho header fixed
-        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    });
-  });
-</script>
+<!-- <script src="./js/core.min.js"></script>
+<script src="./js/script.js"></script> -->
 
 </body>

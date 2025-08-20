@@ -27,17 +27,17 @@
     min-height:100dvh;
   }
   .sidebar{
-    position:relative;
+    position: sticky;
     background:var(--brown);
     color:var(--text);
     overflow-y: scroll;
     overflow-x: hidden;
-    overflow: visible;
     border-right:4px solid #fff; /* giống viền trắng trong ảnh */
   }
+
   .sidebar__scroll{
-    height:100%;
-    overflow:hidden;
+    flex: 1 1 auto;
+    overflow: auto;         /* trước đang để hidden */
     padding: 16px 0px 72px; /* chừa đáy cho nút thu gọn */
   }
 
@@ -102,8 +102,8 @@
   /* ====== Collapse button (bottom-left) ====== */
   .collapse-btn{
     position:absolute;
-    bottom: 0px;
-    right: -38px;
+    right: 0px;
+    top: 0px;
     display:flex;
     align-items:center;
     justify-content:center;

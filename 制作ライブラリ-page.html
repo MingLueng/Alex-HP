@@ -179,7 +179,8 @@
     <a href="#" class="tree-item" data-key="others"><span class="label">Night_view</span></a>
   </div>
 </details>
-<details open>
+
+<details>
   <summary><span class="label sub-library">アレックスライブラリ</span></summary>
   <div class="tree-group">
     <a href="#" class="tree-item" data-key="alexlib"><span class="label">えむぷり</span></a>
@@ -191,14 +192,11 @@
 <details>
   <summary><span class="label sub-library">素材集ライブラリ</span></summary>
 </details>
-
     </div>
-
-    <button class="collapse-btn" id="collapseBtn" aria-label="Thu gọn/ Mở rộng nav" title="Thu gọn/ Mở rộng">
-      <span>≪</span>
+      <button class="collapse-btn" id="collapseBtn" aria-label="Thu gọn/ Mở rộng nav" title="Thu gọn/ Mở rộng">
+      <span>≫</span>
     </button>
   </aside>
-
 <main class="content" id="content" aria-live="polite">
   <div class="pager" id="pager"></div>  
   <div class="grid" id="grid"></div>
@@ -207,312 +205,18 @@
 
 </div>
 
-<script src="./js/core.min.js"></script>
-<script src="./js/script.js"></script>
-<script>
-    
-// Toggle mobile menu visibility
-const menuToggle = document.getElementById("menuToggle");
-const mobileNav = document.getElementById("mobileNav");
+<!-- <script src="./js/core.min.js"></script>
+<script src="./js/script.js"></script> -->
 
-menuToggle.addEventListener("click", () => {
-  mobileNav.classList.toggle("show");
+<script src="./js/制作ライブラリ-page.js"></script>
+<script src="./js/募集職種-page.js"></script>
+<script src="./js/社内イベント-page.js"></script>
+<script src="./js/スタッフの声TOP-page.js"></script>
+<script src="./js/contact-page.js"></script>
+<script src="./js/access-page.js"></script>
+<script src="./js/about-page.js"></script>
+<script src="./js/top-page.js"></script>
 
-  // Đổi icon giữa ☰ và ✕
-  if (mobileNav.classList.contains("show")) {
-    menuToggle.innerHTML = '&times;'; // ✕
-  } else {
-    menuToggle.innerHTML = '&#9776;'; // ☰
-  }
-});
 
-// Handle submenu accordion logic
-document.querySelectorAll('.mobile-toggle').forEach(button => {
-  button.addEventListener('click', function () {
-    const parent = this.closest('.mobile-nav-item');
-    const submenu = parent.querySelector('.mobile-submenu');
-    const icon = this.querySelector('.toggle-icon');
-
-    // Close all other submenus
-document.querySelectorAll('.mobile-nav-item').forEach(item => {
-      if (item !== parent) {
-        item.classList.remove('open');
-        item.querySelector('.mobile-submenu')?.classList.remove('show');
-        item.querySelector('.toggle-icon').textContent = '＋';
-      }
-    });
-
-    // Toggle current submenu
-    const isOpen = parent.classList.contains('open');
-    if (isOpen) {
-      parent.classList.remove('open');
-      submenu.classList.remove('show');
-      icon.textContent = '＋';
-    } else {
-      parent.classList.add('open');
-      submenu.classList.add('show');
-      icon.textContent = '−';
-    }
-  });
-});
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const list = document.getElementById("newsList");
-    let isScrolling = false;
-
-    window.scrollNews = function (direction) {
-      if (!list || isScrolling) return;
-
-      const scrollAmount = 100;
-      isScrolling = true;
-
-      list.scrollBy({
-        top: direction * scrollAmount,
-        behavior: 'smooth'
-      });
-
-      // Khoảng delay nhẹ để tránh spam cuộn
-      setTimeout(() => {
-        isScrolling = false;
-      }, 300); // khớp với smooth animation
-    };
-  });
-</script>
-<script>
-  document.querySelectorAll('nav.submenu-tabs a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetID = this.getAttribute('href').slice(1);
-      const targetEl = document.getElementById(targetID);
-
-      if (targetEl) {
-        const yOffset = -100; // khoảng cách bù trừ cho header fixed
-        const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    });
-  });
-</script>
-<script>
-document.querySelectorAll('.creation-interview-box').forEach(box => {
-  const overwhole = box.querySelector('.interview-overwhole');
-  const prevBtn = box.querySelector('.overwhole-btn.prev');
-  const nextBtn = box.querySelector('.overwhole-btn.next');
-  const items = overwhole.querySelectorAll('.overwhole-item img');
-  const bigImage = box.querySelector('.creation-interview-left img');
-
-  const itemsPerPage = 3;
-  const gap = 15;
-  const itemWidth = items[0].getBoundingClientRect().width + gap;
-  const totalItems = items.length;
-  const maxOffset = Math.max(0, (totalItems - itemsPerPage) * itemWidth - gap);
-
-  let offset = 0;
-
-  // Thêm transition mượt cho slider
-  overwhole.style.transition = "transform 0.4s ease";
-
-  function updateSlider() {
-    if (offset > maxOffset) offset = maxOffset;
-    if (offset < 0) offset = 0;
-    overwhole.style.transform = `translateX(-${offset}px)`;
-    
-    // Update trạng thái nút
-    prevBtn.disabled = offset === 0;
-    nextBtn.disabled = offset >= maxOffset;
-    prevBtn.style.opacity = offset === 0 ? 0.3 : 1;
-    nextBtn.style.opacity = offset >= maxOffset ? 0.3: 1;
-  }
-
-  // Sự kiện click ảnh nhỏ -> đổi ảnh lớn kèm hiệu ứng fade
-  items.forEach(img => {
-    img.addEventListener('click', () => {
-      // Thêm class fade-out
-      bigImage.classList.add('fade-out');
-
-      // Sau 400ms thì đổi ảnh và remove fade-out để fade-in
-      setTimeout(() => {
-        bigImage.src = img.src;
-        bigImage.classList.remove('fade-out');
-      }, 400);
-    });
-  });
-
-  // Sự kiện click nút next / prev
-  nextBtn.addEventListener('click', () => {
-    offset += itemWidth;
-    updateSlider();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    offset -= itemWidth;
-    updateSlider();
-  });
-
-  // Khởi tạo
-  updateSlider();
-});
-</script>
-<script>
-  /* ---------- Data (giữ tên key như bạn dùng) ---------- */
-  const LIBRARY = {
-    gases: [
-      { title:"Smoke SD", src:"videos/Ogryzek - AURA (Official Music Video).mp4", poster:"thumbs/smoke_sd.jpg" },
-      { title:"Smoke HD", src:"videos/demo1.mp4", poster:"thumbs/smoke_hd.jpg" },
-      { title:"Z_smoke SD", src:"videos/demo1.mp4", poster:"thumbs/z_smoke_sd.jpg" },
-      { title:"Z_smoke HD", src:"videos/demo1.mp4", poster:"thumbs/z_smoke_hd.jpg" },
-      { title:"Smoke_injection SD", src:"videos/demo1.mp4", poster:"thumbs/smoke_inj_sd.jpg" },
-      { title:"Smoke_injection HD", src:"videos/demo1.mp4", poster:"thumbs/smoke_inj_hd.jpg" },
-      { title:"Explosion_clouds SD", src:"videos/demo1.mp4", poster:"thumbs/explosion_sd.jpg" },
-      { title:"Explosion_clouds HD", src:"videos/demo1.mp4", poster:"thumbs/explosion_hd.jpg" },
-    ],
-    solids: [
-      { title:"Dust SD", src:"videos/demo2.mp4", poster:"thumbs/dust_sd.jpg" },
-      { title:"Dust HD", src:"videos/demo2.mp4", poster:"thumbs/dust_hd.jpg" },
-      { title:"Falling_stone SD_HD", src:"videos/demo2.mp4", poster:"thumbs/falling_stone.jpg" },
-      { title:"Dosha HD", src:"videos/demo2.mp4", poster:"thumbs/dosha_hd.jpg" },
-      { title:"fragment HD", src:"videos/demo2.mp4", poster:"thumbs/fragment_hd.jpg" },
-      { title:"Wind HD", src:"videos/demo2.mp4", poster:"thumbs/wind_hd.jpg" },
-    ],
-    crush:  [{ title:"Digital Vision Video", src:"videos/demo1.mp4", poster:"thumbs/dvv.jpg" }],
-    others: [
-      { title:"ControlPanels", src:"videos/demo1.mp4", poster:"thumbs/controlpanels.jpg" },
-      { title:"Effect SD_HD",  src:"videos/demo1.mp4", poster:"thumbs/effect_sd_hd.jpg" },
-      { title:"Sky",           src:"videos/demo1.mp4", poster:"thumbs/sky.jpg" },
-      { title:"promotion",     src:"videos/demo1.mp4", poster:"thumbs/promotion.jpg" },
-      { title:"3D_sozai",      src:"videos/demo1.mp4", poster:"thumbs/3d_sozai.jpg" },
-      { title:"Night_view",    src:"videos/demo1.mp4", poster:"thumbs/night_view.jpg" },
-    ],
-    alexlib: [
-      { title:"えむぷり", src:"videos/demo2.mp4", poster:"thumbs/alex_emupri.jpg" },
-      { title:"てぃーぷり", src:"videos/demo2.mp4", poster:"thumbs/alex_tipri.jpg" },
-      { title:"はいぷり", src:"videos/demo2.mp4", poster:"thumbs/alex_haipri.jpg" },
-      { title:"SGP3", src:"videos/demo2.mp4", poster:"thumbs/alex_sgp3.jpg" },
-    ],
-    sozailib: [],
-  };
-
-  /* ===== DOM refs & state ===== */
-const ITEMS_PER_PAGE = 9; // 3x3
-let currentKey  = null;
-let currentPage = 1;
-let totalPages  = 1;
-
-const app         = document.getElementById('app');
-const grid        = document.getElementById('grid');
-const nav         = document.getElementById('navScroll');
-const collapseBtn = document.getElementById('collapseBtn');
-let   pager       = document.getElementById('pager');
-
-/* Nếu thiếu #pager trong HTML, tự tạo đặt trước #grid */
-if (!pager) {
-  pager = document.createElement('div');
-  pager.id = 'pager';
-  pager.className = 'pager';
-  const content = document.getElementById('content') || document.body;
-  content.insertBefore(pager, grid);
-}
-
-/* ===== Helpers ===== */
-function getListByKey(key){ return (LIBRARY[key] || []).slice(); }
-
-/* Grid theo trang */
-function renderGridPage(list, page){
-  const start = (page - 1) * ITEMS_PER_PAGE;
-  const slice = list.slice(start, start + ITEMS_PER_PAGE);
-
-  grid.innerHTML = slice.map(item => `
-    <article class="video-card" data-title="${item.title}">
-      <div class="video-card__title">${item.title}</div>
-      <div class="video-wrapper">
-        <video preload="metadata" controls poster="${item.poster || ''}">
-          <source src="${item.src}" type="video/mp4" />
-          Trình duyệt của bạn không hỗ trợ video.
-        </video>
-      </div>
-    </article>
-  `).join('');
-}
-
-/* Thanh phân trang */
-function renderPager(page, pages){
-  const nums = Array.from({length: pages}, (_,i)=>i+1);
-  const prevDisabled = page === 1 ? 'is-disabled' : '';
-  const nextDisabled = page === pages ? 'is-disabled' : '';
-  pager.innerHTML = `
-    <button class="page-btn ${prevDisabled}" data-action="prev" aria-label="Trang trước">≪</button>
-    ${nums.map(n => `<button class="page-btn ${n===page?'is-active':''}" data-page="${n}">${n}</button>`).join('')}
-    <button class="page-btn ${nextDisabled}" data-action="next" aria-label="Trang sau">≫</button>
-  `;
-}
-
-/* Chuyển trang (CORE) */
-function goToPage(page){
-  const list = getListByKey(currentKey);
-  totalPages = Math.max(1, Math.ceil(list.length / ITEMS_PER_PAGE));
-  currentPage = Math.min(Math.max(1, page), totalPages);
-
-  renderGridPage(list, currentPage);
-  renderPager(currentPage, totalPages);
-  grid.scrollIntoView({behavior:'smooth', block:'start'});
-}
-
-/* Render khi chọn thư mục */
-function renderVideos(key){
-  currentKey = key;
-  currentPage = 1;
-  goToPage(1);
-}
-
-/* Active item highlight */
-function setActive(link){
-  document.querySelectorAll('.tree-item.active').forEach(el=>el.classList.remove('active'));
-  link.classList.add('active');
-}
-
-/* ===== EVENTS ===== */
-
-/* CLICK PHÂN TRANG — thiếu đoạn này nên trang 2 không chạy */
-pager.addEventListener('click', (e)=>{
-  const btn = e.target.closest('.page-btn');
-  if(!btn || btn.classList.contains('is-disabled')) return;
-
-  if (btn.dataset.action === 'prev')      goToPage(currentPage - 1);
-  else if (btn.dataset.action === 'next') goToPage(currentPage + 1);
-  else if (btn.dataset.page)              goToPage(parseInt(btn.dataset.page, 10));
-});
-
-/* Click item ở cây thư mục */
-nav.addEventListener('click', (e)=>{
-  const link = e.target.closest('.tree-item');
-  if(!link) return;
-  e.preventDefault();
-  setActive(link);
-  renderVideos(link.dataset.key);
-
-  if (matchMedia('(max-width: 640px)').matches && !app.classList.contains('is-collapsed')){
-    app.classList.add('is-collapsed');
-  }
-});
-
-/* Thu gọn/mở rộng sidebar */
-collapseBtn.addEventListener('click', ()=>{
-  app.classList.toggle('is-collapsed');
-  collapseBtn.firstElementChild.textContent = app.classList.contains('is-collapsed') ? '≫' : '≪';
-});
-
-/* Nút trợ giúp (nếu dùng) */
-document.getElementById('helpBtn')?.addEventListener('click', ()=> {
-  alert('Mở trang trợ giúp hoặc popup ở đây');
-});
-
-/* Khởi tạo: chọn thư mục đầu tiên và vào trang 1 */
-window.addEventListener('DOMContentLoaded', ()=>{
-  const first = document.querySelector('.tree-item');
-  if(first) first.click();
-});
-
-</script>
 
 </body>
