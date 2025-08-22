@@ -133,7 +133,8 @@
 </nav>
 
 <div class="app" id="app">
-  <aside class="sidebar" aria-label="Navigation">
+  <div class="sidebar-wrapper">
+     <aside class="sidebar" aria-label="Navigation">
     <div class="sidebar__scroll" id="navScroll">
         <button class="help-btn" id="helpBtn" title="Trợ giúp">
         <span>?</span>
@@ -193,10 +194,13 @@
   <summary><span class="label sub-library">素材集ライブラリ</span></summary>
 </details>
     </div>
-      <button class="collapse-btn" id="collapseBtn" aria-label="Thu gọn/ Mở rộng nav" title="Thu gọn/ Mở rộng">
-      <span>≫</span>
-    </button>
+    
   </aside>
+    <button class="collapse-btn" id="collapseBtn" aria-label="Thu gọn/ Mở rộng nav" title="Thu gọn/ Mở rộng">
+     <i class="fas fa-angle-double-left"></i>
+    </button>
+  </div>
+ 
 <main class="content" id="content" aria-live="polite">
   <div class="pager" id="pager"></div>  
   <div class="grid" id="grid"></div>

@@ -14,7 +14,7 @@
   // Số item hiển thị tùy màn hình
   function getItemsPerPage() {
     const w = window.innerWidth;
-    if (w <= 768) return 2;
+    if (w <= 768)  return 2;
     if (w <= 1200) return 3;
     if (w <= 1600) return 4;
     return 5;

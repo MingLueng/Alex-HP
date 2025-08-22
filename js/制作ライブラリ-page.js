@@ -140,9 +140,16 @@ nav.addEventListener('click', (e)=>{
 });
 
 /* Thu gọn/mở rộng sidebar */
-collapseBtn.addEventListener('click', ()=>{
+collapseBtn.addEventListener('click', () => {
   app.classList.toggle('is-collapsed');
-  collapseBtn.firstElementChild.textContent = app.classList.contains('is-collapsed') ? '≫' : '≪';
+  
+  const icon = collapseBtn.firstElementChild;
+  
+  if (app.classList.contains('is-collapsed')) {
+    icon.className = 'fas fa-angle-double-right'; // icon khi collapse
+  } else {
+    icon.className = 'fas fa-angle-double-left';  // icon khi expand
+  }
 });
 
 /* Nút trợ giúp (nếu dùng) */
