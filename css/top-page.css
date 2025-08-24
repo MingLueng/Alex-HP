@@ -1047,7 +1047,7 @@ html,body {
   }
   .news-grid {
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
   }
 
   .news-box, .news-side {
@@ -1067,7 +1067,7 @@ html,body {
     max-width: 700px;
     width: 100%;
     position: relative;
-    bottom: 25px;
+    bottom: -33px;
 }
    .top-page-menu .container-menu .menu-grid .menu-item .menu-right .menu-title {
     font-size: 4rem;
@@ -1077,7 +1077,7 @@ html,body {
     font-size: 0.8rem;
   }
    .overlay-box .line1 {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     bottom: 17px;
   }
 
@@ -1135,8 +1135,8 @@ html,body {
 
 
   .overlay-box .line1 {
-    font-size: 1.6rem;
-        bottom: 12px;
+    font-size: 1.5rem;
+    bottom: 12px;
   }
 
   .overlay-box .line2 {
@@ -1271,8 +1271,8 @@ html,body {
   }
 
   .overlay-box .line1 {
-    font-size: 1.5rem; 
-        bottom: 2px;
+    font-size: 1.2rem;
+    bottom: 2px;
   }
 
   .overlay-box .line2 {
@@ -1479,7 +1479,7 @@ html,body {
   }
 
 .overlay-box .line1 {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
 }
 
 .overlay-box .line2 {

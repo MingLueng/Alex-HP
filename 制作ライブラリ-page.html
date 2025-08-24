@@ -131,80 +131,195 @@
 </div>
 <nav class="submenu-tabs-1">
 </nav>
-
 <div class="app" id="app">
+
+  <!-- LEFT: sidebar + util -->
   <div class="sidebar-wrapper">
-     <aside class="sidebar" aria-label="Navigation">
-    <div class="sidebar__scroll" id="navScroll">
-        <button class="help-btn" id="helpBtn" title="Trợ giúp">
+    <aside class="sidebar" aria-label="Navigation">
+      <div class="sidebar__scroll" id="navScroll">
+              <button class="help-btn" id="helpBtn" title="Trợ giúp">
         <span>?</span>
         </button>
-<details>
-  <summary><span class="label">気体系</span></summary>
-  <div class="tree-group">
-    <a href="#" class="tree-item" data-key="gases"><span class="label">Smoke SD</span></a>
-    <a href="#" class="tree-item" data-key="gases"><span class="label">Smoke HD</span></a>
-    <a href="#" class="tree-item" data-key="gases"><span class="label">Z_smoke SD</span></a>
-    <a href="#" class="tree-item" data-key="gases"><span class="label">Z_smoke HD</span></a>
-    <a href="#" class="tree-item" data-key="gases"><span class="label">Smoke_injection SD</span></a>
-    <a href="#" class="tree-item" data-key="gases"><span class="label">Smoke_injection HD</span></a>
-    <a href="#" class="tree-item" data-key="gases"><span class="label">Explosion_clouds SD</span></a>
-    <a href="#" class="tree-item" data-key="gases"><span class="label">Explosion_clouds HD</span></a>
-  </div>
-</details>
-<details>
-  <summary><span class="label">固体系</span></summary>
-  <div class="tree-group">
-    <a href="#" class="tree-item" data-key="solids"><span class="label">Dust SD</span></a>
-    <a href="#" class="tree-item" data-key="solids"><span class="label">Dust HD</span></a>
-    <a href="#" class="tree-item" data-key="solids"><span class="label">Falling_stone SD_HD</span></a>
-    <a href="#" class="tree-item" data-key="solids"><span class="label">Dosha HD</span></a>
-    <a href="#" class="tree-item" data-key="solids"><span class="label">fragment HD</span></a>
-    <a href="#" class="tree-item" data-key="solids"><span class="label">Wind HD</span></a>
-  </div>
-</details>
-<details>
-  <summary><span class="label">粉砕系</span></summary>
-  <div class="tree-group">
-    <a href="#" class="tree-item" data-key="crush"><span class="label">Digital Vision Video</span></a>
-  </div>
-</details>
-<details>
-  <summary><span class="label">その他</span></summary>
-  <div class="tree-group">
-    <a href="#" class="tree-item" data-key="others"><span class="label">ControlPanels</span></a>
-    <a href="#" class="tree-item" data-key="others"><span class="label">Effect SD_HD</span></a>
-    <a href="#" class="tree-item" data-key="others"><span class="label">Sky</span></a>
-    <a href="#" class="tree-item" data-key="others"><span class="label">promotion</span></a>
-    <a href="#" class="tree-item" data-key="others"><span class="label">3D_sozai</span></a>
-    <a href="#" class="tree-item" data-key="others"><span class="label">Night_view</span></a>
-  </div>
-</details>
+        <details open>
+          <summary><span class="label">気体系</span></summary>
+          <div class="tree-group">
+            <a href="#gases" class="tree-item"><span class="label">気体系</span></a>
+            <a href="#gases-smoke-sd" class="tree-item"><span class="label">Smoke SD</span></a>
+            <a href="#gases-smoke-hd" class="tree-item"><span class="label">Smoke HD</span></a>
+            <a href="#gases-z_smoke-sd" class="tree-item"><span class="label">Z_smoke SD</span></a>
+            <a href="#gases-z_smoke-hd" class="tree-item"><span class="label">Z_smoke HD</span></a>
+            <a href="#gases-smoke_injection-sd" class="tree-item"><span class="label">Smoke_injection SD</span></a>
+            <a href="#gases-smoke_injection-hd" class="tree-item"><span class="label">Smoke_injection HD</span></a>
+            <a href="#gases-explosion_clouds-sd" class="tree-item"><span class="label">Explosion_clouds SD</span></a>
+            <a href="#gases-explosion_clouds-hd" class="tree-item"><span class="label">Explosion_clouds HD</span></a>
+          </div>
+        </details>
 
-<details>
-  <summary><span class="label sub-library">アレックスライブラリ</span></summary>
-  <div class="tree-group">
-    <a href="#" class="tree-item" data-key="alexlib"><span class="label">えむぷり</span></a>
-    <a href="#" class="tree-item" data-key="alexlib"><span class="label">てぃーぷり</span></a>
-    <a href="#" class="tree-item" data-key="alexlib"><span class="label">はいぷり</span></a>
-    <a href="#" class="tree-item" data-key="alexlib"><span class="label">SGP3</span></a>
-  </div>
-</details>
-<details>
-  <summary><span class="label sub-library">素材集ライブラリ</span></summary>
-</details>
-    </div>
-    
-  </aside>
-    <button class="collapse-btn" id="collapseBtn" aria-label="Thu gọn/ Mở rộng nav" title="Thu gọn/ Mở rộng">
+        <details>
+          <summary><span class="label">固体系</span></summary>
+          <div class="tree-group">
+            <a href="#solids" class="tree-item"><span class="label">固体系</span></a>
+            <a href="#solids-dust-sd" class="tree-item"><span class="label">Dust SD</span></a>
+            <a href="#solids-dust-hd" class="tree-item"><span class="label">Dust HD</span></a>
+            <a href="#solids-falling_stone-sd_hd" class="tree-item"><span class="label">Falling_stone SD_HD</span></a>
+            <a href="#solids-dosha-hd" class="tree-item"><span class="label">Dosha HD</span></a>
+            <a href="#solids-fragment-hd" class="tree-item"><span class="label">fragment HD</span></a>
+            <a href="#solids-wind-hd" class="tree-item"><span class="label">Wind HD</span></a>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="label">粉砕系</span></summary>
+          <div class="tree-group">
+            <a href="#crush" class="tree-item"><span class="label">粉砕系</span></a>
+            <a href="#crush-digital-vision-video" class="tree-item"><span class="label">Digital Vision Video</span></a>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="label">その他</span></summary>
+          <div class="tree-group">
+            <a href="#others" class="tree-item"><span class="label">その他</span></a>
+            <a href="#others-controlpanels" class="tree-item"><span class="label">ControlPanels</span></a>
+            <a href="#others-effect-sd_hd" class="tree-item"><span class="label">Effect SD_HD</span></a>
+            <a href="#others-sky" class="tree-item"><span class="label">Sky</span></a>
+            <a href="#others-promotion" class="tree-item"><span class="label">promotion</span></a>
+            <a href="#others-3d_sozai" class="tree-item"><span class="label">3D_sozai</span></a>
+            <a href="#others-night_view" class="tree-item"><span class="label">Night_view</span></a>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="label sub-library">アレックスライブラリ</span></summary>
+          <div class="tree-group">
+            <a href="#alexlib" class="tree-item"><span class="label">アレックスライブラリ</span></a>
+            <a href="#alexlib-emupri" class="tree-item"><span class="label">えむぷり</span></a>
+            <a href="#alexlib-tipri" class="tree-item"><span class="label">てぃーぷり</span></a>
+            <a href="#alexlib-haipri" class="tree-item"><span class="label">はいぷり</span></a>
+            <a href="#alexlib-sgp3" class="tree-item"><span class="label">SGP3</span></a>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="label sub-library">素材集ライブラリ</span></summary>
+          <div class="tree-group">
+          
+          </div>
+        </details>
+      </div>
+    </aside>
+     <button class="collapse-btn" id="collapseBtn" aria-label="Thu gọn/ Mở rộng nav" title="Thu gọn/ Mở rộng">
      <i class="fas fa-angle-double-left"></i>
     </button>
   </div>
- 
-<main class="content" id="content" aria-live="polite">
+
+  <!-- RIGHT: content -->
+  <main class="content" id="content" aria-live="polite">
   <div class="pager" id="pager"></div>  
-  <div class="grid" id="grid"></div>
-</main>
+    <!-- 気体系 / gases -->
+
+    <div class="grid">
+      <article class="video-card" id="gases-smoke-sd">
+        <div class="video-card__title">Smoke SD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/smoke_sd.jpg">
+            <source src="videos/Ogryzek - AURA (Official Music Video).mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+
+      <article class="video-card" id="gases-smoke-hd">
+        <div class="video-card__title">Smoke HD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/smoke_hd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+
+      <article class="video-card" id="gases-z_smoke-sd">
+        <div class="video-card__title">Z_smoke SD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/z_smoke_sd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+
+      <article class="video-card" id="gases-z_smoke-hd">
+        <div class="video-card__title">Z_smoke HD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/z_smoke_hd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+
+      <article class="video-card" id="gases-smoke_injection-sd">
+        <div class="video-card__title">Smoke_injection SD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/smoke_inj_sd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+
+      <article class="video-card" id="gases-smoke_injection-hd">
+        <div class="video-card__title">Smoke_injection HD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/smoke_inj_hd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+
+      <article class="video-card" id="gases-explosion_clouds-sd">
+        <div class="video-card__title">Explosion_clouds SD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/explosion_sd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+
+      <article class="video-card" id="gases-explosion_clouds-hd">
+        <div class="video-card__title">Explosion_clouds HD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/explosion_hd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+      <article class="video-card" id="gases-explosion_clouds-hd">
+        <div class="video-card__title">Explosion_clouds HD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/explosion_hd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+      <article class="video-card" id="gases-explosion_clouds-hd">
+        <div class="video-card__title">Explosion_clouds HD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/explosion_hd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+      <article class="video-card" id="gases-explosion_clouds-hd">
+        <div class="video-card__title">Explosion_clouds HD</div>
+        <div class="video-wrapper">
+          <video preload="metadata" controls poster="thumbs/explosion_hd.jpg">
+            <source src="videos/demo1.mp4" type="video/mp4"/>
+          </video>
+        </div>
+      </article>
+    </div>
+
+    <!-- 固体系 / solids -->
+
+
+  </main>
 </div>
 
 </div>
