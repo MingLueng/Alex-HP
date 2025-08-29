@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const stepLis = Array.from(document.querySelectorAll("#position_box li"));
   const formBox = document.querySelector("#form_box");
   const form    = document.querySelector("#applyform");
-  const submitImg = form.querySelector('input.submit[type="image"]');
-
+  const submitImg = form?.querySelector('button.submit[type="button"]');
   const errBox = document.querySelector(".errm"); // khối lỗi
   const errBackWrap = errBox?.nextElementSibling?.id === "confirm_btn" ? errBox.nextElementSibling : null; // nút quay lại ngay sau khối lỗi
 
   const confirmBox = document.querySelector(".submittable"); // khối xác nhận
   const confirmForm = confirmBox?.querySelector("form");
-  const confirmSendImg = confirmBox?.querySelector('input.submit[type="image"]');
+  const confirmSendImg = confirmBox?.querySelector('button.submit-a[type="button"]');
   const confirmBtnsWrap = confirmBox?.querySelector("#confirm_btn");
 
   // đoạn cảm ơn (là <p> cuối cùng trong #form_box)

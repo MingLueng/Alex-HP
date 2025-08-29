@@ -10,6 +10,7 @@ html,body {
   color: #222;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 /* Layout */
@@ -686,10 +687,7 @@ html,body {
   position: absolute;
   right: clamp(14px, 2.6vw, 49px);
   bottom: clamp(10px, 1.8vw, 15px);
-   /* chừa “safe area” để không đè viền trắng */
   padding: clamp(6px, .8vw, 10px) clamp(10px, 1.2vw, 16px);
-
-  /* nghiêng cái hộp để song song cạnh banner */
   transform: skewX(-15deg) translateX(-25px) translateY(-42px);
   transform-origin: right bottom;
   text-align: right;
@@ -716,8 +714,6 @@ html,body {
   font-size: clamp(10px, 1.2vw, 16px);
   line-height: 0;
 }
-
-
 }
 
 @media (max-width: 1260px) {

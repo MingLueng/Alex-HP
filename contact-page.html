@@ -231,7 +231,9 @@
   </tbody>
 </table>  
   <p id="sub_btn">
-    <input type="image" name="submit" class="submit" value="入力内容を確認する" src="image/btn_confirm.png">
+    <button type="button" name="submit" class="contact-detail-btn submit" value="入力内容を確認する" >
+      入力内容を確認する
+    </button>
   </p>
   </form>
   <div class="errm">
@@ -242,7 +244,9 @@
 <font color="#ff0000">「お問い合わせ内容」は必須入力項目です。</font><br>
 </div>
 <div id="confirm_btn">
-<img src="../image/btn_back.png" onclick="history.back()" class="h_back">
+<button type="button" class="h_back contact-detail-btn" value="入力画面に戻る" onclick="history.back()">
+      入力画面に戻る
+    </button>
 </div>
 
 <div class="submittable">
@@ -264,8 +268,12 @@
 
 <div id="confirm_btn">
 <input type="hidden" name="eweb_set" value="eweb_submit">
-<img src="../image/btn_back.png" onclick="history.back()" class="h_back">
-<input type="image" src="../image/btn_send.png" name="submit" value="送信する" class="submit">
+<button type="button" class="h_back contact-detail-btn" value="入力画面に戻る" onclick="history.back()">
+      入力画面に戻る
+    </button>
+<button type="button" name="submit-a" class="submit-a confirm-detail-btn" value="送信する" >
+      送信する
+    </button>
 </div>
 </form>
 </div>
