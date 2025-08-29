@@ -173,41 +173,41 @@
     <img class="subtitle-frame-recruit" src="../image/グループ 27.png" alt="Subtitle Frame">
     <span class="subtitle-text-recruit">東京本社</span>
   </div>
-    <div class="container">
+
+  <div class="container">
     <div class="address-wrapper">
       <div class="address-box">
         <p class="address-main">〒114-0024<br>東京都北区西ケ原1-46-13 横河駒込ビル1F</p>
+
         <div class="station-list">
-            <div class="station-item">
+          <div class="station-item">
             <span class="linestream">東京メトロ南北線</span>
             <span class="station">西ケ原駅</span>
             <span class="time">徒歩 7分</span>
-            <img src="../image/グループ 213.png" 
-                alt="icon" 
-                class="arrow-icon" 
-                data-video="JTw-zfq0j6c">
+            <!-- nút gọi tới iframe #tyoVideo1 -->
+            <img src="../image/グループ 213.png" alt="icon" class="arrow-icon"
+                 data-target="tyoVideo1" data-start="0">
           </div>
 
           <div class="station-item">
             <span class="linestream">JR京浜東北線</span>
             <span class="station">上中里駅</span>
             <span class="time">徒歩10分</span>
-            <img src="../image/グループ 213.png" 
-                alt="icon" 
-                class="arrow-icon" 
-                data-video="vRphJf_s7jM">
+            <!-- nút gọi tới iframe #tyoVideo2 -->
+            <img src="../image/グループ 213.png" alt="icon" class="arrow-icon"
+                 data-target="tyoVideo2">
           </div>
 
           <div class="station-item">
             <span class="linestream">JR山手線</span>
             <span class="station">駒込駅</span>
             <span class="time">徒歩10分</span>
-            <img src="../image/グループ 213.png" 
-                alt="icon" 
-                class="arrow-icon" 
-                data-video="TFi7vk8NPls">
+            <!-- nút gọi tới iframe #tyoVideo3 -->
+            <img src="../image/グループ 213.png" alt="icon" class="arrow-icon"
+                 data-target="tyoVideo3">
           </div>
         </div>
+
         <p class="note">
           <span class="highlight">※ 当社ビルには駐車場のご用意がございません</span><br>
           お車でお越しの際は、近隣のコインパーキングをご利用下さい。
@@ -216,21 +216,35 @@
 
       <div class="building-video">
         <div class="video-wrapper">
-        <img id="defaultImage" src="../image/レイヤー 850.png" alt="Building" class="default-building-img">
+          <img src="../image/レイヤー 850.png" alt="Building" class="default-building-img">
+
+          <!-- 3 iframe, mỗi cái 1 id cố định -->
           <iframe
-            id="officeVideo"
-            src="https://www.youtube.com/embed/JTw-zfq0j6c?rel=0"
-            title="Office video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-            style="display:none;"
-          ></iframe>
+            id="tyoVideo1"
+            src="https://www.youtube.com/embed/JTw-zfq0j6c?enablejsapi=1&rel=0"
+            title="東京本社 video 1"
+            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy" style="display:none"></iframe>
+
+          <iframe
+            id="tyoVideo2"
+            src="https://www.youtube.com/embed/vRphJf_s7jM?enablejsapi=1&rel=0"
+            title="東京本社 video 2"
+            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy" style="display:none"></iframe>
+
+          <iframe
+            id="tyoVideo3"
+            src="https://www.youtube.com/embed/TFi7vk8NPls?enablejsapi=1&rel=0"
+            title="東京本社 video 3"
+            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy" style="display:none"></iframe>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 <section class="recruit-heading" id="島根支社">
@@ -247,34 +261,28 @@
       <div class="address-box">
         <p class="address-main">〒690-0003<br> 島根県松江市朝日町字伊勢宮477-17 松江SUNビル2F</p>
         <div class="station-list">
-            <div class="station-item">
+          <div class="station-item">
             <span class="linestream">ＪＲ山陰本線</span>
             <span class="station">松江駅</span>
             <span class="time">徒歩 2分</span>
-            <img src="../image/グループ 213.png" 
-                alt="icon" 
-                class="arrow-icon" 
-                data-video="h5B4Rvo3W9Q">
+            <img src="../image/グループ 213.png" alt="icon" class="arrow-icon"
+                data-target="officeVideo1" data-start="0">
           </div>
 
           <div class="station-item">
             <span class="linestream">出雲縁結び空港</span>
             <span class="station">高速バス</span>
             <span class="time">40分</span>
-            <img src="../image/グループ 213.png" 
-                alt="icon" 
-                class="arrow-icon" 
-                data-video="rBUeLYgzTOo">
+            <img src="../image/グループ 213.png" alt="icon" class="arrow-icon"
+                data-target="officeVideo2" data-start="15">
           </div>
 
           <div class="station-item">
             <span class="linestream">米子鬼太郎空港</span>
             <span class="station">高速バス</span>
             <span class="time">45分</span>
-            <img src="../image/グループ 213.png" 
-                alt="icon" 
-                class="arrow-icon" 
-                data-video="bQL2VQRdLzI">
+            <img src="../image/グループ 213.png" alt="icon" class="arrow-icon"
+                data-target="officeVideo3">
           </div>
         </div>
         </div>
@@ -290,22 +298,47 @@
             </div>
         </div>
       <div class="building-video">
-        <div class="video-wrapper">
-              <img id="defaultImage" 
-         src="../image/レイヤー 893.png" 
-         alt="Building" 
+  <div class="video-wrapper">
+    <img id="defaultImage"
+         src="../image/レイヤー 893.png"
+         alt="Building"
          class="default-building-img">
-          <iframe
-            id="officeVideo"
-            src="https://www.youtube.com/embed/JTw-zfq0j6c?rel=0"
-            title="Office video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-            style="display:none;"
-          ></iframe>
-        </div>
-      </div>
+
+    <!-- Video 1 -->
+    <iframe
+      id="officeVideo1"
+      src="https://www.youtube.com/embed/h5B4Rvo3W9Q?enablejsapi=1&rel=0"
+      title="Office video 1"
+      allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+      style="display:none"
+    ></iframe>
+
+    <!-- Video 2 -->
+    <iframe
+      id="officeVideo2"
+      src="https://www.youtube.com/embed/rBUeLYgzTOo?enablejsapi=1&rel=0"
+      title="Office video 2"
+      allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+      style="display:none"
+    ></iframe>
+
+    <!-- Video 3 -->
+    <iframe
+      id="officeVideo3"
+      src="https://www.youtube.com/embed/bQL2VQRdLzI?enablejsapi=1&rel=0"
+      title="Office video 3"
+      allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+      style="display:none"
+    ></iframe>
+  </div>
+</div>
+
       </div>
     </div>
 </section>
