@@ -190,10 +190,83 @@
   }
 }
 
+@media (max-width: 768px) {
+
+  .works-content {
+    max-width: 95%;
+  }
+
+  .works-title {
+    font-size: 1.2rem;
+    right: 5%;
+  }
+
+  .works-text {
+    font-size: 0.9rem;
+  }
+  .overlay-box-work .line5{
+    font-size: 1.6rem;
+  }
+  .overlay-box-work .line6{
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .works-content {
+    max-width: 95%;
+  }
+
+  .works-title {
+    font-size: 1.0rem;
+    right: 5%;
+  }
+
+  .works-text {
+    font-size: 0.6rem;
+  }
+  .overlay-box-work .line5{
+    font-size: 1.2rem;
+  }
+  .overlay-box-work .line6{
+    font-size: 1.0rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .works-title {
+    font-size: 0.7rem;
+    right: -10%;
+  }
+
+  .works-text {
+    font-size: 0.6rem;
+  }
+  .overlay-box-work .line5{
+    font-size: 1.0rem;
+  }
+  .overlay-box-work .line6{
+    font-size: 0.7rem;
+  }
+}
+
 @media (max-width: 360px) {
 
-  .overlay-box-work .line5 {
-  font-size: 1.2rem;
-  font-weight: 700;
-}
+  .works-title {
+    font-size: 0.7rem;
+    right: -10%;
+  }
+
+  .works-text {
+    font-size: 0.6rem;
+  }
+  .overlay-box-work .line5{
+    font-size: 0.7rem;
+  }
+  .overlay-box-work .line6{
+    font-size: 0.5rem;
+  }
 }
