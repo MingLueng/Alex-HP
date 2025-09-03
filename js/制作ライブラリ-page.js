@@ -12,137 +12,106 @@ collapseBtn.addEventListener('click', () => {
   }
 });
 
-/* Nút trợ giúp (nếu dùng) */
-document.getElementById('helpBtn')?.addEventListener('click', ()=> {
-  alert('Mở trang trợ giúp hoặc popup ở đây');
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const grid   = $(".grid");
+  const pager  = $("#pager");
+  const items  = [...$$(".video-card")];
 
-document.addEventListener('DOMContentLoaded', () => {
-  makeGridPager({
-    gridSelector: '.grid',          // nơi chứa các thẻ item
-    itemSelector: '.video-card',    // mỗi item
-    pagerSelector: '#pager',        // thanh phân trang
-    perPage: 9                      // mỗi trang bao nhiêu item
-  });
-});
+  let cat="*", sub="*", page=1, per=9;
 
-function makeGridPager({gridSelector, itemSelector, pagerSelector, perPage = 9}) {
-  const grid  = document.querySelector(gridSelector);
-  const pager = document.querySelector(pagerSelector);
-  if (!grid || !pager) return;
+  // 1. Lấy filter mặc định
+  initDefaultFilter();
 
-  const allItems = Array.from(grid.querySelectorAll(itemSelector));
-  let filtered   = allItems.slice();   // danh sách đang được lọc
-  let page       = 1;
+  // 2. Lắng nghe click menu
+  $("#catNav")?.addEventListener("click", handleNavClick);
 
-  // ===== helpers
-  const pause = (el) => {
-    const v = el.querySelector('video');
-    if (v) { try { v.pause(); } catch(_){} }
-  };
+  // 3. Render lần đầu
+  render();
 
-  // Ẩn/hiện item theo TRANG trên TẬP ĐANG LỌC
-  function renderPage(n, {scroll=true} = {}) {
-    const total = filtered.length;
-    const pages = Math.max(1, Math.ceil(total / perPage));
-    page = Math.min(Math.max(1, n), pages);
+  // ====== FUNCTIONS ======
+  function initDefaultFilter(){
+    const cur = $("#catNav .sub-link.is-active");
+    if (cur){ cat = cur.dataset.cat || "*"; sub = cur.dataset.sub || "*"; }
+  }
 
-    const start = (page - 1) * perPage;
-    const end   = start + perPage;
+  function handleNavClick(e){
+    const t = e.target.closest(".cat-toggle, .sub-link");
+    if (!t) return;
 
-    // Ẩn tất cả trước
-    allItems.forEach(el => { pause(el); el.style.display = 'none'; });
+    if (t.classList.contains("cat-toggle")) {
+      toggleCat(t);
+    } else {
+      selectSub(t);
+    }
+  }
 
-    // Hiện các item thuộc trang hiện tại trong TẬP LỌC
-    filtered.slice(start, end).forEach(el => { el.style.display = ''; });
+  function toggleCat(btn){
+    const li = btn.closest(".cat");
+    li.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", li.classList.contains("is-open"));
+  }
+
+  function selectSub(btn){
+    cat = btn.dataset.cat || "*";
+    sub = btn.dataset.sub || "*";
+    page = 1;
+    $$("#catNav .sub-link").forEach(b=>b.classList.toggle("is-active", b===btn));
+    btn.closest(".cat")?.classList.add("is-open");
+    render();
+  }
+
+  function render(){
+    // lọc theo cat/sub
+    const list = items.filter(el =>
+      (cat==="*"||el.dataset.cat===cat) &&
+      (sub==="*"||el.dataset.sub===sub)
+    );
+
+    // phân trang
+    const pages = Math.max(1, Math.ceil(list.length/per));
+    page = Math.min(page, pages);
+
+    // reset & show
+    items.forEach(el => { el.querySelector("video")?.pause(); el.style.display="none"; });
+    list.slice((page-1)*per, page*per).forEach(el => el.style.display="");
 
     renderPager(pages);
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // Tạo 1 nút
-  function btn(label, targetPage, {disabled=false, active=false, aria='', isHtml=false} = {}) {
-    const b = document.createElement('button');
-    b.className = 'page-btn' + (active ? ' is-active' : '') + (disabled ? ' is-disabled' : '');
-    b.type = 'button';
-    if (isHtml) b.innerHTML = label; else b.textContent = label;
-    if (aria) b.setAttribute('aria-label', aria);
-    if (!disabled && !active) b.addEventListener('click', () => renderPage(targetPage));
-    else { b.tabIndex = -1; b.disabled = true; }
-    return b;
-  }
+  function renderPager(pages){
+  pager.innerHTML = "";
 
-  // Vẽ thanh phân trang: « 1 2 3 »
-  function renderPager(pages) {
-    pager.innerHTML = '';
-    pager.appendChild(
-      btn('<i class="fas fa-angle-double-left"></i>', 1, {
-        disabled: page === 1,
-        aria: 'Trang đầu',
-        isHtml: true
-      })
-    );
-    for (let i = 1; i <= pages; i++) {
-      pager.appendChild(
-        btn(String(i), i, {
-          active: i === page,
-          aria: 'Tới trang ' + i
-        })
-      );
-    }
-    pager.appendChild(
-      btn('<i class="fas fa-angle-double-right"></i>', pages, {
-        disabled: page === pages,
-        aria: 'Trang cuối',
-        isHtml: true
-      })
-    );
-  }
+  const btn = (content, p, dis=false, act=false, isIcon=false)=>{
+    const b = document.createElement("button");
+    b.className = "page-btn" + (act ? " is-active" : "");
 
-  // ===== LỌC THEO HASH: #all / #gases / #solids / #gases-smoke-sd ...
-  function highlightNav(hash) {
-    document.querySelectorAll('.tree-item').forEach(a => {
-      a.classList.toggle('is-active', a.getAttribute('href') === '#'+hash);
-    });
-  }
-
-  function applyHash() {
-    const raw = decodeURIComponent((location.hash || '#all').slice(1)); // bỏ '#'
-    if (!raw || raw === 'all') {
-      filtered = allItems.slice();          // toàn bộ
-      renderPage(1);
-      highlightNav('all');
-      return;
+    if(isIcon){
+      const i = document.createElement("i");
+      i.className = content;   // gán class Font Awesome
+      b.appendChild(i);
+    } else {
+      b.textContent = content; // số trang
     }
 
-    // 1) Nếu raw trùng ID CỤ THỂ -> chỉ hiện đúng item đó (kể cả có bản ghi trùng id "không hợp lệ")
-    const exactMatches = allItems.filter(el => el.id === raw);
-    if (exactMatches.length) {
-      filtered = exactMatches;              // chỉ các item có id đúng
-      renderPage(1, {scroll:false});
-      // focus nhẹ
-      const el = exactMatches[0];
-      el.scrollIntoView({behavior:'smooth', block:'center'});
-      el.classList.add('is-highlight');
-      setTimeout(() => el.classList.remove('is-highlight'), 1200);
-      highlightNav(raw);
-      return;
+    if(dis || act) {
+      b.disabled = true;
+    } else {
+      b.onclick = ()=>{ page = p; render(); };
     }
 
-    // 2) Nếu là NHÓM (ví dụ #gases, #solids) -> lọc theo tiền tố id "gases-"
-    filtered = allItems.filter(el => el.id && el.id.startsWith(raw + '-'));
+    pager.appendChild(b);
+  };
 
-    // Fallback: nếu không khớp gì thì trả về toàn bộ để tránh trắng trang
-    if (filtered.length === 0) filtered = allItems.slice();
-
-    renderPage(1);
-    highlightNav(raw);
-  }
-
-  // Khởi tạo theo hash hiện tại + lắng nghe đổi hash
-  window.addEventListener('hashchange', applyHash);
-  applyHash();
+  btn("fas fa-angle-double-left", 1, page===1, false, true);
+  for(let i=1;i<=pages;i++) btn(i, i, false, i===page);
+  btn("fas fa-angle-double-right", pages, page===pages, false, true);
 }
+
+});
+
+// helpers
+const $  = (s,sc=document)=>sc.querySelector(s);
+const $$ = (s,sc=document)=>sc.querySelectorAll(s);
 
 
 

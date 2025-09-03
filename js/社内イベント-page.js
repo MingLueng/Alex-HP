@@ -1,58 +1,57 @@
 document.querySelectorAll('.creation-interview-box').forEach(box => {
-  const overwhole = box.querySelector('.interview-overwhole');
-  const prevBtn = box.querySelector('.overwhole-btn.prev');
-  const nextBtn = box.querySelector('.overwhole-btn.next');
-  const items = overwhole.querySelectorAll('.overwhole-item img');
+  const scroller = box.querySelector('.interview-overwhole');
+  const prevBtn  = box.querySelector('.overwhole-btn.prev');
+  const nextBtn  = box.querySelector('.overwhole-btn.next');
+  const thumbs   = box.querySelectorAll('.overwhole-item img');
   const bigImage = box.querySelector('.creation-interview-left img');
+  if (!scroller || !prevBtn || !nextBtn) return;
 
-  const itemsPerPage = 3;
-  const gap = 15;
-  const itemWidth = items[0].getBoundingClientRect().width + gap;
-  const totalItems = items.length;
-  const maxOffset = Math.max(0, (totalItems - itemsPerPage) * itemWidth - gap);
+  // TÍNH BƯỚC CUỘN THEO THỰC TẾ (responsive)
+  const getStep = () => {
+    const item = scroller.querySelector('.overwhole-item');
+    if (!item) return scroller.clientWidth;
+    const rect = item.getBoundingClientRect();
+    const gap  = parseFloat(getComputedStyle(scroller).gap || 0);
+    return rect.width + gap; // đúng ở mọi breakpoint
+  };
 
-  let offset = 0;
+  const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+  const maxLeft = () => Math.max(0, scroller.scrollWidth - scroller.clientWidth);
 
-  // Thêm transition mượt cho slider
-  overwhole.style.transition = "transform 0.4s ease";
+  const updateButtons = () => {
+    const max = maxLeft() - 1; // trừ epsilon để tránh nhấp nháy
+    prevBtn.disabled = scroller.scrollLeft <= 0;
+    nextBtn.disabled = scroller.scrollLeft >= max;
+    prevBtn.style.opacity = prevBtn.disabled ? 0.3 : 1;
+    nextBtn.style.opacity = nextBtn.disabled ? 0.3 : 1;
+  };
 
-  function updateSlider() {
-    if (offset > maxOffset) offset = maxOffset;
-    if (offset < 0) offset = 0;
-    overwhole.style.transform = `translateX(-${offset}px)`;
-    
-    // Update trạng thái nút
-    prevBtn.disabled = offset === 0;
-    nextBtn.disabled = offset >= maxOffset;
-    prevBtn.style.opacity = offset === 0 ? 0.3 : 1;
-    nextBtn.style.opacity = offset >= maxOffset ? 0.3: 1;
-  }
+  // Nút điều hướng
+  prevBtn.addEventListener('click', () => {
+    const left = clamp(scroller.scrollLeft - getStep(), 0, maxLeft());
+    scroller.scrollTo({ left, behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    const left = clamp(scroller.scrollLeft + getStep(), 0, maxLeft());
+    scroller.scrollTo({ left, behavior: 'smooth' });
+  });
 
-  // Sự kiện click ảnh nhỏ -> đổi ảnh lớn kèm hiệu ứng fade
-  items.forEach(img => {
+  // Cập nhật trạng thái khi scroll / resize
+  scroller.addEventListener('scroll', updateButtons, { passive: true });
+  window.addEventListener('resize', updateButtons);
+
+  // Click thumbnail -> đổi ảnh lớn (fade)
+  thumbs.forEach(img => {
     img.addEventListener('click', () => {
-      // Thêm class fade-out
       bigImage.classList.add('fade-out');
-
-      // Sau 400ms thì đổi ảnh và remove fade-out để fade-in
+      const src = img.currentSrc || img.src;
       setTimeout(() => {
-        bigImage.src = img.src;
+        bigImage.src = src;
         bigImage.classList.remove('fade-out');
-      }, 400);
+      }, 200);
     });
   });
 
-  // Sự kiện click nút next / prev
-  nextBtn.addEventListener('click', () => {
-    offset += itemWidth;
-    updateSlider();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    offset -= itemWidth;
-    updateSlider();
-  });
-
   // Khởi tạo
-  updateSlider();
+  updateButtons();
 });

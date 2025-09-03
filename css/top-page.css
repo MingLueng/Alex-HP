@@ -38,7 +38,7 @@ html,body {
 .hero {
   position: relative;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
   z-index: 0;
    min-height: 520px;                        /* đảm bảo đủ cao cho desktop */
   padding-bottom: clamp(80px, 12vw, 160px); /* chừa chỗ cho banner nằm chồng */
@@ -80,6 +80,7 @@ html,body {
   line-height: 1.4;
   color: #ffffff;
   text-shadow: 1px 1px 2px black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
 
