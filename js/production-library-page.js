@@ -1,117 +1,108 @@
+(function () {
+  if (window.PAGE !== 'production-library') return;
 
-/* Thu gọn/mở rộng sidebar */
-collapseBtn.addEventListener('click', () => {
-  app.classList.toggle('is-collapsed');
-  
-  const icon = collapseBtn.firstElementChild;
-  
-  if (app.classList.contains('is-collapsed')) {
-    icon.className = 'fas fa-angle-double-right'; // icon khi collapse
-  } else {
-    icon.className = 'fas fa-angle-double-left';  // icon khi expand
-  }
-});
+  // helpers
+  const $  = (s, sc=document) => sc.querySelector(s);
+  const $$ = (s, sc=document) => Array.from(sc.querySelectorAll(s));
 
-document.addEventListener("DOMContentLoaded", () => {
-  const grid   = $(".grid");
-  const pager  = $("#pager");
-  const items  = [...$$(".video-card")];
-
-  let cat="*", sub="*", page=1, per=9;
-
-  // 1. Lấy filter mặc định
-  initDefaultFilter();
-
-  // 2. Lắng nghe click menu
-  $("#catNav")?.addEventListener("click", handleNavClick);
-
-  // 3. Render lần đầu
-  render();
-
-  // ====== FUNCTIONS ======
-  function initDefaultFilter(){
-    const cur = $("#catNav .sub-link.is-active");
-    if (cur){ cat = cur.dataset.cat || "*"; sub = cur.dataset.sub || "*"; }
-  }
-
-  function handleNavClick(e){
-    const t = e.target.closest(".cat-toggle, .sub-link");
-    if (!t) return;
-
-    if (t.classList.contains("cat-toggle")) {
-      toggleCat(t);
-    } else {
-      selectSub(t);
+  function init() {
+    // ===== Collapse sidebar =====
+    const app = $('#app');
+    const collapseBtn = $('#collapseBtn');
+    if (app && collapseBtn) {
+      collapseBtn.addEventListener('click', () => {
+        app.classList.toggle('is-collapsed');
+        const icon = collapseBtn.firstElementChild;
+        if (icon) {
+          icon.className = app.classList.contains('is-collapsed')
+            ? 'fas fa-angle-double-right'
+            : 'fas fa-angle-double-left';
+        }
+      });
     }
-  }
 
-  function toggleCat(btn){
-    const li = btn.closest(".cat");
-    li.classList.toggle("is-open");
-    btn.setAttribute("aria-expanded", li.classList.contains("is-open"));
-  }
+    // ===== Filter + Pager =====
+    const grid  = $('.grid');
+    const pager = $('#pager');
+    const items = $$('.video-card');
+    if (!grid || !pager || !items.length) return;
 
-  function selectSub(btn){
-    cat = btn.dataset.cat || "*";
-    sub = btn.dataset.sub || "*";
-    page = 1;
-    $$("#catNav .sub-link").forEach(b=>b.classList.toggle("is-active", b===btn));
-    btn.closest(".cat")?.classList.add("is-open");
+    let cat='*', sub='*', page=1, per=9;
+
+    const cur = $('#catNav .sub-link.is-active');
+    if (cur) { cat = cur.dataset.cat || '*'; sub = cur.dataset.sub || '*'; }
+
+    $('#catNav')?.addEventListener('click', (e) => {
+      const t = e.target.closest('.cat-toggle, .sub-link');
+      if (!t) return;
+
+      if (t.classList.contains('cat-toggle')) {
+        const li = t.closest('.cat');
+        if (!li) return;
+        li.classList.toggle('is-open');
+        t.setAttribute('aria-expanded', li.classList.contains('is-open'));
+      } else {
+        cat = t.dataset.cat || '*';
+        sub = t.dataset.sub || '*';
+        page = 1;
+        $$('#catNav .sub-link').forEach(b => b.classList.toggle('is-active', b === t));
+        t.closest('.cat')?.classList.add('is-open');
+        render();
+      }
+    });
+
+    function render() {
+      const list = items.filter(el =>
+        (cat === '*' || el.dataset.cat === cat) &&
+        (sub === '*' || el.dataset.sub === sub)
+      );
+      const pages = Math.max(1, Math.ceil(list.length / per));
+      page = Math.min(page, pages);
+
+      items.forEach(el => { el.querySelector('video')?.pause(); el.style.display = 'none'; });
+      list.slice((page - 1) * per, page * per).forEach(el => el.style.display = '');
+
+      drawPager(pages);
+    }
+
+    function drawPager(pages) {
+      pager.innerHTML = '';
+
+      const add = (label, p, disabled=false, active=false, iconClass='') => {
+        const btn = document.createElement('button');
+        btn.className = 'page-btn' + (active ? ' is-active' : '');
+        if (iconClass) {
+          const i = document.createElement('i');
+          i.className = iconClass;          // Font Awesome
+          btn.appendChild(i);
+        } else {
+          btn.textContent = label;
+        }
+        if (!disabled && !active) {
+          btn.addEventListener('click', () => {
+            page = p; render();
+            const header = document.querySelector('.header-wrapper');
+            const offset = header ? header.offsetHeight : 0;
+            const y = window.scrollY + grid.getBoundingClientRect().top - offset - 8;
+            window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+          });
+        } else {
+          btn.disabled = true;
+        }
+        pager.appendChild(btn);
+      };
+
+      add('', 1, page === 1, false, 'fas fa-angle-double-left');
+      for (let i = 1; i <= pages; i++) add(String(i), i, false, i === page);
+      add('', pages, page === pages, false, 'fas fa-angle-double-right');
+    }
+
     render();
   }
 
-  function render(){
-    // lọc theo cat/sub
-    const list = items.filter(el =>
-      (cat==="*"||el.dataset.cat===cat) &&
-      (sub==="*"||el.dataset.sub===sub)
-    );
-
-    // phân trang
-    const pages = Math.max(1, Math.ceil(list.length/per));
-    page = Math.min(page, pages);
-
-    // reset & show
-    items.forEach(el => { el.querySelector("video")?.pause(); el.style.display="none"; });
-    list.slice((page-1)*per, page*per).forEach(el => el.style.display="");
-
-    renderPager(pages);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
-
-  function renderPager(pages){
-  pager.innerHTML = "";
-
-  const btn = (content, p, dis=false, act=false, isIcon=false)=>{
-    const b = document.createElement("button");
-    b.className = "page-btn" + (act ? " is-active" : "");
-
-    if(isIcon){
-      const i = document.createElement("i");
-      i.className = content;   // gán class Font Awesome
-      b.appendChild(i);
-    } else {
-      b.textContent = content; // số trang
-    }
-
-    if(dis || act) {
-      b.disabled = true;
-    } else {
-      b.onclick = ()=>{ page = p; render(); };
-    }
-
-    pager.appendChild(b);
-  };
-
-  btn("fas fa-angle-double-left", 1, page===1, false, true);
-  for(let i=1;i<=pages;i++) btn(i, i, false, i===page);
-  btn("fas fa-angle-double-right", pages, page===pages, false, true);
-}
-
-});
-
-// helpers
-const $  = (s,sc=document)=>sc.querySelector(s);
-const $$ = (s,sc=document)=>sc.querySelectorAll(s);
-
-
-
+})();

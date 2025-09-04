@@ -1,125 +1,28 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Eagle MES</title>
+  <title>Eagle MES - Comments TOP</title>
 
-<!-- 1. Font từ Google trước (vì các style phụ thuộc font) -->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+<script>
+  // nơi đặt partials + tên trang hiện tại
+  window.PARTIALS_ROOT = './partials';
+  window.PAGE = 'recruit'; // tên trang
 
-<!-- 2. Thư viện bên thứ 3 (Bootstrap, Font Awesome...) -->
-<link rel="stylesheet" href="./css/bootstrap.css">
-<link href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
-
-<!-- 3. Fonts nội bộ (nếu có) -->
-<link rel="stylesheet" href="./css/fonts.css">
-
-<!-- 4. CSS chung của bạn -->
-<!-- <link rel="stylesheet" href="./css/site.css"> -->
-
-<!-- <link rel="stylesheet" href="./css/style.css"> -->
-
-<!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
-<link rel="stylesheet" href="./css/recruit-page.css">
-<link rel="stylesheet" href="./css/results-page.css">
-<link rel="stylesheet" href="./css/work-page.css">
-<link rel="stylesheet" href="./css/service-page.css">
-<link rel="stylesheet" href="./css/about-page.css">
-<link rel="stylesheet" href="./css/top-page.css">
+  // CSS/JS BỔ SUNG chỉ cho trang này (mảng thuần)
+  window.PAGE_CSS = [
+    "./css/about-page.css",
+    "./css/service-page.css",
+  ]; // nếu cần thêm css phụ, để vào đây
+  window.PAGE_JS  = []; // nếu cần thêm js phụ, để vào đây
+</script>
+  <script src="./js/include-partials.js" defer></script>
 </head>
 <body>
-<div>
-<header class="header-wrapper">
-  <div class="header">
-    <!-- Logo -->
-    <a class="logo" href="top-page.html">
-      <img src="./image/共通_01_画面上部_01_ALEXロゴ.png" alt="Alex">
-    </a>
 
-    <!-- Right block: Language + Nav + Menu Button -->
-    <div class="header-right">
-      <div class="top-bar-right">
-        <div class="language">Japanese / Vietnamese</div>
-        <button class="menu-toggle" id="menuToggle">&#9776;</button>
-      </div>
-
-    <!-- Desktop nav -->
-      <nav class="nav" id="nav">
-        <div class="nav-item with-submenu">
-          <a href="about-page.html">ABOUT</a>
-          <div class="submenu">
-            <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
-            <a href="#" data-tab="tab2">会社概要</a>
-            <a href="#" data-tab="tab3">沿革</a>
-            <a href="#" data-tab="tab4">組織図</a>
-            <a href="#" data-tab="tab5">主要取引先</a> -->
-          </div>
-        </div>
-
-        <div class="nav-item with-submenu">
-          <a href="service-page.html">SERVICE</a>
-          <div class="submenu">
-            <!-- <a href="#">映像制作</a>
-            <a href="#">実装・プログラミング</a>
-            <a href="#">システム・ツール開発</a>
-            <a href="#">企画</a> -->
-          </div>
-        </div>
-
-        <a href="work-page.html">WORKS</a>
-        <div class="nav-item with-submenu">
-          <a href="recruit-page.html">RECRUIT</a>
-          <div class="submenu">
-            <a href="job-openings-page.html">募集職種</a>
-            <a href="comments-top-page.html">スタッフの声TOP</a>
-          </div>
-        </div>
-
-        <a href="access-page.html">ACCESS</a>
-        <a href="contact-page.html">CONTACT</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<!-- Mobile Nav -->
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-item">
-    <a class="mobile-toggle" href="about-page.html">ABOUT <span class="toggle-icon">＋</span></a>
-    <div class="mobile-submenu">
-      <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
-      <a href="#" data-tab="tab2">会社概要</a>
-      <a href="#" data-tab="tab3">沿革</a>
-      <a href="#" data-tab="tab4">組織図</a>
-      <a href="#" data-tab="tab5">主要取引先</a> -->
-    </div>
-  </div>
-
-  <div class="mobile-nav-item">
-    <a class="mobile-toggle" href="service-page.html">SERVICE <span class="toggle-icon">＋</span></a>
-    <div class="mobile-submenu">
-      <!-- <a href="#">映像制作</a>
-      <a href="#">実装・プログラミング</a>
-      <a href="#">システム・ツール開発</a>
-      <a href="#">企画</a> -->
-    </div>
-  </div>
-
-  <a href="work-page.html">WORK</a>
-
-  <div class="mobile-nav-item">
-    <button class="mobile-toggle" href="recruit-page.html">RECRUIT <span class="toggle-icon">＋</span></button>
-    <div class="mobile-submenu">
-       <a href="募集職種-page.html">募集職種</a>
-      <a href="スタッフの声-page.html">スタッフの声</a>
-    </div>
-  </div>
-
-     <a href="access-page.html">ACCESS</a>
-        <a href="contact-page.html">CONTACT</a>
-  <div class="language">Japanese / Vietnamese</div>
-</div>
+  <!-- HEADER chung -->
+  <div data-include="header"></div>
 <section class="about">
   <div class="about-avatar">
     <!-- Ảnh nền tự động chuyển bằng CSS -->
@@ -181,7 +84,7 @@
               
             </ul>
           </div>
-          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+          <a href="job-openings-page.html" class="recruit-detail-btn">詳細はこちら</a>
        </div>
     </div>
     <div class="creation-recruit-box">
@@ -200,7 +103,7 @@
             最終コンポジットまでの仕上げの部分をメインに担当いただきます。</p>
 
           </div>
-         <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+         <a href="job-openings-page.html" class="recruit-detail-btn">詳細はこちら</a>
        </div>
     </div>
         <div class="creation-recruit-box">
@@ -219,7 +122,7 @@
           演出企画では絵コンテ制作や見せ方考案にも関わっていただく場合もあります。<br>
           ※どれか1つでも得意分野があれば問題ありません。</p>
           </div>
-          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+          <a href="job-openings-page.html" class="recruit-detail-btn">詳細はこちら</a>
        </div>
     </div>
         <div class="creation-recruit-box">
@@ -238,7 +141,7 @@
             コンテからのシーン構築など演出企画にも関わっていただくこともあります。
             ※どれか1つでも得意分野があれば問題ありません。</p>
           </div>
-          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+          <a href="job-openings-page.html" class="recruit-detail-btn">詳細はこちら</a>
        </div>
     </div>
         <div class="creation-recruit-box">
@@ -255,7 +158,7 @@
               <p>大手メーカー様から直接ご依頼をいただき、演出企画、映像企画、出玉企画と連携しながら<br>
                プログラム開発を担当していただきます。</p>
           </div>
-          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+          <a href="job-openings-page.html" class="recruit-detail-btn">詳細はこちら</a>
        </div>
     </div>
         <div class="creation-recruit-box">
@@ -274,7 +177,7 @@
                 情熱が命の仕事です。</p>
 
           </div>
-          <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+          <a href="job-openings-page.html" class="recruit-detail-btn">詳細はこちら</a>
        </div>
     </div>
         <div class="creation-recruit-box">
@@ -291,15 +194,11 @@
              <p>パチスロ機の出玉数・機械割などの計算。<br>
             数学的知識、統計学等の基礎知識のある方(数学に強い方)が最適です。</p>
           </div>
-         <a href="募集職種-page.html" class="recruit-detail-btn">詳細はこちら</a>
+         <a href="job-openings-page.html" class="recruit-detail-btn">詳細はこちら</a>
        </div>
     </div>
   </div>
 </section>
-</div>
-
-
-<!-- <script src="./js/core.min.js"></script>
-<script src="./js/script.js"></script> -->
-
+  <div data-include="footer"></div>
 </body>
+</html>

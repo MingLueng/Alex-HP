@@ -1,60 +1,72 @@
-document.addEventListener("click", function (e) {
-  const btn = e.target.closest(".arrow-icon");
-  if (!btn) return;
+// ./js/access-page-videos.js
+(function () {
+  if (window.PAGE !== 'access') return;
 
-  const section = btn.closest("section.recruit-heading");
-  if (!section) return;
+  function init() {
+    document.addEventListener('click', function (e) {
+      const btn = e.target.closest('.arrow-icon');
+      if (!btn) return;
 
-  const wrapper = section.querySelector(".building-video .video-wrapper");
-  if (!wrapper) return;
+      const section = btn.closest('section.recruit-heading');
+      if (!section) return;
 
-  const defaultImg = wrapper.querySelector(".default-building-img");
-  const iframes = wrapper.querySelectorAll("iframe");
-  if (!iframes.length) return;
+      const wrapper = section.querySelector('.building-video .video-wrapper');
+      if (!wrapper) return;
 
-  // Lấy video theo index
-  const index = parseInt(btn.dataset.index || "-1", 10);
-  if (index < 0 || index >= iframes.length) return;
+      const defaultImg = wrapper.querySelector('.default-building-img');
+      const iframes   = wrapper.querySelectorAll('iframe');
+      if (!iframes.length) return;
 
-  const target = iframes[index];
+      // Lấy id mục tiêu từ data-target (ví dụ: "tyoVideo1")
+      const targetId = (btn.dataset.target || '').trim();
+      if (!targetId) return;
 
-  // Ẩn ảnh mặc định
-  if (defaultImg) defaultImg.style.display = "none";
+      const target = wrapper.querySelector(`#${CSS.escape(targetId)}`);
+      if (!target) return;
 
-  // Dừng và ẩn các video khác
-  iframes.forEach((f, i) => {
-    if (i === index) return;
-    try {
-      f.contentWindow?.postMessage(
-        JSON.stringify({ event: "command", func: "stopVideo", args: [] }),
-        "*"
-      );
-    } catch {}
-    f.style.display = "none";
-  });
+      // Ẩn ảnh mặc định
+      if (defaultImg) defaultImg.style.display = 'none';
 
-  // Hiện video mục tiêu
-  target.style.display = "block";
+      // Dừng & ẩn tất cả video trong wrapper hiện tại
+      iframes.forEach((f) => {
+        try {
+          f.contentWindow?.postMessage(
+            JSON.stringify({ event: 'command', func: 'stopVideo', args: [] }),
+            '*'
+          );
+        } catch {}
+        f.style.display = 'none';
+      });
 
-  // Tua đến thời điểm chỉ định
-  const start = parseInt(btn.dataset.start || "0", 10);
-  if (start > 0) {
-    try {
-      target.contentWindow?.postMessage(
-        JSON.stringify({ event: "command", func: "seekTo", args: [start, true] }),
-        "*"
-      );
-    } catch {}
+      // Hiện video mục tiêu
+      target.style.display = 'block';
+
+      // Seek nếu có start
+      const start = parseInt(btn.dataset.start || '0', 10);
+      if (start > 0) {
+        try {
+          target.contentWindow?.postMessage(
+            JSON.stringify({ event: 'command', func: 'seekTo', args: [start, true] }),
+            '*'
+          );
+        } catch {}
+      }
+
+      // Auto play
+      try {
+        target.contentWindow?.postMessage(
+          JSON.stringify({ event: 'command', func: 'playVideo', args: [] }),
+          '*'
+        );
+      } catch {}
+    });
   }
 
-  // Auto play
-    try {
-      target.contentWindow?.postMessage(
-        JSON.stringify({ event: "command", func: "playVideo", args: [] }),
-        "*"
-      );
-    } catch {}
-});
-
-
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  
+})();
 

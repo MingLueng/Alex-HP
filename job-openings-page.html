@@ -1,127 +1,35 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Eagle MES</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eagle MES - Comments TOP</title>
 
-<!-- 1. Font từ Google trước (vì các style phụ thuộc font) -->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
+<script>
+  // nơi đặt partials + tên trang hiện tại
+  window.PARTIALS_ROOT = './partials';
+  window.PAGE = 'job-openings'; // tên trang
 
-<!-- 2. Thư viện bên thứ 3 (Bootstrap, Font Awesome...) -->
-<link rel="stylesheet" href="./css/bootstrap.css">
-<link href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet">
+  // CSS/JS BỔ SUNG chỉ cho trang này (mảng thuần)
+   window.PAGE_CSS = [
 
-<!-- 3. Fonts nội bộ (nếu có) -->
-<link rel="stylesheet" href="./css/fonts.css">
+    "./css/about-page.css",
+    "./css/service-page.css",
+    "./css/recruit-page.css",
+  ];
+  window.PAGE_JS = [
 
-<!-- 4. CSS chung của bạn -->
-<!-- <link rel="stylesheet" href="./css/site.css">
-<link rel="stylesheet" href="./css/style.css"> -->
 
-<!-- 5. CSS trang cụ thể (ưu tiên override ở cuối) -->
-<link rel="stylesheet" href="./css/job-openings-page.css">
-<link rel="stylesheet" href="./css/comments-top-page.css">
-<link rel="stylesheet" href="./css/company-events-page.css">
-<link rel="stylesheet" href="./css/recruit-page.css">
-<link rel="stylesheet" href="./css/results-page.css">
-<link rel="stylesheet" href="./css/work-page.css">
-<link rel="stylesheet" href="./css/service-page.css">
-<link rel="stylesheet" href="./css/about-page.css">
-<link rel="stylesheet" href="./css/top-page.css">
+   
+  ];
+
+</script>
+  <script src="./js/include-partials.js" defer></script>
 </head>
 <body>
-<div>
-<header class="header-wrapper">
-  <div class="header">
-    <!-- Logo -->
-    <a class="logo" href="top-page.html">
-      <img src="./image/共通_01_画面上部_01_ALEXロゴ.png" alt="Alex">
-    </a>
 
-    <!-- Right block: Language + Nav + Menu Button -->
-    <div class="header-right">
-      <div class="top-bar-right">
-        <div class="language">Japanese / Vietnamese</div>
-        <button class="menu-toggle" id="menuToggle">&#9776;</button>
-      </div>
-
-    <!-- Desktop nav -->
-    <nav class="nav" id="nav">
-        <div class="nav-item with-submenu">
-          <a href="about-page.html">ABOUT</a>
-          <div class="submenu">
-            <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
-            <a href="#" data-tab="tab2">会社概要</a>
-            <a href="#" data-tab="tab3">沿革</a>
-            <a href="#" data-tab="tab4">組織図</a>
-            <a href="#" data-tab="tab5">主要取引先</a> -->
-          </div>
-        </div>
-
-        <div class="nav-item with-submenu">
-          <a href="service-page.html">SERVICE</a>
-          <div class="submenu">
-            <!-- <a href="#">映像制作</a>
-            <a href="#">実装・プログラミング</a>
-            <a href="#">システム・ツール開発</a>
-            <a href="#">企画</a> -->
-          </div>
-        </div>
-
-        <a href="work-page.html">WORKS</a>
-        <div class="nav-item with-submenu">
-          <a href="recruit-page.html">RECRUIT</a>
-          <div class="submenu">
-            <a href="job-openings-page.html">募集職種</a>
-            <a href="comments-top-page.html">スタッフの声TOP</a>
-          </div>
-        </div>
-
-        <a href="access-page.html">ACCESS</a>
-        <a href="contact-page.html">CONTACT</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<!-- Mobile Nav -->
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-item">
-    <a class="mobile-toggle" href="about-page.html">ABOUT <span class="toggle-icon">＋</span></a>
-    <div class="mobile-submenu">
-      <!-- <a href="#" data-tab="tab1">代表メッセージ</a>
-      <a href="#" data-tab="tab2">会社概要</a>
-      <a href="#" data-tab="tab3">沿革</a>
-      <a href="#" data-tab="tab4">組織図</a>
-      <a href="#" data-tab="tab5">主要取引先</a> -->
-    </div>
-  </div>
-
-  <div class="mobile-nav-item">
-    <a class="mobile-toggle" href="service-page.html">SERVICE <span class="toggle-icon">＋</span></a>
-    <div class="mobile-submenu">
-      <!-- <a href="#">映像制作</a>
-      <a href="#">実装・プログラミング</a>
-      <a href="#">システム・ツール開発</a>
-      <a href="#">企画</a> -->
-    </div>
-  </div>
-
-  <a href="work-page.html">WORK</a>
-
-  <div class="mobile-nav-item">
-    <button class="mobile-toggle" href="recruit-page.html">RECRUIT <span class="toggle-icon">＋</span></button>
-    <div class="mobile-submenu">
-       <a href="募集職種-page.html">募集職種</a>
-      <a href="スタッフの声-page.html">スタッフの声</a>
-    </div>
-  </div>
-
-     <a href="access-page.html">ACCESS</a>
-        <a href="contact-page.html">CONTACT</a>
-  <div class="language">Japanese / Vietnamese</div>
-</div>
+  <!-- HEADER chung -->
+  <div data-include="header"></div>
 <section class="about">
   <div class="about-avatar">
     <!-- Ảnh nền tự động chuyển bằng CSS -->
@@ -149,13 +57,15 @@
 <section class="job-open-heading">
   <div class="container">
     <div class="job-open-tab-menu">
-      <button class="job-open-detail-btn active">プロデューサー・映像ディレクター</button>
-      <button class="job-open-detail-btn">エフェクトデザイナー・コンポジター</button>
-      <button class="job-open-detail-btn">2DCGデザイナー</button>
-      <button class="job-open-detail-btn">3DCGデザイナー</button>
-      <button class="job-open-detail-btn">プログラマー</button>
-      <button class="job-open-detail-btn">企画設計</button>
-      <button class="job-open-detail-btn">出玉設計</button>
+      <button class="job-open-detail-btn active" data-target="producer-video-director">プロデューサー・映像ディレクター</button>
+      <button class="job-open-detail-btn" data-target="effects-designer-compositor">エフェクトデザイナー・コンポジター</button>
+      <button class="job-open-detail-btn" data-target="2DCG-designer">2DCGデザイナー</button>
+      <button class="job-open-detail-btn" data-target="3DCG-designer">3DCGデザイナー</button>
+      <button class="job-open-detail-btn" data-target="programmer">プログラマー</button>
+      <button class="job-open-detail-btn" data-target="planning-design">企画設計</button>
+      <button class="job-open-detail-btn" data-target="ball-output-design">出玉設計</button>
+
+      <button class="job-open-detail-btn" >プロデューサー・映像ディレクター</button>
     </div>
   </div>
 </section>
@@ -1367,17 +1277,7 @@
     </div>
   </div>
 </section>
-</div>
-
-<!-- <script src="./js/core.min.js"></script>
-<script src="./js/script.js"></script> -->
-<script src="./js/job-openings-page.js"></script>
-<script src="./js/company-events-page.js"></script>
-<script src="./js/comments-top-page.js"></script>
-<script src="./js/contact-page.js"></script>
-<script src="./js/access-page.js"></script>
-<script src="./js/about-page.js"></script>
-<script src="./js/top-page.js"></script>
-
-
+  <!-- FOOTER chung -->
+  <div data-include="footer"></div>
 </body>
+</html>
