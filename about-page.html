@@ -9,10 +9,11 @@
   // nơi đặt partials + tên trang hiện tại
   window.PARTIALS_ROOT = './partials';
   window.PAGE = 'about'; // tên trang
+  
 
   // CSS/JS BỔ SUNG chỉ cho trang này (mảng thuần)
   window.PAGE_CSS = []; // nếu cần thêm css phụ, để vào đây
-  window.PAGE_JS  = []; // nếu cần thêm js phụ, để vào đây
+   window.PAGE_JS = (window.PAGE_JS || []).concat(['./js/script.js']);
 </script>
   <script src="./js/include-partials.js" defer></script>
 </head>
