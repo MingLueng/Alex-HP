@@ -1,115 +1,86 @@
-  const stack = document.querySelector('.interview-stack');
-  const prevBtn = document.querySelector('.slide-interview-btn.prev');
-  const nextBtn = document.querySelector('.slide-interview-btn.next');
-  const items = stack.querySelectorAll('.stack-item');
+(function () {
+  const ready = (fn) =>
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', fn, { once: true })
+      : fn();
 
-  const gap = 15;
-  let offset = 0;
+  ready(() => {
+    // ===== Slider nhân sự =====
+    document.querySelectorAll('.interview-slider').forEach((slider) => {
+      const scroller = slider.querySelector('.interview-stack');
+      const prevBtn  = slider.querySelector('.slide-interview-btn.prev');
+      const nextBtn  = slider.querySelector('.slide-interview-btn.next');
+      if (!scroller || !prevBtn || !nextBtn) return;
 
-  // Lấy chiều rộng 1 item
-  function getItemWidth() {
-    return items[0].getBoundingClientRect().width + gap;
-  }
+      // ÉP là container cuộn ngang (phòng khi CSS thiếu)
+      scroller.style.overflowX = 'auto';
+      scroller.style.scrollBehavior = 'smooth';
+      scroller.style.webkitOverflowScrolling = 'touch';
 
-  // Số item hiển thị tùy màn hình
-  function getItemsPerPage() {
-    const w = window.innerWidth;
-    if (w <= 768)  return 2;
-    if (w <= 1200) return 3;
-    if (w <= 1600) return 4;
-    return 5;
-  }
+      // Bước cuộn theo kích thước thực tế
+      const getStep = () => {
+        const item = scroller.querySelector('.stack-item');
+        if (!item) return scroller.clientWidth;
+        const rect = item.getBoundingClientRect();
+        const gap  = parseFloat(getComputedStyle(scroller).gap || '0');
+        return rect.width + gap;
+      };
+      const clamp   = (v, min, max) => Math.min(Math.max(v, min), max);
+      const maxLeft = () => Math.max(0, scroller.scrollWidth - scroller.clientWidth);
 
-  // Offset tối đa (không để dư khoảng trắng)
-  function getMaxOffset() {
-    const itemWidth = getItemWidth();
-    const itemsPerPage = getItemsPerPage();
-    const totalItems = items.length;
+      const updateButtons = () => {
+        const fits = scroller.scrollWidth <= scroller.clientWidth + 1;
+        prevBtn.style.display = fits ? 'none' : '';
+        nextBtn.style.display = fits ? 'none' : '';
+        const max = maxLeft() - 1;
+        prevBtn.disabled = scroller.scrollLeft <= 0;
+        nextBtn.disabled = scroller.scrollLeft >= max;
+        prevBtn.style.opacity = prevBtn.disabled ? 0.3 : 1;
+        nextBtn.style.opacity = nextBtn.disabled ? 0.3 : 1;
+      };
 
-    if (totalItems <= itemsPerPage) return 0;
+      // Điều hướng
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const left = clamp(scroller.scrollLeft - getStep(), 0, maxLeft());
+        scroller.scrollTo({ left, behavior: 'smooth' });
+      });
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const left = clamp(scroller.scrollLeft + getStep(), 0, maxLeft());
+        scroller.scrollTo({ left, behavior: 'smooth' });
+      });
 
-    // Tổng chiều rộng item thực tế (trừ gap cuối cùng)
-    const totalWidth = totalItems * itemWidth - gap;
-    const containerWidth = stack.parentElement.getBoundingClientRect().width;
+      scroller.addEventListener('scroll', updateButtons, { passive: true });
+      window.addEventListener('resize', updateButtons);
+      updateButtons();
 
-    // Scroll tối đa = totalWidth - containerWidth
-    return Math.max(0, totalWidth - containerWidth);
-  }
+      // ===== Popup (event delegation) =====
+      slider.addEventListener('click', (e) => {
+        if (e.target.closest('.slide-interview-btn')) return; // bấm nút -> không mở popup
+        const item = e.target.closest('.stack-item');
+        if (!item || !slider.contains(item)) return;
 
-  function updateSliderStaff() {
-    const containerWidth = stack.parentElement.getBoundingClientRect().width;
-    const totalItems = items.length;
-    const itemWidth = getItemWidth();
-    const totalWidth = totalItems * itemWidth - gap;
-    const maxOffset = getMaxOffset();
+        const sel   = item.getAttribute('data-popup');
+        const popup = sel && document.querySelector(sel);
+        if (!popup) return;
 
-    // Nếu ít item hơn container → căn giữa
-    if (totalWidth <= containerWidth) {
-      const gapCenter = (containerWidth - totalWidth) / 2;
-      stack.style.transform = `translateX(${gapCenter}px)`;
-      prevBtn.style.display = "none";
-      nextBtn.style.display = "none";
-      return;
-    }
+        document.querySelectorAll('.interview-popup-overlay')
+          .forEach(p => p.classList.remove('active'));
 
-    // Giới hạn offset
-    offset = Math.max(0, Math.min(offset, maxOffset));
+        popup.classList.add('active');
+        document.body.classList.add('popup-open');
+      });
+    });
 
-    // Trượt
-    stack.style.transform = `translateX(-${offset}px)`;
-    stack.style.transition = "transform 0.4s ease";
-
-    // Cập nhật nút
-    prevBtn.style.display = "block";
-    nextBtn.style.display = "block";
-    prevBtn.disabled = offset === 0;
-    nextBtn.disabled = offset >= maxOffset;
-    prevBtn.style.opacity = offset === 0 ? 0.3 : 1;
-    nextBtn.style.opacity = offset >= maxOffset ? 0.3 : 1;
-  }
-
-  nextBtn.addEventListener('click', () => {
-    offset += getItemWidth();
-    updateSliderStaff();
+    // Đóng popup khi click ngoài
+    document.querySelectorAll('.interview-popup-overlay').forEach((popup) => {
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+          popup.classList.remove('active');
+          document.body.classList.remove('popup-open');
+        }
+      });
+    });
   });
-
-  prevBtn.addEventListener('click', () => {
-    offset -= getItemWidth();
-    updateSliderStaff();
-  });
-
-  window.addEventListener('resize', () => {
-    offset = 0;
-    updateSliderStaff();
-  });
-
-  updateSliderStaff();
-
-
-document.querySelectorAll('.stack-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const popupSelector = item.getAttribute('data-popup');
-    const popup = document.querySelector(popupSelector);
-
-    // Ẩn tất cả popup trước
-    document.querySelectorAll('.interview-popup-overlay').forEach(p => p.classList.remove('active'));
-
-    // Hiện popup tương ứng
-    popup.classList.add('active');
-
-    // Thêm class để ẩn thanh cuộn
-    document.body.classList.add('popup-open');
-  });
-});
-
-// Đóng popup khi click ra ngoài
-document.querySelectorAll('.interview-popup-overlay').forEach(popup => {
-  popup.addEventListener('click', e => {
-    if (e.target === popup) {
-      popup.classList.remove('active');
-      
-      // Gỡ class ẩn thanh cuộn
-      document.body.classList.remove('popup-open');
-    }
-  });
-});
+})();
