@@ -69,38 +69,38 @@
   width: 100%;
 }
 
-.interview-stack {
-    --gap: 15px;
-    --items: 5;
-    display: flex;
-    gap: var(--gap);
-    width: 100%;
+.interview-stack{
+  --gap: 15px;
+  --items: 5;
+  display: flex;
+  gap: var(--gap);
+  width: 100%;
+  align-items: stretch;           /* tất cả item cao bằng nhau */
+  overflow: hidden;               /* không cho kéo tay, chỉ dùng mũi tên */
 }
 
 
-.stack-item{
-  flex: 0 0 calc((100% - (var(--items) - 1) * var(--gap)) / var(--items));
+.stack-item {
   position: relative;
+  flex: 0 0 calc((100% - (var(--items) - 1) * var(--gap)) / var(--items));
   overflow: hidden;
-  transform: skew(0deg);
-  transition: transform .25s ease, opacity .25s ease;
+  transition: transform .25s ease;
+  clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%);
 }
 
-
-.stack-item img{
-  display: block;
+.stack-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 .stack-item:hover{ transform: scale(.96); }
 
 
-/* Overlay mờ – scale theo % thay vì margin cố định */
 .stack-item::after{
   content:"";
   position:absolute;
-  inset: 0% 7% 0 7%;     /* top/right/bottom/left theo % để responsive */
+  inset: 0% 7% 0 7%;              /* top/right/bottom/left theo % => responsive */
   background: rgba(10,10,10,.65);
   transform: skew(-5deg);
   pointer-events:none;
@@ -111,7 +111,6 @@
 .popup-name{
   color:#f9f9f9;
 }
-/* Tên – bám theo đáy ảnh, không dùng “top: 3xx px” nữa */
 .stack-name{
   position:absolute;
   right: 22%;
@@ -124,6 +123,7 @@
   color:#fff;
   opacity:.95;
   transform: skew(-5deg);
+  cursor: pointer;
   background: linear-gradient(
     to right,
     rgba(0,0,0,0) 0%,
@@ -134,11 +134,6 @@
   border-radius: 2px;
   z-index: 2;
 }
-
-
-
-
-/* Nút điều hướng */
 .slide-interview-btn{
   position: absolute;
   top: 50%;
@@ -151,7 +146,6 @@
   background: rgba(231,226,226,.9);
   color: #111;
   font-size: 22px;
-  line-height: 1;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -169,7 +163,7 @@ body.popup-open {
   display: none;
   position: absolute;
   inset: 0;
-  /* background: rgba(0,0,0,0.35); */
+  background: rgba(0,0,0,0.35);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 999;
@@ -196,30 +190,36 @@ body.popup-open {
 }
 
 .interview-popup-overlay.active .popup-content {
-  transform: scale(1);
+  transform: scale(0.9);
   opacity: 1;
 }
 
 .popup-frame {
   position: relative;
-  width: 400px;
+  width: 400px;                 /* bạn có thể đổi: 400–460px */
+  /* max-width: 86vw; */
+  /* aspect-ratio: 3 / 4; */
   height: auto;
-  aspect-ratio: 3 / 4; /* Giữ tỉ lệ ảnh */
+  overflow: visible;
   max-width: 80%;
   max-height: 80%;
 }
 
 .popup-frame img {
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
 }
 
 /* Ảnh nền xanh */
 .popup-frame-bg {
-  width: 100%;
   display: block;
   position: relative;
   z-index: 4;
+  width: 100%;
+  /* Cắt 2 cạnh chéo (xiết) – điều chỉnh 10%/90% nếu muốn xiết mạnh/nhẹ hơn */
+  clip-path: polygon(16% 0, 100% 0, 86% 100%, 0 100%);
+  z-index: 4;
+  height: 500px;
 }
 
 /* Khung viền */
@@ -227,19 +227,19 @@ body.popup-open {
 .popup-frame-bottom,
 .popup-frame-left {
   position: absolute;
-  width: 85%;
+  width: 90%;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .popup-frame-top {top: -6%;z-index: 3;}
-.popup-frame-bottom {bottom: -3%;z-index: 5;}
+.popup-frame-bottom {bottom: -2%;z-index: 5;height: 105%;}
 .popup-frame-left {top: -6%;z-index: 5;}
 
 /* Tiêu đề bên trong popup */
 .popup-title {
   position: absolute;
-  bottom: 10%;
+  bottom: 6%;
   right: 13%;
   z-index: 6;
   font-size: 16px;
@@ -281,13 +281,19 @@ body.popup-open {
 /* Tablet ngang (dưới 992px) */
 @media (max-width: 992px) {
     .interview-stack{ --items: 3; }
-  .slide-interview-btn{ font-size: 30px; }
+  /* .slide-interview-btn{ font-size: 30px; } */
 }
 
 
 
 /* Tablet dọc (dưới 768px) */
 @media (max-width: 768px) {
+  .popup-frame-bg {
+
+  height: 275px;
+}
+
+
   .creation-interview-section {
     padding: 40px 0;
     margin: 40px 0;
@@ -325,7 +331,7 @@ body.popup-open {
 /* Điện thoại (dưới 576px) */
 @media (max-width: 576px) {
  .interview-stack{ --items: 1; }
-  .slide-interview-btn{ font-size: 28px; }
+  /* .slide-interview-btn{ font-size: 28px; } */
 }
 
 
@@ -337,5 +343,10 @@ body.popup-open {
   .popup-title {
     font-size: 12px;
   }
+
+    .popup-frame-bg {
+
+  height: 226px;
+}
 }
 
