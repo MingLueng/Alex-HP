@@ -3,7 +3,7 @@
 html, body {
   font-family: 'Roboto', sans-serif;
   background: #fff; color: #222;
-  overflow-x: hidden; scroll-behavior: smooth; height: 100%;
+  overflow-x: hidden; scroll-behavior: smooth;
 }
 
 /* Biến chiều cao header để smooth-scroll bù khoảng */
