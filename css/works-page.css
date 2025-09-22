@@ -14,7 +14,24 @@
   animation: bgZoom 40s ease-in-out infinite;
 }
 
+.work-heading {
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    line-height: 1;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
 
+.work-info {
+    color: white;
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    font-weight: 500;
+    text-shadow: 1px 1px 2px black;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+}
 /* Khối nội dung chính */
 .works-content {
   position: relative;
@@ -32,6 +49,14 @@
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
+}
+.work-company-info {
+  color: white;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  font-weight: 500;
+  text-shadow: 1px 1px 2px black;
+  display: inline-block;
+  margin-bottom: 0.3rem;
 }
 
 .works-image-wrapper {
@@ -108,7 +133,7 @@
 /* Overlay chữ */
 .overlay-box-work {
   position: absolute;
-  bottom: 10px;
+  bottom: 14px;
   right: 14px;
   color: #ffffff;
   text-align: right;
@@ -210,12 +235,17 @@
   .overlay-box-work .line6{
     font-size: 1.2rem;
   }
+  .work-heading {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+}
 }
 
 @media (max-width: 600px) {
 
   .works-content {
     max-width: 95%;
+    transform: scale(1.0);
+    opacity: 1;
   }
 
   .works-title {
@@ -230,7 +260,7 @@
     font-size: 1.2rem;
   }
   .overlay-box-work .line6{
-    font-size: 1.0rem;
+    font-size: 0.8rem;
   }
 }
 

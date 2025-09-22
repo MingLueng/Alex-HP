@@ -5,26 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eagle MES - Comments TOP</title>
 
-<script>
-  // nơi đặt partials + tên trang hiện tại
-  window.PARTIALS_ROOT = './partials';
-  window.PAGE = 'job-openings'; // tên trang
-
-  // CSS/JS BỔ SUNG chỉ cho trang này (mảng thuần)
-   window.PAGE_CSS = [
-
-    "./css/about-page.css",
-    "./css/service-page.css",
-    "./css/recruit-page.css",
-  ];
-  window.PAGE_JS = [
-
-
-   
-  ];
-
+<script type="application/json" id="page-config">
+{
+  "partialsRoot": "partials",
+  "page": "job-openings",
+  "extraCss": ["css/about-page.css","css/service-page.css"],
+  "extraJs": []
+}
 </script>
-  <script src="./js/include-partials.js" defer></script>
+<script src="./js/include-partials.js" defer></script>
 </head>
 <body>
 

@@ -5,100 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eagle MES - Comments TOP</title>
 
-<script>
-  // nơi đặt partials + tên trang hiện tại
-  window.PARTIALS_ROOT = './partials';
-  window.PAGE = 'about'; // tên trang
-  
-
-  // CSS/JS BỔ SUNG chỉ cho trang này (mảng thuần)
-  window.PAGE_CSS = []; // nếu cần thêm css phụ, để vào đây
-   window.PAGE_JS = (window.PAGE_JS || []).concat(['./js/script.js']);
+<script type="application/json" id="page-config">
+{ "partialsRoot": "partials", "page": "about", "extraCss": [], "extraJs": ["js/lang.js"] }
 </script>
-  <script src="./js/include-partials.js" defer></script>
+<script src="../js/include-partials.js" defer></script>
+
 </head>
 <body>
-
+<div id="page" class="site">
   <!-- HEADER chung -->
   <div data-include="header"></div>
 
 <section class="about">
   <div class="about-avatar">
     <!-- Ảnh nền tự động chuyển bằng CSS -->
-    <div class="about-bg bg1" style="background-image:url('../image/レイヤー 854.png');"></div>
-    <div class="about-bg bg2" style="background-image:url('../image/レイヤー 851.png');"></div>
+    <div class="about-bg bg1"></div>
+    <div class="about-bg bg2"></div>
 
     <div class="overlay-about">
       <!-- Bên trái: câu khẩu hiệu -->
       <div class="about-left-text">
-        <h2>成長に終わりはない<br>常に先を見て<br>常に変わっていく<br></h2>
+        <h2></h2>
       </div>
       
       <!-- Bên phải: ABOUT + 会社情報 -->
       <div class="about-right-text">
-        <span class="company-info">会社情報</span>
-        <h1 class="about-heading">ABOUT</h1>
+        <span class="company-info"></span>
+        <h1 class="about-heading"></h1>
       </div>
     </div>
   </div>
 </section>
-<nav class="submenu-tabs">
+<nav class="submenu-tabs ">
   <div class="container">
-    <ul>
-      <li><a href="#代表メッセージ">代表メッセージ</a></li>
-      <li><a href="#会社概要">会社概要</a></li>
-      <li><a href="#沿革">沿革</a></li>
-      <li><a href="#組織図">組織図</a></li>
-      <li><a href="#主要取引先">主要取引先</a></li>
+    <ul id="submenu-list">
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
     </ul>
   </div>
 </nav>
 
-
-<section class="section-heading" id="代表メッセージ">
+<section class="section-heading" id="message" data-anchor-offset="24">
   <div class="section-header">
     <img class="section-bg" src="../image/帯.png" alt="帯背景">
   </div>
   <div class="container">
-    <h2 class="section-title">代表メッセージ</h2>
+    <h2 class="section-title"></h2>
     <div class="message-block-wrapper">
       <div class="message-image-wrapper">
         <!-- Ảnh chính -->
-        <img src="../image/社長写真.png" alt="代表者画像" class="message-photo">
+        <img src="" alt="代表者画像" class="message-photo">
         <!-- Text overlay -->
        <div class="message-overlay-wrapper">
           <div class="message-overlay">
-            <p class="message-role">代表取締役社長</p>
-            <p class="message-name"><strong>阿出川 敏朗</strong></p>
+            <p class="message-role"></p>
+            <p class="message-name"><strong></strong></p>
           </div>
        </div>
         <!-- Viền trang trí -->
-        <img src="../image/長方形 5.png" alt="viền trên" class="overlay-decor overlay-bottom">
-        <img src="../image/長方形 6.png" alt="viền dưới" class="overlay-decor-top overlay-top">
+        <img src="" alt="viền trên" class="overlay-decor overlay-bottom">
+        <img src="" alt="viền dưới" class="overlay-decor-top overlay-top">
       </div>
 
       <div class="message-box">
         <p class="message-text">
-          企画立案・プログラム開発・映像制作・音響制作を一貫して行います。<br>
-          それぞれの部門にはプロフェッショナルな社員ばかりなので、<br>
-          完成度はどれを取っても業界トップレベル。<br>
-
-          その精度の高さが評価され<br>
-          現在では大手メーカーからも絶大な信頼を獲得しています。<br>
-          アレックスの商品レベルと会社の成長スピードに<br>
-          業界の中では驚異だと恐れられています。<br><br>
-
-          <span class="highlight">
-            「私達にはまだまだやるべきことがあり、<br>
-            私達アレックスにしか出来ない事がある！！」
-          </span><br>
-
-          今までの実績が私たちの自信に繋がっています!!<br>
-          まだまだ私達には無限大の可能性が待っています!!<br><br>
-
-          現在日本で100年以上続いている企業は一万は越えています。<br>
-          アレックスの技術レベルを100年後も世に伝え続ける為、<br>
-          世に愛される会社をこの仲間達と共に創り上げます！
+         
         </p>
       </div>
     </div>
@@ -106,7 +80,7 @@
 
 </section>
 
-<section class="section-heading-table" id="会社概要">
+<section class="section-heading-table" id="company" data-anchor-offset="24">
   <div class="section-header">
     <img class="section-bg" src="../image/帯.png" alt="帯背景">
   </div>
@@ -164,7 +138,7 @@
   </div>
 </section>
 
-<section class="section-heading-history" id="沿革">
+<section class="section-heading-history" id="history" data-anchor-offset="24">
   <div class="section-header">
     <img class="section-bg" src="../image/帯.png" alt="帯背景">
   </div>
@@ -224,43 +198,71 @@
   </div>
 </section>
 
-<section class="section-orgchart" id="組織図">
+<section class="section-orgchart" id="org" data-anchor-offset="24">
   <div class="section-header">
     <img class="section-bg" src="../image/帯.png" alt="背景">
   </div>
   <div class="container">
-    <h2 class="section-title">組織図</h2>
+    <h2 class="section-title"></h2>
         <div class="route-block-wrapper">
-    <div class="org-chart">
-  <div class="org-node ceo">代表取締役</div>
-  <div class="org-branches">
-    <div class="org-node mid">総務部</div>
-    <div class="org-node mid">事業推進部</div>
+  <div class="org-chart">
+  <div class="org-node ceo"></div>
+  <div class="org-branches higher">
+    <div class="org-node mid"></div>
+    <div class="org-node mid"></div>
   </div>
   <div class="org-branches lower">
-    <div class="org-node">企画開発部</div>
-    <div class="org-node">ソフト開発部</div>
-    <div class="org-node">映像開発部</div>
-    <div class="org-node">映像制作部</div>
+    <div class="org-node"></div>
+    <div class="org-node"></div>
+    <div class="org-node"></div>
+    <div class="org-node"></div>
+  </div>
+  </div>
+  <div class="org-chart">
+  <div class="org-node ceo vi"></div>
+  <div class="org-branches higher vi">
+    <div class="org-node mid vi"></div>
+    <div class="org-node mid vi"></div>
+  </div>
+  <div class="org-branches lower vi">
+    <div class="org-node vi"></div>
+    <div class="org-node vi"></div>
+    <div class="org-node vi"></div>
+    <div class="org-node vi"></div>
+  </div>
+  </div>
+  <div class="org-chart">
+  <div class="org-node ceo en"></div>
+  <div class="org-branches higher en">
+    <div class="org-node mid en"></div>
+    <div class="org-node mid en"></div>
+  </div>
+  <div class="org-branches lower en">
+    <div class="org-node en"></div>
+    <div class="org-node en"></div>
+    <div class="org-node en"></div>
+    <div class="org-node en"></div>
   </div>
   </div>
   </div>
   </div>
 </section>
 
-<section class="section-customer" id="主要取引先">
+<section class="section-customer" id="clients" data-anchor-offset="24">
   <div class="section-header">
     <img class="section-bg" src="../image/帯.png" alt="背景">
   </div>
   <div class="container">
-    <h2 class="section-title">主要取引先</h2>
+    <h2 class="section-title"></h2>
   <div class="route-blender-wrapper">
       
   </div>
   </div>
 </section>
 
+
   <!-- FOOTER chung -->
   <div data-include="footer"></div>
+  </div>
 </body>
 </html>

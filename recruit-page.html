@@ -5,19 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eagle MES - Comments TOP</title>
 
-<script>
-  // nơi đặt partials + tên trang hiện tại
-  window.PARTIALS_ROOT = './partials';
-  window.PAGE = 'recruit'; // tên trang
-
-  // CSS/JS BỔ SUNG chỉ cho trang này (mảng thuần)
-  window.PAGE_CSS = [
-    "./css/about-page.css",
-    "./css/service-page.css",
-  ]; // nếu cần thêm css phụ, để vào đây
-  window.PAGE_JS  = []; // nếu cần thêm js phụ, để vào đây
+<script type="application/json" id="page-config">
+{
+  "partialsRoot": "partials",
+  "page": "recruit",
+  "extraCss": ["css/about-page.css"],
+  "extraJs": ["js/lang.js"]
+}
 </script>
-  <script src="./js/include-partials.js" defer></script>
+<script src="../js/include-partials.js" defer></script>
 </head>
 <body>
 
@@ -31,7 +27,7 @@
     <div class="overlay-about">
       <!-- Bên trái: câu khẩu hiệu -->
       <div class="about-left-text">
-        <h2>あなたの想像を超える未来を<br>私たちと共に創りませんか？<br></h2> 
+        <h2>あなたの想像を超える未来を<br>私たちと共に創りませんか？<br></h2>
       </div>
       <!-- Bên phải: RECRUIT + 事業内容 -->
       <div class="about-right-text">

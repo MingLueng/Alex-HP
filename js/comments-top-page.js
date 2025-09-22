@@ -1,86 +1,96 @@
-(function () {
-  const ready = (fn) =>
-    document.readyState === 'loading'
-      ? document.addEventListener('DOMContentLoaded', fn, { once: true })
-      : fn();
+$(function () {
+  $('.interview-slider').each(function () {
+    var $slider   = $(this);
+    var $scroller = $slider.find('.interview-stack');
+    if (!$scroller.length) return;
 
-  ready(() => {
-    // ===== Slider nhân sự =====
-    document.querySelectorAll('.interview-slider').forEach((slider) => {
-      const scroller = slider.querySelector('.interview-stack');
-      const prevBtn  = slider.querySelector('.slide-interview-btn.prev');
-      const nextBtn  = slider.querySelector('.slide-interview-btn.next');
-      if (!scroller || !prevBtn || !nextBtn) return;
-
-      // ÉP là container cuộn ngang (phòng khi CSS thiếu)
-      scroller.style.overflowX = 'auto';
-      scroller.style.scrollBehavior = 'smooth';
-      scroller.style.webkitOverflowScrolling = 'touch';
-
-      // Bước cuộn theo kích thước thực tế
-      const getStep = () => {
-        const item = scroller.querySelector('.stack-item');
-        if (!item) return scroller.clientWidth;
-        const rect = item.getBoundingClientRect();
-        const gap  = parseFloat(getComputedStyle(scroller).gap || '0');
-        return rect.width + gap;
-      };
-      const clamp   = (v, min, max) => Math.min(Math.max(v, min), max);
-      const maxLeft = () => Math.max(0, scroller.scrollWidth - scroller.clientWidth);
-
-      const updateButtons = () => {
-        const fits = scroller.scrollWidth <= scroller.clientWidth + 1;
-        prevBtn.style.display = fits ? 'none' : '';
-        nextBtn.style.display = fits ? 'none' : '';
-        const max = maxLeft() - 1;
-        prevBtn.disabled = scroller.scrollLeft <= 0;
-        nextBtn.disabled = scroller.scrollLeft >= max;
-        prevBtn.style.opacity = prevBtn.disabled ? 0.3 : 1;
-        nextBtn.style.opacity = nextBtn.disabled ? 0.3 : 1;
-      };
-
-      // Điều hướng
-      prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const left = clamp(scroller.scrollLeft - getStep(), 0, maxLeft());
-        scroller.scrollTo({ left, behavior: 'smooth' });
-      });
-      nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const left = clamp(scroller.scrollLeft + getStep(), 0, maxLeft());
-        scroller.scrollTo({ left, behavior: 'smooth' });
-      });
-
-      scroller.addEventListener('scroll', updateButtons, { passive: true });
-      window.addEventListener('resize', updateButtons);
-      updateButtons();
-
-      // ===== Popup (event delegation) =====
-      slider.addEventListener('click', (e) => {
-        if (e.target.closest('.slide-interview-btn')) return; // bấm nút -> không mở popup
-        const item = e.target.closest('.stack-item');
-        if (!item || !slider.contains(item)) return;
-
-        const sel   = item.getAttribute('data-popup');
-        const popup = sel && document.querySelector(sel);
-        if (!popup) return;
-
-        document.querySelectorAll('.interview-popup-overlay')
-          .forEach(p => p.classList.remove('active'));
-
-        popup.classList.add('active');
-        document.body.classList.add('popup-open');
-      });
+    // đảm bảo style cuộn (phòng khi thiếu CSS)
+    $scroller.css({
+      overflowX: 'auto',
+      scrollBehavior: 'smooth',
+      WebkitOverflowScrolling: 'touch',
+      display: 'flex',
+      flexWrap: 'nowrap'
     });
 
-    // Đóng popup khi click ngoài
-    document.querySelectorAll('.interview-popup-overlay').forEach((popup) => {
-      popup.addEventListener('click', (e) => {
-        if (e.target === popup) {
-          popup.classList.remove('active');
-          document.body.classList.remove('popup-open');
-        }
+    function getGapPx () {
+      var el = $scroller[0];
+      var cs = el ? window.getComputedStyle(el) : null;
+      var g  = cs ? parseFloat(cs.gap || cs.columnGap || '0') : 0;
+      return isNaN(g) ? 0 : g;
+    }
+    function getStep () {
+      var $item = $scroller.find('.stack-item').first();
+      if (!$item.length) return $scroller.innerWidth();
+      return $item.outerWidth() + getGapPx();
+    }
+    function maxLeft () {
+      return Math.max(0, $scroller[0].scrollWidth - $scroller.innerWidth());
+    }
+    function clamp (v, min, max) { return Math.min(Math.max(v, min), max); }
+
+    // tự động cuộn
+    function autoSlideOnce () {
+      var max = maxLeft();
+      if (max <= 1) return; // không có gì để cuộn
+      var next = $scroller.scrollLeft() + getStep();
+      if (next >= max - 1) next = 0; // quay về đầu
+      $scroller.stop(true).animate({ scrollLeft: clamp(next, 0, max) }, 500);
+    }
+
+    // khởi động timer sau khi chắc chắn tính được kích thước
+    var timer = null;
+    function startAuto(){
+      if (timer) return;
+      if (maxLeft() > 1) {
+        timer = setInterval(autoSlideOnce, 3000);
+      }
+    }
+    function stopAuto(){
+      if (timer){ clearInterval(timer); timer = null; }
+    }
+
+    // dừng khi hover/chạm – rời ra chạy tiếp
+    $slider.on('mouseenter touchstart', stopAuto);
+    $slider.on('mouseleave touchend', startAuto);
+
+    // khi resize/ảnh load xong -> tính lại & (re)start
+    var relaunch = function(){
+      stopAuto();
+      // delay nhỏ để browser layout xong
+      setTimeout(startAuto, 100);
+    };
+    $(window).on('resize', relaunch);
+
+    // nếu có ảnh trong slide, chờ ảnh load xong rồi chạy
+    var $imgs = $scroller.find('img');
+    var pending = $imgs.length;
+    if (pending) {
+      $imgs.each(function(){
+        if (this.complete) { if (--pending === 0) relaunch(); }
+        else $(this).one('load error', function(){ if (--pending === 0) relaunch(); });
       });
+    } else {
+      relaunch();
+    }
+
+    // ===== Popup mở khi click vào item =====
+    $slider.on('click', function (e) {
+      var $item = $(e.target).closest('.stack-item');
+      if (!$item.length || !$slider.has($item).length) return;
+      var sel = $item.data('popup');
+      var $popup = sel ? $(sel) : $();
+      if (!$popup.length) return;
+      $('.interview-popup-overlay').removeClass('active');
+      $popup.addClass('active');
+      $('body').addClass('popup-open');
     });
   });
-})();
+
+  $('.interview-popup-overlay').on('click', function (e) {
+    if (e.target === this) {
+      $(this).removeClass('active');
+      $('body').removeClass('popup-open');
+    }
+  });
+});

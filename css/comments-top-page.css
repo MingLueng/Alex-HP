@@ -4,7 +4,23 @@
   padding: 60px 0;
   background: #f9f9f9;
 }
+/* hàng slide cuộn ngang */
+.interview-slider .interview-stack{
+  display: flex;
+  flex-wrap: nowrap;           /* không xuống dòng */
+  column-gap: 16px;            /* khoảng cách giữa item; JS sẽ đọc được */
+  overflow-x: auto;            /* phải là auto/scroll */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+/* mỗi card là một “khung” cố định để tạo bề rộng cuộn */
+.interview-slider .stack-item{
+  flex: 0 0 auto;              /* không co lại */
+  width: min(280px, 80vw);     /* chỉnh theo thiết kế của bạn */
+}
 
+/* Ẩn nút nếu bạn không dùng */
+.interview-slider .slide-interview-btn{ display:none; }
 .submenu-tabs-3 {
   background-color: #23a36b;
   padding: 5.5rem 0;
@@ -313,6 +329,10 @@ body.popup-open {
   }
   .interview-stack{ --items: 2; }
   .stack-name{ font-size: 14px; }
+  .interview-popup-overlay.active .popup-content {
+    transform: scale(1.4);
+    opacity: 1;
+}
 }
 
 @media (max-width: 600px) {
