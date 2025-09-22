@@ -5,25 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eagle MES - Comments TOP</title>
 
-<script>
-  // nơi đặt partials + tên trang hiện tại
-  window.PARTIALS_ROOT = './partials';
-  window.PAGE = 'work'; // tên trang
-
-  // CSS/JS BỔ SUNG chỉ cho trang này (mảng thuần)
-  window.PAGE_CSS = [
-    "./css/top-page.css",
-    "./css/about-page.css",
-
-  ];
-  window.PAGE_JS = [
-
-    "./js/top-page.js",
-
-   
-  ];
+<script type="application/json" id="page-config">
+{
+  "partialsRoot": "partials",
+  "page": "works",
+  "extraCss": ["css/about-page.css"],
+  "extraJs": ["js/lang.js"]
+}
 </script>
-  <script src="./js/include-partials.js" defer></script>
+<script src="../js/include-partials.js" defer></script>
 </head>
 <body>
 
@@ -33,9 +23,9 @@
 <section class="about">
   <div class="about-avatar">
     <!-- Ảnh nền tự động chuyển bằng CSS -->
-    <div class="about-bg bg1" style="background-image:url('../image/レイヤー 852.png');"></div>
-    <div class="about-bg bg2" style="background-image:url('../image/レイヤー 851.png');"></div>
-    <div class="about-bg bg3" style="background-image:url('../image/グループ 2.png');"></div>
+    <div class="about-bg bg1" ></div>
+    <div class="about-bg bg2" ></div>
+    <div class="about-bg bg3" ></div>
     <div class="overlay-about">
       <!-- Bên trái: câu khẩu hiệu -->
       <div class="about-left-text">
@@ -44,8 +34,8 @@
       
       <!-- Bên phải: ABOUT + 会社情報 -->
       <div class="about-right-text">
-        <span class="company-info">制作実績</span>
-        <h1 class="about-heading">WORK</h1>
+        <span class="work-company-info">制作実績</span>
+        <h1 class="work-heading">WORK</h1>
       </div>
     </div>
   </div>
@@ -60,19 +50,19 @@
     <div class="works-image-wrapper">
        <a href="production-library-page.html" class="works-image-link">
         <img class="works-main" src="../image/制作ライブラリ.png" alt="制作ライブラリ">
-        <div class="works-title">制作ライブラリ</div>
+        <div class="works-title"></div>
       </a>
     </div>
 
-    <a class="works-text" href="results-page.html">≫≫ 過去開発実績はこちら</a>
+    <a class="works-text" href="results-page.html"></a>
 
     <!-- Nút nhỏ đặt ngay trong content -->
     <div class="work-link-wrapper">
       <a href="company-events-page.html" class="work-link with-text">
-        <img src="./image/グループ 11.png" alt="社内イベント">
+        <img src="" alt="社内イベント">
         <div class="overlay-box-work">
-          <div class="line5">社内イベント</div>
-          <div class="line6">ページはこちら</div>
+          <div class="line5"></div>
+          <div class="line6"></div>
         </div>
       </a>
     </div>
