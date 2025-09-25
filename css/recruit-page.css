@@ -206,6 +206,44 @@
   left: -40%;
   z-index: 1;
 }
+.recruit-heading-info {
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.recruit-company-info {
+  color: white;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  font-weight: 500;
+  text-shadow: 1px 1px 2px black;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+/* === CỘT TRÁI === */
+.recruit-left-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.recruit-left-text h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.45;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  white-space: normal;
+  word-break: break-word;
+  margin: 0;
+}
 /* Khung phụ đề */
 .subtitle-frame-wrapper-recruit {
   position: absolute;
@@ -313,6 +351,16 @@
   }
 }
 @media (max-width: 768px) {
+  .recruit-left-text {
+    max-width: 100%;
+  }
+
+  .recruit-left-text h2 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+  .recruit-heading {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
   .recruit-header {
     height: 160px;
   }

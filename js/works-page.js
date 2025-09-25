@@ -5,7 +5,7 @@
       hero: {
         left: '成長に終わりはない<br>常に先を見て<br>常に変わっていく<br>',
         info: '制作実績',
-        heading: 'WORK',
+        heading: '製品',
         bg1: 'レイヤー 852.png',
         bg2: 'レイヤー 851.png',
         bg3: 'グループ 2.png'
@@ -27,7 +27,7 @@
       hero: {
         left: 'Không có điểm dừng cho tăng trưởng<br>luôn nhìn về phía trước<br>luôn đổi mới<br>',
         info: 'Sản phẩm',
-        heading: 'WORK',
+        heading: 'SẢN PHẨM',
         bg1: 'レイヤー 852.png',
         bg2: 'レイヤー 851.png',
         bg3: 'グループ 2.png'

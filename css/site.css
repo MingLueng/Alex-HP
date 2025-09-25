@@ -9,6 +9,8 @@ html, body {
   scroll-padding-top: var(--header-h, 80px);
   height: 100%;
 }
+
+
 .anchored-section{ scroll-margin-top: var(--header-h, 80px); }
 /* Biến chiều cao header để smooth-scroll bù khoảng */
 :root { --header-h: 0px; }

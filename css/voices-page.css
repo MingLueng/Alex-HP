@@ -88,7 +88,7 @@
 
 
 .staff-frame-bg {
-  position: relative;
+  position: absolute;
   width: 100%;
   max-width: 405px;
   height: 650px;
@@ -102,7 +102,7 @@
 
 .staff-frame-top
 {
-  position: absolute;
+  position: relative;
   z-index: 3;
   width: 100%;
   max-width: 340px;
@@ -124,7 +124,7 @@
 }
 
 .staff-frame-brigde {
-    position: relative;
+    position: absolute;
     width: 100%;
     max-width: 370px;
     height: auto;
@@ -132,13 +132,13 @@
     z-index: 4;
     top: 0;
     left: 0;
-    max-height: 590px;
+    min-height: 590px;
     clip-path: polygon(0% 2%, 100% 0%, 100% 98%, 0% 100%);
 }
 
 .staff-frame-bottom
 {
-  position: absolute;
+  position: relative;
   z-index: 3;
   width: 100%;
   max-width: 340px;
@@ -160,38 +160,25 @@
 }
 
 .staff-frame-wrapper {
+  position: absolute;
   width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  top: 10px;
+  left: 0;
+  max-height: 645px;
+  clip-path: polygon(0% 2%, 100% 0%, 100% 98%, 0% 100%);
   height: auto;
   display: block;
-  border-radius: 8px;
-  object-fit: cover;
+  
   /* chiều sâu nhẹ như hình mẫu */
   box-shadow: 0 12px 36px rgba(0,0,0,.20);
-  position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
-.staff-frame-underground {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: -18px;  
-  height: 36px;                        
-  object-fit: cover;
-  transform: skewX(-8deg);              
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,.12));
-  z-index: 1; 
-}
+.staff-frame-underground {position: relative;z-index: 3;width: 100%;max-width: 97.8%;height: auto;pointer-events: none;top: -30px;left: 15px;clip-path: polygon(0% 2%, 100% 0%, 100% 98%, 0% 100%);}
 
-.staff-frame-scrapper {
-  position: absolute;
-  inset: 18px;                          
-  width: calc(100% - 36px);
-  height: calc(100% - 36px);
-  object-fit: contain;     
-  pointer-events: none;
-  z-index: 3;
-}
+.staff-frame-scrapper {position: absolute;z-index: 4;width: 100%;max-width: 97.8%;height: auto;pointer-events: none;top: -30px;left: 15px;clip-path: polygon(0% 2%, 100% 0%, 100% 98%, 0% 100%);}
 
 .staff-text {
   flex: 1; 
@@ -297,7 +284,7 @@
   z-index: 3;
   color: #fff;
   top: 40px;
-  left: 22px;
+  left: 3px;
   transform: skewY(-18deg); /* 👈 tạo góc nghiêng */
 }
 
@@ -327,16 +314,28 @@
 @media (max-width: 1024px) {
 
 
-.staff-frame-scrapper{ inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); }
-  .staff-frame-underground{ bottom: -12px; height: 28px; transform: skewX(-7deg); }
+.staff-frame-scrapper{
+    max-width: 96.5%;
+    top: -10px;
+    left: 15px;
+}
+  .staff-frame-underground{
+    max-width: 96.5%;
+    top: -10px;
+    left: 15px;
+}
 }
 
 
 /* Tablet và nhỏ hơn */
 @media (max-width: 768px) {
   .staff-text-bg { max-width: 100%; }
- .staff-frame-scrapper{ inset: 12px; width: calc(100% - 24px); height: calc(100% - 24px); }
-  .staff-frame-underground{ bottom: -10px; height: 24px; transform: skewX(-6deg); }
+ .staff-frame-scrapper{max-width: 96.5%;top: -3px;left: 9px;}
+  .staff-frame-underground{
+    max-width: 96.5%;
+    top: -3px;
+    left: 9px;
+}
 
   .staff-block {
     flex-direction: column;
@@ -366,9 +365,9 @@
     height: 630px;
     clip-path: polygon(0% 7%, 100% 0%, 100% 91%, 0% 100%);
   }
- .staff-frame-top{
-  left:20px
- }
+  .staff-frame-top{
+    left:20px
+  }
 
   .staff-frame-bottom{
     left: 10px;
@@ -398,7 +397,7 @@
 
   .name-text {
     top: 48px;
-    left: 6px;
+    left: -7px;
     transform: skewY(-18deg) scale(0.95);
   }
 
@@ -416,7 +415,7 @@
   }
 
   .staff-department {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .staff-name {
@@ -448,7 +447,7 @@
 
   .name-text {
     top: 52px;
-    left: -2px;
+    left: -12px;
     transform: skewY(-22deg) scale(0.9);
   }
 
@@ -490,7 +489,7 @@
 
   .name-text {
     top: 60px;
-    left: -6px;
+    left: -3px;
     transform: skewY(-27deg) scale(0.87);
   }
 
@@ -503,7 +502,7 @@
   }
 
   .staff-department {
-    font-size: 11px;
+    font-size: 8px;
   }
 
   .staff-name {
@@ -511,8 +510,16 @@
   }
 
 
-  .staff-frame-scrapper{ inset: 10px; width: calc(100% - 20px); height: calc(100% - 20px); }
-  .staff-frame-underground{ bottom: -8px; height: 20px; transform: skewX(-5deg); }
+  .staff-frame-scrapper{
+    max-width: 96.5%;
+    top: 0px;
+    left: 6px;
+}
+  .staff-frame-underground{
+    max-width: 96.5%;
+    top: 0px;
+    left: 6px;
+}
 }
 
 @media (max-width: 460px) {
@@ -604,7 +611,7 @@
 }
 
 @media (max-width: 308px) {
-  .staff-frame-bg, .staff-frame-middle {
+   .staff-frame-bg, .staff-frame-middle {
     max-width: 100%;
     left: 0;
     height: 215px;
@@ -618,7 +625,7 @@
         /* margin-top: 120px; */
   }
     .name-text {
-    top: 48px;
+    top: 37px;
     left: 8px;
     transform: skewY(-27deg);
   }

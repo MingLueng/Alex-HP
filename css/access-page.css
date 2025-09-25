@@ -9,7 +9,14 @@
   z-index: 0;
   animation: bgZoom 40s ease-in-out infinite;
 }
-
+.access-company-info {
+  color: white;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  font-weight: 500;
+  text-shadow: 1px 1px 2px black;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
 .access-map{
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -144,7 +151,15 @@
   font-weight: bold;
 }
 
-
+.access-heading {
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
 .building-video {
     width: 100%;
     height: auto;
@@ -319,6 +334,9 @@
 }
 
 @media (max-width: 768px) {
+  .access-heading {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
   /* Stack trái/phải */
   .address-wrapper {
     flex-direction: column;
