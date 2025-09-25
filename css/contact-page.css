@@ -22,7 +22,49 @@
 	height:133px;
 	background:url(../image/base/second_bg.png) no-repeat right 0;
 } */
+.contact-left-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
 
+.contact-left-text h2 {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.45;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  white-space: normal;
+  word-break: break-word;
+  margin: 0;
+}
+.contact-company-info {
+  color: white;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+  font-weight: 500;
+  text-shadow: 1px 1px 2px black;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+.contact-heading-info {
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+.contact-right-text {
+  text-align: right;
+  align-self: flex-end;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
 .contact-detail-btn{
 	position: relative;
     max-width: 240px;
@@ -343,6 +385,18 @@ textarea {
 }
 
 @media(max-width:768px){
+
+  .contact-right-text {
+    text-align: left;
+    align-self: flex-start;
+  }
+  .contact-left-text {
+    max-width: 100%;
+  }
+
+  .contact-left-text h2 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
 	/* position_box */
 	#position_box{
 		padding:20px 0px 18px;
@@ -382,6 +436,10 @@ textarea {
 	#form_box table td #comment{
 		width:100%;
 	}
+
+	.contact-heading-info {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
 }
 @media(max-width:480px){
 	#main_contents:after{
