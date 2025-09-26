@@ -30,7 +30,8 @@
     "https://code.jquery.com/jquery-3.7.1.min.js",
     "https://code.jquery.com/jquery-migrate-3.4.1.min.js",
     "js/script.js",
-    "js/lang.js"
+    "js/lang.js",
+    
   ];
 
   var PAGE_CSS_MAP = {

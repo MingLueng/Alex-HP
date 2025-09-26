@@ -14,11 +14,12 @@
 }
 </script>
 <script src="../js/include-partials.js" defer></script>
+
 </head>
 <body>
 
   <!-- HEADER chung -->
-  <div data-include="header"></div>
+<div data-include="header"></div>
 
 <section class="about">
   <div class="about-avatar">
@@ -43,142 +44,143 @@
 <nav class="submenu-tabs">
 </nav>
 
-<section class="contact-heading" >
+<section class="contact-heading">
   <div class="container">
     <div class="contact-block-wrapper" id="main_contents">
-<p>
-  以下のフォームにお問い合わせ内容をご記入いただき、送信してください
-</p>
 
+      <!-- intro -->
+      <p class="contact-intro">
+        以下のフォームにお問い合わせ内容をご記入いただき、送信してください
+      </p>
 
-<div id="position_box">
-  <ul>
-    <li class="active"><span>STEP1　内容入力</span> →</li>
-    <li><span>STEP2　内容確認</span> →</li>
-    <li><span>STEP3　受付完了</span></li>
-    </ul>
-</div>
+      <!-- steps -->
+      <div id="position_box">
+        <ul>
+          <li class="active"><span class="step-label-1">STEP1　内容入力</span> →</li>
+          <li><span class="step-label-2">STEP2　内容確認</span> →</li>
+          <li><span class="step-label-3">STEP3　受付完了</span></li>
+        </ul>
+      </div>
 
+      <div id="form_box" class="line-contact">
+        <form action="#" method="post" name="applyform" id="applyform">
+          <table>
+            <tbody>
+              <tr>
+                <th class="th-name">
+                  <span class="label-name">お名前</span>
+                  <span class="required req-name">※必須</span>
+                </th>
+                <td><input name="お名前" type="text" size="7"></td>
+              </tr>
 
-<div id="form_box" class="line-contact">
-  <form action="system/contact_form.php" method="post" name="applyform" id="applyform">
-    
-  <table>
-  <tbody>
-    <tr>
-      <th>お名前
-        <span class="required">※必須</span>
-      </th>
-  <td>
-    <input name="お名前" type="text" size="7">
-  </td>
-  </tr>
-    
-  <tr>
-    <th>フリガナ</th>
-  <td>
-    <input name="フリガナ" type="text" size="7">
-  </td>
-  </tr>
-    
-  <tr>
-    <th>電話番号</th>
-  <td>
-    <input name="電話番号" type="text" size="11" maxlength="11" style="ime-mode: disabled">
-  </td>
-  </tr>
-    
-  <tr>
-    <th>メールアドレス
-      <span class="required">※必須</span>
-    </th>
-  <td>
-  <input name="email" type="text" size="40" title="info@example.com" style="ime-mode: disabled">
-  <div class="plus_txt">
-    ドメイン指定受信の設定をされている方は、「alex7.co.jp」を<br>
-    指定メールアドレスに追加してください。<br>
-    【ドメイン指定の方法】<br>
-    ■<a href="https://www.nttdocomo.co.jp/info/spam_mail/measure/url/index.html" target="_blank">docomoをご使用の方</a>
-    ■<a href="http://www.au.kddi.com/support/mobile/trouble/forestalling/mail/anti-spam/fillter/" target="_blank">auをご使用の方</a>　　
-    ■<a href="http://www.softbank.jp/mobile/support/antispam/settings/indivisual/whiteblack/" target="_blank">SoftBankをご使用の方</a>
-  </div>
-  </td>
-  </tr>
-    
-  <tr>
-    <th>メールアドレス確認用
-      <span class="required">※必須</span>
-    </th>
-  <td>
-    <input name="email2" type="text" size="40" title="info@example.com" style="ime-mode: disabled">
-  </td>
-  </tr>
-    
-  <tr>
-  <th>
-    お問い合わせ内容<span class="required">※必須</span>
-  </th>
-  <td>
-    <textarea name="お問い合わせ内容" id="comment"></textarea>
-  </td>
-</tr>
-  </tbody>
-</table>  
-  <p id="sub_btn">
-    <button type="button" name="submit" class="contact-detail-btn submit" value="入力内容を確認する" >
-      入力内容を確認する
-    </button>
-  </p>
-  </form>
-  <div class="errm">
-<h4>未入力項目があります</h4>
-<font color="#ff0000">「お名前」は必須入力項目です。</font><br>
-<font color="#ff0000">「メールアドレス」は必須入力項目です。</font><br>
-<font color="#ff0000">「メールアドレス：確認用」は必須入力項目です。</font><br>
-<font color="#ff0000">「お問い合わせ内容」は必須入力項目です。</font><br>
-</div>
-<div id="confirm_btn">
-<button type="button" class="h_back contact-detail-btn" value="入力画面に戻る" onclick="history.back()">
-      入力画面に戻る
-    </button>
-</div>
+              <tr>
+                <th class="th-kana"><span class="label-kana">フリガナ</span></th>
+                <td><input name="フリガナ" type="text" size="7"></td>
+              </tr>
 
-<div class="submittable">
-<p>
-以下の内容で間違いがなければ、「送信」ボタンを押してください。
-</p>
-<form action="contact_form.php" method="POST">
+              <tr>
+                <th class="th-phone"><span class="label-phone">電話番号</span></th>
+                <td><input name="電話番号" type="text" size="11" maxlength="11" style="ime-mode: disabled"></td>
+              </tr>
 
-<table cellpadding="0" cellspacing="0" class="confirm_table">
-<tbody><tr><th>お名前</th><td><input type="hidden" name="お名前" value=""></td></tr>
-<tr><th>フリガナ</th><td><input type="hidden" name="フリガナ" value=""></td></tr>
-<tr><th>電話番号</th><td><input type="hidden" name="電話番号" value=""></td></tr>
-<tr><th>メールアドレス</th><td><input type="hidden" name="email" value=""></td></tr>
-<tr><th>お問い合わせ内容</th><td><input type="hidden" name="お問い合わせ内容" value=""></td></tr>
-</tbody></table>
-<div class="hide">
-<input type="hidden" name="email2" value="">
-</div>
+              <tr>
+                <th class="th-email">
+                  <span class="label-email">メールアドレス</span>
+                  <span class="required req-email">※必須</span>
+                </th>
+                <td>
+                  <input name="email" type="text" size="40" title="info@example.com" style="ime-mode: disabled">
+                  <div class="plus_txt email-note">
+                    ドメイン指定受信の設定をされている方は、「alex7.co.jp」を<br>
+                    指定メールアドレスに追加してください。<br>
+                    【ドメイン指定の方法】<br>
+                    ■<a href="https://www.nttdocomo.co.jp/info/spam_mail/measure/url/index.html" target="_blank">docomoをご使用の方</a>
+                    ■<a href="http://www.au.kddi.com/support/mobile/trouble/forestalling/mail/anti-spam/fillter/" target="_blank">auをご使用の方</a>　　
+                    ■<a href="http://www.softbank.jp/mobile/support/antispam/settings/indivisual/whiteblack/" target="_blank">SoftBankをご使用の方</a>
+                  </div>
+                </td>
+              </tr>
 
-<div id="confirm_btn">
-<input type="hidden" name="eweb_set" value="eweb_submit">
-<button type="button" class="h_back contact-detail-btn" value="入力画面に戻る" onclick="history.back()">
-      入力画面に戻る
-    </button>
-<button type="button" name="submit-a" class="submit-a confirm-detail-btn" value="送信する" >
-      送信する
-    </button>
-</div>
-</form>
-</div>
-<p>
-  お問い合わせありがとうございました。<br>
-  送信は無事に完了しました。
-</p>
-</div>
-</div>
+              <tr>
+                <th class="th-email2">
+                  <span class="label-email2">メールアドレス確認用</span>
+                  <span class="required req-email2">※必須</span>
+                </th>
+                <td><input name="email2" type="text" size="40" title="info@example.com" style="ime-mode: disabled"></td>
+              </tr>
+
+              <tr>
+                <th class="th-body">
+                  <span class="label-message">お問い合わせ内容</span>
+                  <span class="required req-body">※必須</span>
+                </th>
+                <td><textarea name="お問い合わせ内容" id="comment"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="sub_btn">
+            <button type="button" name="submit" class="contact-detail-btn submit" value="">
+              入力内容を確認する
+            </button>
+          </p>
+        </form>
+
+        <!-- error box -->
+        <div class="errm">
+          <h4 class="err-title">未入力項目があります</h4>
+          <div class="err-lines">
+            <font color="#ff0000">「お名前」は必須入力項目です。</font><br>
+            <font color="#ff0000">「メールアドレス」は必須入力項目です。</font><br>
+            <font color="#ff0000">「メールアドレス：確認用」は必須入力項目です。</font><br>
+            <font color="#ff0000">「お問い合わせ内容」は必須入力項目です。</font><br>
+          </div>
+        </div>
+
+        <div id="confirm_btn">
+          <button type="button" class="h_back contact-detail-btn" value="">
+            入力画面に戻る
+          </button>
+        </div>
+
+        <!-- confirm box -->
+        <div class="submittable">
+          <p class="confirm-intro">
+            以下の内容で間違いがなければ、「送信」ボタンを押してください。
+          </p>
+          <form action="#" method="POST">
+            <table cellpadding="0" cellspacing="0" class="confirm_table">
+              <tbody>
+                <tr><th class="label-name">お名前</th><td><input type="hidden" name="お名前" value=""></td></tr>
+                <tr><th class="label-kana">フリガナ</th><td><input type="hidden" name="フリガナ" value=""></td></tr>
+                <tr><th class="label-phone">電話番号</th><td><input type="hidden" name="電話番号" value=""></td></tr>
+                <tr><th class="label-email">メールアドレス</th><td><input type="hidden" name="email" value=""></td></tr>
+                <tr><th class="label-message">お問い合わせ内容</th><td><input type="hidden" name="お問い合わせ内容" value=""></td></tr>
+              </tbody>
+            </table>
+            <div class="hide"><input type="hidden" name="email2" value=""></div>
+
+            <div id="confirm_btn">
+              <input type="hidden" name="eweb_set" value="eweb_submit">
+              <button type="button" class="h_back contact-detail-btn" value="">
+                入力画面に戻る
+              </button>
+              <button type="button" name="submit-a" class="submit-a confirm-detail-btn" value="">
+                送信する
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- thanks -->
+        <p class="thanks-text">
+          お問い合わせありがとうございました。<br>送信は無事に完了しました。
+        </p>
+      </div>
+    </div>
   </div>
 </section>
+
   <!-- FOOTER chung -->
   <div data-include="footer"></div>
 </body>
